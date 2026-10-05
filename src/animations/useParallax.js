@@ -35,7 +35,8 @@ export function setupHero(root, { desktop }) {
   const content = hero.querySelector("[data-hero-content]");
 
   const tl = gsap.timeline({ defaults: { ease: EASE } });
-  if (media) tl.fromTo(media, { scale: 1.12 }, { scale: 1, duration: 2.4, ease: EASE_SOFT }, 0);
+  // Subtle settle only: a large scale-up visibly softens a 1080p video.
+  if (media) tl.fromTo(media, { scale: 1.03 }, { scale: 1, duration: 2, ease: EASE_SOFT, clearProps: "transform" }, 0);
   tl.fromTo(
     items,
     { autoAlpha: 0, y: desktop ? 30 : 18 },

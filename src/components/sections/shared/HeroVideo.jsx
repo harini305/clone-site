@@ -2,13 +2,17 @@
 
 import { useEffect, useRef } from "react";
 
+const PHONE = "(max-width: 600px)";
+
 /**
  * Muted background loop layered over the (priority) poster image.
- * - Chooses a 1080p or 720p source by screen width, after hydration.
+ * - Desktop/tablet: the native 1916×1080 source (stream-copied, no re-encode).
+ * - Phones: a native-resolution 608×1080 portrait crop, so a tall hero isn't
+ *   filled by blowing up a small slice of a landscape frame.
  * - Never loads with prefers-reduced-motion or data-saver enabled.
- * - Pauses whenever the hero is off-screen so it costs nothing while scrolling.
+ * - Pauses whenever the hero is off-screen.
  */
-export default function HeroVideo({ src, mobileSrc, poster, className }) {
+export default function HeroVideo({ src, portraitSrc, poster, portraitPoster, className }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -18,7 +22,10 @@ export default function HeroVideo({ src, mobileSrc, poster, className }) {
     const saveData = navigator.connection?.saveData;
     if (reduce || saveData) return undefined;
 
-    video.src = mobileSrc && window.matchMedia("(max-width: 899px)").matches ? mobileSrc : src;
+    const phone = portraitSrc && window.matchMedia(PHONE).matches;
+    if (phone && portraitPoster) video.poster = portraitPoster;
+    video.src = phone ? portraitSrc : src;
+
     const onReady = () => video.classList.add("is-ready");
     video.addEventListener("playing", onReady, { once: true });
 
@@ -34,7 +41,7 @@ export default function HeroVideo({ src, mobileSrc, poster, className }) {
       observer.disconnect();
       video.removeEventListener("playing", onReady);
     };
-  }, [src, mobileSrc]);
+  }, [src, portraitSrc, portraitPoster]);
 
   return (
     <video
