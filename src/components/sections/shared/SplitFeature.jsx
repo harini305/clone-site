@@ -29,7 +29,7 @@ export default function SplitFeature({
         <div
           className={`${styles.frame} ${portrait ? styles.portrait : ""}`}
           data-reveal-image
-          {...(parallax ? { "data-parallax": "6" } : {})}
+          {...(parallax ? { "data-parallax": "4" } : {})}
         >
           <Image
             src={image}

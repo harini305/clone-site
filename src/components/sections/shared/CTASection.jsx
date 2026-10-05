@@ -14,7 +14,7 @@ export default function CTASection({
 }) {
   return (
     <section className={styles.cta}>
-      <div className={styles.media} data-parallax="10">
+      <div className={styles.media} data-parallax="4">
         <Image src={image} alt="" fill sizes="100vw" className="media-cover" data-parallax-target />
       </div>
       <div className={styles.overlay} aria-hidden="true" />

@@ -1,5 +1,4 @@
-import PageHero from "@/components/sections/shared/PageHero";
-import HeroTrust from "@/components/sections/home/HeroTrust";
+import HomeHero from "@/components/sections/home/HomeHero";
 import SplitFeature from "@/components/sections/shared/SplitFeature";
 import StatsBand from "@/components/sections/shared/StatsBand";
 import GlanceGrid from "@/components/sections/shared/GlanceGrid";
@@ -32,27 +31,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <PageHero
-        size="full"
-        image="/assets/images/hero/aerial-video-poster.webp"
-        video="/assets/video/bali-aerial-1080p.mp4"
-        portraitVideo="/assets/video/bali-aerial-portrait.mp4"
-        portraitPoster="/assets/images/hero/aerial-video-poster-portrait.webp"
-        eyebrow="Blooming Lotus Yoga · Ubud, Bali"
-        title={
-          <>
-            Heart-based, holistic yoga school <em>&amp; lifelong community</em>
-          </>
-        }
-        subtitle="Reconnect Within • Deepen Your Practice • Transform Your Life"
-        ctas={[
-          { label: "Explore your next retreat or training", href: "#programmes" },
-          { label: "Speak to a teacher", href: "/contact", variant: "light" },
-        ]}
-        scrollIndicator
-      >
-        <HeroTrust />
-      </PageHero>
+      <HomeHero />
 
       <section id="content" className="section">
         <div className="container">

@@ -4,7 +4,9 @@ import { gsap } from "./gsap";
 import { EASE, EASE_SOFT } from "./presets";
 
 /**
- * Subtle scroll parallax for selected large images.
+ * Subtle scroll parallax for selected large images. The image is scaled just
+ * enough (1 + amount/50) to cover its travel — keep amounts small (~4) so HD
+ * photos aren't visibly enlarged.
  * Usage: <div data-parallax="8"><img data-parallax-target … /></div>
  * Only called on desktop without reduced motion.
  */
@@ -35,7 +37,7 @@ export function setupHero(root, { desktop }) {
   const content = hero.querySelector("[data-hero-content]");
 
   const tl = gsap.timeline({ defaults: { ease: EASE } });
-  // Subtle settle only: a large scale-up visibly softens a 1080p video.
+  // Subtle settle only: a large scale-up visibly softens the hero image.
   if (media) tl.fromTo(media, { scale: 1.03 }, { scale: 1, duration: 2, ease: EASE_SOFT, clearProps: "transform" }, 0);
   tl.fromTo(
     items,

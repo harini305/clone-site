@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Button from "@/components/ui/Button";
+import HeroImage from "./HeroImage";
 import HeroVideo from "./HeroVideo";
 import styles from "./PageHero.module.css";
 
@@ -10,9 +10,9 @@ import styles from "./PageHero.module.css";
 export default function PageHero({
   image,
   imageAlt = "",
+  portraitImage,
   video,
   portraitVideo,
-  portraitPoster,
   eyebrow,
   title,
   subtitle,
@@ -25,20 +25,8 @@ export default function PageHero({
   return (
     <section className={`${styles.hero} ${styles[size]} ${styles[align] || ""}`} data-hero>
       <div className={styles.media} data-hero-media>
-        {video ? (
-          <>
-            <Image src={image} alt="" fill priority quality={95} sizes="100vw" className={styles.img} />
-            <HeroVideo
-              src={video}
-              portraitSrc={portraitVideo}
-              poster={image}
-              portraitPoster={portraitPoster}
-              className={`${styles.img} ${styles.video}`}
-            />
-          </>
-        ) : (
-          <Image src={image} alt={imageAlt} fill priority quality={95} sizes="100vw" className={styles.img} />
-        )}
+        <HeroImage image={image} portraitImage={portraitImage} alt={imageAlt} className={styles.img} />
+        {video && <HeroVideo src={video} portraitSrc={portraitVideo} className={`${styles.img} ${styles.video}`} />}
       </div>
       <div className={styles.overlay} aria-hidden="true" />
 

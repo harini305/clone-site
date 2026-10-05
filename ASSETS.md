@@ -2,13 +2,13 @@
 
 All media lives in `public/assets/` and is served as-is from `/assets/...`. Vercel serves these files byte-for-byte; images rendered through `next/image` are additionally resized and re-encoded (AVIF/WebP) per screen size.
 
-Source: [blooming-lotus-yoga.com](https://www.blooming-lotus-yoga.com/) (WordPress uploads and the site's S3 video bucket). Used for a training project.
+Source: [blooming-lotus-yoga.com](https://www.blooming-lotus-yoga.com/) (WordPress uploads), plus the home hero aerials supplied for this project. Used for a training project.
 
 ## Folders
 
 | Folder | Contents |
 | --- | --- |
-| `images/hero/` | Full-bleed page header images and the hero video posters |
+| `images/hero/` | Full-bleed page header images, including the home hero aerials |
 | `images/venue/` | Villas, pools, river, temple, shala, spa, dining |
 | `images/rooms/` | Room types, bedrooms, bathrooms |
 | `images/practice/` | Classes and students |
@@ -19,29 +19,36 @@ Source: [blooming-lotus-yoga.com](https://www.blooming-lotus-yoga.com/) (WordPre
 | `images/giving/` | Charitable fund posters |
 | `images/guide/` | “YTT Unfiltered” guide cover |
 | `logos/`, `badges/`, `icons/` | Wordmark, lotus mark, Amrita logo, Yoga Alliance / award badges, favicon |
-| `video/` | Home hero loops |
+| `video/` | Home hero loops (rendered from the HD aerial photos) |
 | `docs/` | PDFs: YTT Unfiltered guide, Amrita menu, retreat welcome guide |
 
 ## Images
 
 Images were exported from the largest original available on the source site (WordPress `-WxH` size suffixes stripped), saved as WebP at quality 88 and capped at 2560px wide. Originals narrower than 900px were enlarged 2× with Lanczos resampling — the source site does not publish larger versions of those files (teacher portraits, food photos, a few 540px practice photos), so they are only used where they display at or below their native size.
 
-## Home hero video
+## Home hero
 
-| File | Resolution | FPS | Bitrate | Size | Used on |
-| --- | --- | --- | --- | --- | --- |
-| `video/bali-aerial-1080p.mp4` | 1916×1080 | 60 | ~12 Mbps | ~21 MB | Screens wider than 600px |
-| `video/bali-aerial-portrait.mp4` | 608×1080 | 30 | ~5.5 Mbps | ~5.4 MB | Phones (≤600px) |
-| `images/hero/aerial-video-poster.webp` | 1916×1080 | – | – | – | Poster / first paint (landscape) |
-| `images/hero/aerial-video-poster-portrait.webp` | 608×1080 | – | – | – | Poster on phones |
+The home hero is a slow, drone-style video loop rendered from HD aerial photographs supplied for this project (the original drone footage on the source site was 1080p and visibly soft). The HD photo sits underneath as the poster / first paint, and the video fades in over it.
 
-- **Source:** `Epic Overhead.mp4` from the Blooming Lotus Yoga S3 bucket (`BLY Accommodations/`), 1916×1080, 60 fps, ~12 Mbps H.264. This is the highest-resolution version available; the only other hero-style clip (`Yoga Retreats Bali.mp4`) is 1280×720.
-- **Desktop file** is a lossless stream copy of the source (trimmed to 14 s from the keyframe at 0.967 s, audio removed) — no resize and no re-encode, so it carries exactly the source's pixels.
-- **Portrait file** is a centre crop of the source at native resolution (no scaling), re-encoded once with x264 (CRF 23, 8 s loop) to keep it light on mobile data.
-- **Posters** are the exact first frame of each loop, saved without any sharpening.
-- The video is never loaded with `prefers-reduced-motion` or data-saver enabled, and pauses when the hero is off-screen.
+| File | Size | Used on |
+| --- | --- | --- |
+| `video/villas-aerial-1080p.mp4` | 1920×1080, 30 fps, 15 s, ~8 MB | Screens wider than 600px |
+| `video/villas-aerial-portrait.mp4` | 1080×1920, 30 fps, 15 s, ~6 MB | Phones (≤600px) |
+| `images/hero/villas-aerial.webp` | 2096×1184 | Poster / first paint, screens > 600px |
+| `images/hero/villas-aerial-portrait.webp` | 1152×2032 | Poster / first paint on phones |
+| `images/hero/aerial-pool.webp` | 2080×1136 | 7-Day Bliss hero and the location section |
 
-**Limit:** the source is 1080 pixels tall. On a 1× desktop screen the hero shows it at or below native size. On high-DPI (retina) displays and phones the browser must upscale it, so it cannot be fully pin-sharp there — that is the source resolution, not the implementation.
+How the video was made:
+
+- **Desktop loop:** opens on the whole villas photo, holds briefly, then a drone-style camera glides in over the upper villas, travels right along the terraces, and pulls back out to the full photo, so the loop is seamless.
+- **Phone loop:** the same move on the tall villas photo, travelling down the terraces toward the pool.
+- **Why one photo per screen shape:** putting the tall photo into the wide frame (or the reverse) would mean enlarging it about 1.6×, so each screen shape uses the photo that matches it.
+- **Resampling:** each frame is cut with sub-pixel Lanczos resampling along a smooth keyframed camera path.
+- **How far it zooms:** the tightest framing is about 1.65× the photo's native resolution (desktop), so the travel reads clearly while staying clean. The opening and closing frames are the full photo.
+- **Encoding:** x264, CRF 21 (desktop) and CRF 23 (phone).
+- **Photos:** saved as WebP (quality 92) at native size, with no sharpening. Phones get the portrait photo through `<picture>` art direction (`next/image` `getImageProps`), served at quality 95.
+- **Reproducible:** the loops can be regenerated with `scripts/render-hero.py` (needs Python, Pillow and imageio-ffmpeg; place the photos in `scripts/source-photos/` as `villas-wide.jpg` and `villas-tall.jpg`).
+- **Loading:** the video never loads with `prefers-reduced-motion` or data-saver enabled, and pauses when the hero is off-screen.
 
 ## PDFs
 

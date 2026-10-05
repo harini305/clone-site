@@ -15,8 +15,18 @@ const strip = [
 export default function LocationSection({ id = "location", cta = { label: "Explore the retreat center", href: "/retreat-center" } }) {
   return (
     <section id={id} className={styles.location}>
-      <div className={styles.bg} data-parallax="12">
-        <Image src="/assets/images/hero/aerial-pool.webp" alt="" fill sizes="100vw" className="media-cover" data-parallax-target />
+      <div className={styles.bg} data-parallax="4">
+        <Image
+          src="/assets/images/hero/aerial-pool.webp"
+          alt=""
+          fill
+          quality={95}
+          // Phones show a height-filled crop of the full photo (~2080 CSS px wide);
+          // desktop adds ~8% for the parallax travel.
+          sizes="(max-width: 899px) 2080px, 108vw"
+          className="media-cover"
+          data-parallax-target
+        />
       </div>
       <div className={styles.overlay} aria-hidden="true" />
 

@@ -41,7 +41,7 @@ src/
     sections/          shared/ (reusable page sections) + page-specific folders
   data/                all copy: programmes, retreats, YTT, teachers, testimonials, FAQs, venue, contact
   styles/              tokens, globals, typography, utilities
-public/assets/         optimised local images, logos, badges, video and PDFs (see ASSETS.md)
+public/assets/         optimised local images, logos, badges and PDFs (see ASSETS.md)
 ```
 
 ## Animation system

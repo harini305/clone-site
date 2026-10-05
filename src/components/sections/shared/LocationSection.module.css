@@ -15,16 +15,36 @@
   overflow: hidden;
 }
 
+/* Desktop: keep the photo at its own proportions (never stretched past its
+   native pixels) and fade it into the section background below. */
+@media (min-width: 900px) {
+  .bg {
+    bottom: auto;
+    aspect-ratio: 2080 / 1136;
+    max-height: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+  }
+}
+
 .overlay {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(18, 22, 18, 0.82) 0%, rgba(18, 22, 18, 0.45) 60%, rgba(18, 22, 18, 0.35) 100%),
-    linear-gradient(180deg, transparent 55%, rgba(18, 22, 18, 0.85) 100%);
+  background: linear-gradient(90deg, rgba(18, 22, 18, 0.72) 0%, rgba(18, 22, 18, 0.38) 45%, rgba(18, 22, 18, 0.08) 75%, rgba(18, 22, 18, 0) 100%),
+    linear-gradient(180deg, transparent 60%, rgba(18, 22, 18, 0.72) 100%);
 }
 
 .copy {
   max-width: 620px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 0 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Phones: text runs over the whole photo, so shade it evenly. */
+@media (max-width: 899px) {
+  .overlay {
+    background: linear-gradient(180deg, rgba(18, 22, 18, 0.6) 0%, rgba(18, 22, 18, 0.42) 55%, rgba(18, 22, 18, 0.75) 100%);
+  }
 }
 
 .title {

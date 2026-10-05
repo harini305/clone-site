@@ -47,7 +47,11 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${serif.variable} ${sans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Flag JS before first paint so reveal targets start hidden (no flash). */}
         <script
