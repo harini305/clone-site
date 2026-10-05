@@ -26,11 +26,11 @@ export default function PageHero({
       <div className={styles.media} data-hero-media>
         {video ? (
           <>
-            <Image src={image} alt="" fill priority sizes="100vw" className={styles.img} />
+            <Image src={image} alt="" fill priority quality={95} sizes="100vw" className={styles.img} />
             <HeroVideo src={video} mobileSrc={mobileVideo} poster={image} className={`${styles.img} ${styles.video}`} />
           </>
         ) : (
-          <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={styles.img} />
+          <Image src={image} alt={imageAlt} fill priority quality={95} sizes="100vw" className={styles.img} />
         )}
       </div>
       <div className={styles.overlay} aria-hidden="true" />
