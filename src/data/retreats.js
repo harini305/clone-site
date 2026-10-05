@@ -110,7 +110,7 @@ export const retreats = {
     badge: "Most Affordable",
     offsite: 150,
     image: "/assets/images/hero/river-meditation.webp",
-    cardImage: "/assets/images/practice/temple-prayer.webp",
+    cardImage: "/assets/images/community/pool-friends.webp",
     ctaImage: "/assets/images/venue/pool-umbrella.webp",
     checkIn: "Check-in 1:30–3:30 pm on day one · check-out by 12:00 noon on the last day",
     summary:
@@ -146,8 +146,8 @@ export const retreats = {
     workshops: 3,
     badge: "Most Popular",
     offsite: 300,
-    image: "/assets/images/hero/rice-field.webp",
-    cardImage: "/assets/images/practice/jungle-stairs.webp",
+    image: "/assets/images/hero/aerial-pool.webp",
+    cardImage: "/assets/images/practice/rice-walk.webp",
     ctaImage: "/assets/images/venue/infinity-villa.webp",
     checkIn: "Check-in Sunday 1:30–3:30 pm, orientation at 5:00 pm · check-out Saturday by 12:00 noon",
     summary:

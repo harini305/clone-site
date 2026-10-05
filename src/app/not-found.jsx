@@ -7,7 +7,7 @@ export const metadata = {
 export default function NotFound() {
   return (
     <PageHero
-      image="/assets/images/meditation/rice-terrace.webp"
+      image="/assets/images/venue/sacred-river.webp"
       eyebrow="404"
       title={
         <>

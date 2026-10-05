@@ -19,8 +19,8 @@ export default function EscapeRetreatPage() {
       testimonials={testimonials}
       faqs={escapeFaqs}
       intro="One of the most affordable, intimate & transformative yoga retreats Bali has to offer"
-      splitImage="/assets/images/practice/temple-prayer.webp"
-      splitAlt="A student offering a prayer at a Balinese water temple"
+      splitImage="/assets/images/practice/class-arms-up.webp"
+      splitAlt="Retreat guests raising their arms during a yoga class"
     />
   );
 }

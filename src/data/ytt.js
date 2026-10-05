@@ -54,7 +54,7 @@ export const curriculum = [
   {
     key: "body",
     label: "The Body",
-    image: "/assets/images/practice/crow-shala.webp",
+    image: "/assets/images/practice/shala-crow.webp",
     items: [
       "Explore the 64 core asanas of hatha yoga with alignment, anatomy & adjustments using body-mapping and “anatomy lines” to practise safely.",
       "Practise & teach the foundational vinyasa “Sunrise & Sunset Sequences” taught to thousands of yogis — the base for sequencing your own classes.",
@@ -67,7 +67,7 @@ export const curriculum = [
   {
     key: "mind",
     label: "The Mind",
-    image: "/assets/images/meditation/field-meditation.webp",
+    image: "/assets/images/meditation/namaste-pair.webp",
     items: [
       "Practise & teach essential meditation techniques — powerful mental-health tools to reduce stress, find inner peace and enhance clarity.",
       "Use and teach “yoga nidra” at the end of classes, in workshops and retreats to create a safe space for deep inner work.",
@@ -78,7 +78,7 @@ export const curriculum = [
   {
     key: "soul",
     label: "The Soul",
-    image: "/assets/images/practice/temple-door.webp",
+    image: "/assets/images/meditation/bindi.webp",
     items: [
       "A complete overview of the liberation teachings of “Yoga, Tantra and Vedanta” — a clear framework of yogic philosophy.",
       "Chakras, bandha, mudra and kundalini practices to purify the energy body and spiritually evolve.",

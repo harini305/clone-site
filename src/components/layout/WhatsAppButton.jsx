@@ -1,14 +1,50 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { ScrollTrigger } from "@/animations/gsap";
 import { contact } from "@/data/contact";
 import styles from "./WhatsAppButton.module.css";
 
+/**
+ * Floating WhatsApp shortcut. It appears once the visitor scrolls past the
+ * hero and steps aside when the footer arrives, so it never sits on top of
+ * hero content or footer links. Uses ScrollTrigger toggles only (no per-frame state).
+ */
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  const [pastHero, setPastHero] = useState(false);
+  const [atFooter, setAtFooter] = useState(false);
+
+  useEffect(() => {
+    const hero = ScrollTrigger.create({
+      start: () => window.innerHeight * 0.7,
+      end: "max",
+      onToggle: (self) => setPastHero(self.isActive),
+    });
+    const footer = ScrollTrigger.create({
+      trigger: "footer",
+      start: "top bottom-=40",
+      end: "max",
+      onToggle: (self) => setAtFooter(self.isActive),
+    });
+    return () => {
+      hero.kill();
+      footer.kill();
+    };
+  }, [pathname]);
+
+  const visible = pastHero && !atFooter;
+
   return (
     <a
-      className={styles.button}
+      className={`${styles.button} ${visible ? styles.visible : ""}`}
       href={contact.whatsappTeacherHref}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with a teacher on WhatsApp (opens in a new tab)"
+      tabIndex={visible ? 0 : -1}
+      aria-hidden={visible ? undefined : true}
     >
       <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
         <path

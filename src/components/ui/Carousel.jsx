@@ -11,12 +11,15 @@ export default function Carousel({ children, label, tone = "dark", slideClassNam
   const trackRef = useRef(null);
   const [edges, setEdges] = useState({ start: true, end: false });
 
+  const frame = useRef(0);
   const update = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    setEdges({
-      start: el.scrollLeft <= 4,
-      end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 4,
+    cancelAnimationFrame(frame.current);
+    frame.current = requestAnimationFrame(() => {
+      const el = trackRef.current;
+      if (!el) return;
+      const start = el.scrollLeft <= 4;
+      const end = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      setEdges((prev) => (prev.start === start && prev.end === end ? prev : { start, end }));
     });
   }, []);
 
@@ -27,6 +30,7 @@ export default function Carousel({ children, label, tone = "dark", slideClassNam
     el.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
+      cancelAnimationFrame(frame.current);
       el.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };

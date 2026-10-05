@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   description:
     "Read reviews from Blooming Lotus Yoga teacher training graduates, retreat guests and meditators — rated 4.9 on Google and Tripadvisor.",
   path: "/reviews",
-  image: "/assets/images/community/coconut.webp",
+  image: "/assets/images/venue/loungers.webp",
 });
 
 const stats = [
@@ -27,8 +27,8 @@ export default function ReviewsPage() {
   return (
     <>
       <PageHero
-        image="/assets/images/community/coconut.webp"
-        imageAlt="A guest relaxing with a fresh coconut by the pool"
+        image="/assets/images/venue/loungers.webp"
+        imageAlt="Guests relaxing on sun loungers above the jungle"
         eyebrow="Student stories"
         title={
           <>
@@ -66,7 +66,7 @@ export default function ReviewsPage() {
       <AccreditationSection />
 
       <CTASection
-        image="/assets/images/community/pool-coconut.webp"
+        image="/assets/images/venue/gangga-pool.webp"
         title="Write your own story with us"
         primary={{ label: "Yoga teacher training", href: "/yoga-teacher-training" }}
         secondary={{ label: "Yoga retreats", href: "/yoga-retreats" }}

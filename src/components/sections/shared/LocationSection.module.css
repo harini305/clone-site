@@ -105,7 +105,4 @@
     grid-template-columns: repeat(4, 1fr);
     overflow: visible;
   }
-  .stripItem:nth-child(even) {
-    margin-top: 2rem;
-  }
 }

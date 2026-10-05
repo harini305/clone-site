@@ -27,9 +27,6 @@
   overflow: hidden;
 }
 
-.tile:nth-child(odd) {
-  margin-top: 1.5rem;
-}
 
 @media (min-width: 960px) {
   .grid {

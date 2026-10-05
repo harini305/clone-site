@@ -44,15 +44,15 @@ export const metadata = pageMetadata({
   description:
     "A 200-hour Yoga Alliance registered YTT plus a 25-hour meditation certification in Ubud, Bali. From US$2,770 all-inclusive, max 18 students, free lifetime re-attendance.",
   path: "/yoga-teacher-training",
-  image: "/assets/images/hero/ytt-graduates.webp",
+  image: "/assets/images/venue/shala-night.webp",
 });
 
 export default function YTTPage() {
   return (
     <>
       <PageHero
-        image="/assets/images/hero/ytt-graduates.webp"
-        imageAlt="Graduates of the Blooming Lotus Yoga teacher training celebrating together"
+        image="/assets/images/venue/shala-night.webp"
+        imageAlt="The Blooming Lotus Yoga shala glowing at night above the villas"
         eyebrow="225-Hour Yoga & Meditation Teacher Training"
         title={
           <>
@@ -211,7 +211,7 @@ export default function YTTPage() {
       <FAQSection faqs={yttFaqs} />
 
       <CTASection
-        image="/assets/images/hero/rice-field.webp"
+        image="/assets/images/venue/aerial-villas-2.webp"
         eyebrow="Teach yoga worldwide"
         title="Our Yoga Alliance registered course lets you teach anywhere"
         text="225 certified hours, a maximum of 18 students and the freedom to come back, free, for life."

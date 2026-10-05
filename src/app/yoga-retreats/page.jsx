@@ -53,8 +53,8 @@ export default function RetreatsPage() {
       <section className="section">
         <div className="container">
           <SplitFeature
-            image="/assets/images/practice/jungle-stairs.webp"
-            imageAlt="Two women practising yoga on jungle stairs"
+            image="/assets/images/community/smile-white.webp"
+            imageAlt="A smiling guest in white in the retreat gardens"
             portrait
             eyebrow="An affordable, intimate escape"
             title="This is all about you — reaching the full potential of your life"

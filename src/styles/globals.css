@@ -114,7 +114,6 @@ hr {
 
 .split-inner {
   display: inline-block;
-  will-change: transform;
 }
 
 main:focus {

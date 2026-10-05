@@ -62,7 +62,7 @@ export const venueGallery = [
   { src: "/assets/images/rooms/bathtub.webp", alt: "Bathtub with flower petals" },
   { src: "/assets/images/venue/lounge-couple.webp", alt: "Guests relaxing on sun loungers" },
   { src: "/assets/images/venue/view-north.webp", alt: "The view north over the villas" },
-  { src: "/assets/images/venue/spa-massage.webp", alt: "Balinese massage at the spa" },
+  { src: "/assets/images/rooms/suite-bath.webp", alt: "A suite bathroom with a deep bathtub" },
   { src: "/assets/images/venue/pool-river.webp", alt: "Pool above the river" },
 ];
 

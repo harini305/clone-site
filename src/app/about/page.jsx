@@ -18,7 +18,7 @@ export const metadata = pageMetadata({
   description:
     "Blooming Lotus Yoga is an oasis of peace in Ubud, Bali, rooted in the classical yoga tradition of Shri Vidya. Meet founder Lily Goncalves, our teachers and our lineage.",
   path: "/about",
-  image: "/assets/images/hero/lighting-lamp.webp",
+  image: "/assets/images/venue/view-north.webp",
 });
 
 const journey = [
@@ -66,8 +66,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        image="/assets/images/hero/lighting-lamp.webp"
-        imageAlt="A teacher in white with hands in prayer, seated among cushions"
+        image="/assets/images/venue/view-north.webp"
+        imageAlt="The villas and jungle valley looking north from the retreat"
         eyebrow="About Blooming Lotus Yoga"
         title={
           <>
@@ -80,7 +80,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <SplitFeature
-            image="/assets/images/practice/group-white.webp"
+            image="/assets/images/hero/ytt-graduates.webp"
             imageAlt="A group of yoga students in white celebrating together"
             secondaryImage="/assets/images/practice/temple-door.webp"
             secondaryAlt="Three students at a carved temple doorway"

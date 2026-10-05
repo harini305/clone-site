@@ -40,10 +40,8 @@
   width: clamp(72px, 8vw, 104px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: rgba(249, 246, 240, 0.18);
+  background: rgba(20, 24, 20, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.45);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   padding-left: 4px;
   transition: transform 0.6s var(--ease);
 }

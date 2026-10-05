@@ -1,37 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "./gsap";
 
 /**
  * Tracks whether the page has scrolled past the hero edge, via ScrollTrigger.
- * Returns { scrolled, hidden } — hidden is true while scrolling down quickly
- * deep into the page, so the header gets out of the way of the content.
+ * Returns { scrolled, hidden } — hidden is true while scrolling down deep into
+ * the page. State only changes when a value actually flips, so the header
+ * never re-renders on ordinary scroll frames.
  */
 export function useHeaderState(pathname) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const current = useRef({ scrolled: false, hidden: false });
 
   useEffect(() => {
+    const apply = (nextScrolled, nextHidden) => {
+      if (current.current.scrolled !== nextScrolled) {
+        current.current.scrolled = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+      if (current.current.hidden !== nextHidden) {
+        current.current.hidden = nextHidden;
+        setHidden(nextHidden);
+      }
+    };
+
     const trigger = ScrollTrigger.create({
-      start: 60,
+      start: 0,
       end: "max",
       onUpdate: (self) => {
-        setScrolled(self.scroll() > 60);
-        const deep = self.scroll() > window.innerHeight * 0.9;
-        if (self.direction === 1 && deep) setHidden(true);
-        else if (self.direction === -1) setHidden(false);
-      },
-      onLeaveBack: () => {
-        setScrolled(false);
-        setHidden(false);
+        const y = self.scroll();
+        const deep = y > window.innerHeight * 0.9;
+        let nextHidden = current.current.hidden;
+        if (self.direction === 1 && deep) nextHidden = true;
+        else if (self.direction === -1 || !deep) nextHidden = false;
+        apply(y > 60, nextHidden);
       },
     });
+
     // Sync once after route change (scroll position may have reset).
-    const raf = requestAnimationFrame(() => {
-      setScrolled(window.scrollY > 60);
-      setHidden(false);
-    });
+    const raf = requestAnimationFrame(() => apply(window.scrollY > 60, false));
     return () => {
       cancelAnimationFrame(raf);
       trigger.kill();

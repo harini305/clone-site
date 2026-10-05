@@ -34,8 +34,9 @@ export default function HomePage() {
     <>
       <PageHero
         size="full"
-        image="/assets/images/hero/aerial-pool.webp"
-        video="/assets/video/bali-retreat.mp4"
+        image="/assets/images/hero/aerial-video-poster.webp"
+        video="/assets/video/bali-aerial.mp4"
+        mobileVideo="/assets/video/bali-aerial-720.mp4"
         eyebrow="Blooming Lotus Yoga · Ubud, Bali"
         title={
           <>

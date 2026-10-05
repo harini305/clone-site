@@ -6,36 +6,55 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  min-height: 56px;
-  padding: 0.9rem;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-pill);
   background: var(--sage-deep);
   color: var(--white);
   box-shadow: 0 14px 32px -12px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
   transition:
     background-color var(--dur) var(--ease),
-    transform var(--dur) var(--ease);
+    opacity 0.45s var(--ease),
+    visibility 0.45s,
+    transform 0.45s var(--ease);
 }
 
-.button:hover {
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.visible:hover {
   background: var(--sage);
   transform: translateY(-2px);
 }
 
 .label {
-  display: none;
-  padding-right: 0.4rem;
-  font-size: 0.75rem;
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.3s var(--ease);
 }
 
-@media (min-width: 900px) {
-  .label {
-    display: inline;
-  }
-  .button {
-    padding-inline: 1.1rem 1.25rem;
-  }
+.button:hover .label,
+.button:focus-visible .label {
+  opacity: 1;
+  transform: translateX(0);
 }

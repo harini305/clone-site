@@ -49,8 +49,8 @@ export default function RetreatCenterPage() {
           <SplitFeature
             image="/assets/images/venue/river-flow.webp"
             imageAlt="The Wos River flowing through the jungle below the villas"
-            secondaryImage="/assets/images/community/staff.webp"
-            secondaryAlt="Balinese staff walking along a garden path"
+            secondaryImage="/assets/images/venue/koi-pond.webp"
+            secondaryAlt="The koi pond and garden statue outside the yoga hall"
             eyebrow="Natural tranquility in the village of Mawang"
             title="The tranquility & community of Ubud, Bali"
             parallax

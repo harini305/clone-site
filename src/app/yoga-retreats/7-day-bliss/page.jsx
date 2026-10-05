@@ -8,7 +8,7 @@ export const metadata = pageMetadata({
   description:
     "A 7-day, 6-night all-inclusive yoga retreat in Ubud, Bali from US$700. Starts every Sunday with three workshops, twice-daily yoga and daily meditation.",
   path: "/yoga-retreats/7-day-bliss",
-  image: "/assets/images/hero/rice-field.webp",
+  image: "/assets/images/hero/aerial-pool.webp",
 });
 
 export default function BlissRetreatPage() {
@@ -19,8 +19,8 @@ export default function BlissRetreatPage() {
       testimonials={testimonials}
       faqs={blissFaqs}
       intro="A week to deepen your practice in one of the most exquisite places on the planet"
-      splitImage="/assets/images/practice/dancer-door.webp"
-      splitAlt="A student in dancer pose framed by a carved Balinese doorway"
+      splitImage="/assets/images/practice/senior-namaste.webp"
+      splitAlt="A guest with hands in prayer, eyes closed in meditation"
     />
   );
 }

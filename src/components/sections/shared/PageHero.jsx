@@ -11,6 +11,7 @@ export default function PageHero({
   image,
   imageAlt = "",
   video,
+  mobileVideo,
   eyebrow,
   title,
   subtitle,
@@ -26,7 +27,7 @@ export default function PageHero({
         {video ? (
           <>
             <Image src={image} alt="" fill priority sizes="100vw" className={styles.img} />
-            <HeroVideo src={video} poster={image} className={styles.img} />
+            <HeroVideo src={video} mobileSrc={mobileVideo} poster={image} className={`${styles.img} ${styles.video}`} />
           </>
         ) : (
           <Image src={image} alt={imageAlt} fill priority sizes="100vw" className={styles.img} />

@@ -20,7 +20,7 @@ export const metadata = pageMetadata({
   description:
     "Beginner and advanced silent meditation retreats in Ubud, Bali. Breath awareness, mantra and self-inquiry from the yogic tradition — the teachings are offered freely.",
   path: "/meditation-retreats",
-  image: "/assets/images/meditation/path-meditation.webp",
+  image: "/assets/images/meditation/rice-terrace.webp",
 });
 
 const pillars = [
@@ -87,8 +87,8 @@ export default function MeditationPage() {
   return (
     <>
       <PageHero
-        image="/assets/images/meditation/path-meditation.webp"
-        imageAlt="Two women meditating on a garden path in Bali"
+        image="/assets/images/meditation/rice-terrace.webp"
+        imageAlt="A lone figure walking through misty rice terraces"
         eyebrow="Meditation Retreats in Ubud, Bali"
         title={
           <>
@@ -139,8 +139,8 @@ export default function MeditationPage() {
       <section className="section">
         <div className="container">
           <SplitFeature
-            image="/assets/images/meditation/rice-terrace.webp"
-            imageAlt="A woman walking through misty rice terraces"
+            image="/assets/images/meditation/path-meditation.webp"
+            imageAlt="Two women meditating on a garden path in Bali"
             reverse
             eyebrow="The silent retreat"
             title="Five days of complete silence"
@@ -231,7 +231,7 @@ export default function MeditationPage() {
       <FAQSection faqs={meditationFaqs} />
 
       <CTASection
-        image="/assets/images/meditation/bindi.webp"
+        image="/assets/images/venue/river-flow.webp"
         eyebrow="Give yourself the gift of silence"
         title="Dive deeper into meditation"
         text="Apply for a beginner or advanced retreat — we reply to all enquiries within 24 hours."
