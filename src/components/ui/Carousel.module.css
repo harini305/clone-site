@@ -1,0 +1,81 @@
+.carousel {
+  position: relative;
+}
+
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * 1.5rem) / 3);
+  column-gap: 1.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  scroll-snap-align: start;
+  min-width: 0;
+  display: flex;
+}
+
+.slide > * {
+  flex: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 1.75rem;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+
+.control:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.control:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.light .control {
+  border-color: var(--line-light);
+}
+
+.light .control:hover:not(:disabled) {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+@media (max-width: 1024px) {
+  .track {
+    grid-auto-columns: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .track {
+    grid-auto-columns: 86%;
+    column-gap: 1rem;
+  }
+}

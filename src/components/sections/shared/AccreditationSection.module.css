@@ -1,0 +1,100 @@
+.badges {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.badgeImg {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 10px;
+  transition: transform 0.7s var(--ease);
+}
+
+.badge:hover .badgeImg {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.badgeImg img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.badgeLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.badgeText {
+  margin-top: 0.3rem !important;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.verify {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.verify a {
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.trust {
+  display: grid;
+  gap: 1rem;
+  margin: 3.5rem 0 0;
+  padding: 2.5rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.trust li {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  color: var(--ink-soft);
+}
+
+.trust svg {
+  flex: none;
+  color: var(--sage);
+  margin-top: 0.15rem;
+}
+
+@media (min-width: 700px) {
+  .badges {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .trust {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 3rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .badges {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .trust {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

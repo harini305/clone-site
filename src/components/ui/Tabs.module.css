@@ -1,0 +1,41 @@
+.list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.tab {
+  min-height: 44px;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.active:hover {
+  color: var(--cream);
+}
+
+.panel:focus-visible {
+  outline-offset: 8px;
+}

@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+  margin-bottom: 1.75rem;
+  mix-blend-mode: multiply;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tile:nth-child(odd) {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}

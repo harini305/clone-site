@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: calc(var(--container-narrow) + var(--gutter) * 2);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--tight {
+  padding-block: calc(var(--section-y) * 0.6);
+}
+
+.section--warm {
+  background: var(--cream-warm);
+}
+
+.section--sand {
+  background: var(--sand);
+}
+
+.section--dark {
+  background: var(--night);
+  color: var(--cream);
+}
+
+.section--sage {
+  background: var(--sage-deep);
+  color: var(--cream);
+}
+
+.section--dark .muted,
+.section--sage .muted {
+  color: rgba(249, 246, 240, 0.72);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.stack > * + * {
+  margin-top: 1.25rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.cta-row--center {
+  justify-content: center;
+}
+
+.media-cover {
+  object-fit: cover;
+}
+
+.rounded {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.block-gap {
+  margin-top: clamp(3.5rem, 3rem + 3vw, 6rem);
+}

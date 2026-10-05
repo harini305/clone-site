@@ -1,0 +1,101 @@
+.split {
+  display: grid;
+  gap: clamp(2.5rem, 2rem + 3vw, 6rem);
+  align-items: center;
+}
+
+.visual {
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.secondary {
+  position: absolute;
+  right: -1rem;
+  bottom: -2.5rem;
+  width: 38%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 6px solid var(--cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  margin-bottom: 1.5rem;
+}
+
+.body {
+  color: var(--ink-soft);
+  font-size: var(--fs-body);
+}
+
+.body > p:first-child {
+  font-size: var(--fs-lead);
+}
+
+.body ul {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.body li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.body li + li {
+  margin-top: 0.6rem;
+}
+
+.body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage-light);
+}
+
+:global(.section--dark) .body,
+:global(.section--sage) .body {
+  color: rgba(249, 246, 240, 0.82);
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+  .reverse .visual {
+    order: 2;
+  }
+  .secondary {
+    right: -2.5rem;
+  }
+  .reverse .secondary {
+    right: auto;
+    left: -2.5rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .secondary {
+    right: 0.75rem;
+    bottom: -1.75rem;
+  }
+}

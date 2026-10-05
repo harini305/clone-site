@@ -1,0 +1,66 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 980px;
+  margin: 3rem auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 0.8rem 0.9rem;
+}
+
+.badge {
+  flex: none;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.card strong {
+  display: block;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+}
+
+.card small {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  opacity: 0.78;
+}
+
+.score {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .card small {
+    display: none;
+  }
+}

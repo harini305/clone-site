@@ -1,0 +1,36 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.sage {
+  color: var(--sage);
+}
+
+.light {
+  color: rgba(249, 246, 240, 0.85);
+}
+
+.coral {
+  color: var(--coral-ink);
+}
+
+.brown {
+  color: var(--brown-deep);
+}

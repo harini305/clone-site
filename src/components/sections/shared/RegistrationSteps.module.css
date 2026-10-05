@@ -1,0 +1,41 @@
+.steps {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.step {
+  position: relative;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-light);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.num {
+  display: block;
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: 3.25rem;
+  line-height: 1;
+  color: var(--sage-light);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: var(--fs-h4);
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  color: rgba(249, 246, 240, 0.75);
+}
+
+@media (min-width: 800px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

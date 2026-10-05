@@ -1,0 +1,103 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  flex: none;
+  transition: transform var(--dur) var(--ease);
+}
+
+.primary {
+  background: var(--coral);
+  color: var(--white);
+}
+.primary:hover {
+  background: var(--coral-hover);
+}
+
+.dark {
+  background: var(--ink);
+  color: var(--cream);
+}
+.dark:hover {
+  background: var(--sage-deep);
+}
+
+.light {
+  background: var(--cream);
+  color: var(--ink);
+}
+.light:hover {
+  background: var(--white);
+}
+
+.outline {
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
+}
+.outline:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+:global(.section--dark) .outline:hover,
+:global(.section--sage) .outline:hover,
+.onDark.outline:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--ink);
+}
+
+.text {
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-inline: 0;
+}
+
+.sm {
+  min-height: 42px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.75rem;
+}
+
+.lg {
+  min-height: 56px;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .btn:not(.text) {
+    width: 100%;
+  }
+}

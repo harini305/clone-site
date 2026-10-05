@@ -1,0 +1,56 @@
+.section {
+  background: var(--sand);
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.cover {
+  position: relative;
+  width: min(420px, 80%);
+  aspect-ratio: 1400 / 1460;
+  margin-inline: auto;
+}
+
+.cover {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.coverImg {
+  object-fit: cover;
+}
+
+.title {
+  font-size: var(--fs-display);
+  font-weight: 400;
+}
+
+.title em {
+  color: var(--sage-deep);
+}
+
+.lead {
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  font-size: var(--fs-lead);
+  color: var(--ink-soft);
+}
+
+.note {
+  margin-top: 1rem !important;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+  }
+}

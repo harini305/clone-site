@@ -1,0 +1,63 @@
+.wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.9688rem;
+}
+
+.table th,
+.table td {
+  padding: 1.1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table thead th {
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  padding-top: 1.75rem;
+  padding-bottom: 1.5rem;
+}
+
+.table thead a:hover {
+  color: var(--sage);
+}
+
+.table tbody th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  width: 30%;
+}
+
+.highlight {
+  background: rgba(98, 130, 107, 0.07);
+}
+
+.badge {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral-ink);
+}

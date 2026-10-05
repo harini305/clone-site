@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.aside header {
+  margin-bottom: 1.25rem;
+}
+
+.note {
+  color: var(--muted);
+  max-width: 34ch;
+}
+
+.aside :global(.cta-row) {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .aside {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}

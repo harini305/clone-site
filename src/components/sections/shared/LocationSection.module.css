@@ -1,0 +1,111 @@
+.location {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--cream);
+  background: var(--night);
+  padding-top: clamp(6rem, 4rem + 8vw, 11rem);
+  padding-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(18, 22, 18, 0.82) 0%, rgba(18, 22, 18, 0.45) 60%, rgba(18, 22, 18, 0.35) 100%),
+    linear-gradient(180deg, transparent 55%, rgba(18, 22, 18, 0.85) 100%);
+}
+
+.copy {
+  max-width: 620px;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 400;
+}
+
+.text {
+  margin-top: 1.5rem;
+  font-size: var(--fs-lead);
+  color: rgba(249, 246, 240, 0.86);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line-light);
+}
+
+.facts strong {
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.facts span {
+  font-size: 0.875rem;
+  color: rgba(249, 246, 240, 0.72);
+}
+
+.stripWrap {
+  margin-top: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0 0.5rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+.stripItem {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 700px) {
+  .facts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .strip {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
+  }
+  .stripItem:nth-child(even) {
+    margin-top: 2rem;
+  }
+}

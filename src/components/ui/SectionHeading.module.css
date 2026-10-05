@@ -1,0 +1,40 @@
+.heading {
+  max-width: 760px;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.center > p:first-child {
+  justify-content: center;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.large .title {
+  font-size: var(--fs-h1);
+}
+
+.small .title {
+  font-size: var(--fs-h3);
+}
+
+.intro {
+  margin-top: 1.25rem;
+  font-size: var(--fs-lead);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.light .title {
+  color: var(--cream);
+}
+
+.light .intro {
+  color: rgba(249, 246, 240, 0.78);
+}

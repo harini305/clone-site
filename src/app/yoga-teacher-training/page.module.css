@@ -1,0 +1,25 @@
+.subhead {
+  font-size: var(--fs-h3);
+  margin-bottom: 1.75rem;
+}
+
+.inclusions {
+  display: grid;
+  gap: 3rem;
+}
+
+.note {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--cream-warm);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 960px) {
+  .inclusions {
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 4rem;
+  }
+}

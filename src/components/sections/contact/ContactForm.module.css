@@ -1,0 +1,97 @@
+.form {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.row {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.field label span {
+  color: var(--coral-ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 1rem;
+  transition:
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(98, 130, 107, 0.2);
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--coral-ink);
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: var(--coral-ink);
+}
+
+.hint {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.success {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.success:focus {
+  outline: none;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  margin-bottom: 0.75rem;
+}
+
+.reset {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--muted);
+}
+
+@media (min-width: 700px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,72 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0 0 2.5rem 2.5rem;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1px solid var(--sage);
+  box-shadow: inset 0 0 0 3px var(--cream), inset 0 0 0 8px var(--sage-light);
+}
+
+.marker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .timeline::before {
+    left: 50%;
+  }
+  .item {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 0 0 3.5rem;
+  }
+  .item::before {
+    left: calc(50% - 7px);
+  }
+  .marker {
+    text-align: right;
+    padding-top: 0.35rem;
+  }
+}

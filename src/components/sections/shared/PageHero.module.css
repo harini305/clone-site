@@ -1,0 +1,167 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--cream);
+  background: var(--night);
+  isolation: isolate;
+}
+
+.full {
+  min-height: max(620px, 94svh);
+  padding-block: calc(var(--header-h) + 3rem) 7.5rem;
+}
+
+.page {
+  min-height: max(540px, 78svh);
+  padding-block: calc(var(--header-h) + 3rem) 4rem;
+}
+
+.compact {
+  min-height: 420px;
+  padding-block: calc(var(--header-h) + 3rem) 3.5rem;
+  align-items: flex-end;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  will-change: transform;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(15, 18, 15, 0.55) 0%, rgba(15, 18, 15, 0.25) 35%, rgba(15, 18, 15, 0.7) 100%),
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35));
+}
+
+.content {
+  position: relative;
+}
+
+.center .content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.88);
+}
+
+.title {
+  max-width: 17ch;
+  font-size: var(--fs-h1);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.full .title {
+  font-size: var(--fs-display);
+  max-width: 16ch;
+}
+
+.compact .title {
+  font-size: var(--fs-h2);
+}
+
+.title em {
+  font-style: italic;
+  color: #f1e4d3;
+}
+
+.subtitle {
+  max-width: 46ch;
+  margin-top: 1.5rem;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: rgba(249, 246, 240, 0.88);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+.center .ctas {
+  justify-content: center;
+}
+
+.scroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin-inline: auto;
+  bottom: 1.75rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(249, 246, 240, 0.8);
+}
+
+.scrollLine {
+  position: relative;
+  width: 1px;
+  height: 46px;
+  overflow: hidden;
+  background: rgba(249, 246, 240, 0.25);
+}
+
+.scrollLine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  animation: scrollCue 2.4s var(--ease) infinite;
+}
+
+@keyframes scrollCue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (min-width: 900px) and (min-height: 700px) {
+  .scroll {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .full {
+    min-height: max(600px, 92svh);
+  }
+  .page {
+    min-height: 560px;
+  }
+}

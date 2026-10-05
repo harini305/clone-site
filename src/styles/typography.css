@@ -1,0 +1,97 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-variant-numeric: lining-nums;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.15;
+}
+h4 {
+  font-size: var(--fs-h4);
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+em {
+  font-style: italic;
+}
+
+.display {
+  font-size: var(--fs-display);
+  line-height: 1;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose h2 {
+  font-size: var(--fs-h3);
+  margin: 2.4em 0 0.6em;
+}
+
+.prose h3 {
+  font-size: var(--fs-h4);
+  margin: 2em 0 0.5em;
+}
+
+.prose p,
+.prose li {
+  color: var(--ink-soft);
+}
+
+.prose ul {
+  padding-left: 1.2em;
+  margin: 1em 0;
+}
+
+.prose li + li {
+  margin-top: 0.4em;
+}
+
+.prose a {
+  color: var(--sage-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

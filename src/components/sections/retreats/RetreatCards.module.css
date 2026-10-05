@@ -1,0 +1,106 @@
+.grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+.card:hover .img {
+  transform: scale(1.04);
+}
+
+.badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+}
+
+.duration {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  margin: 0.5rem 0 0.75rem;
+}
+
+.price {
+  font-size: 1.0625rem;
+  color: var(--muted);
+}
+
+.price strong {
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 0;
+  list-style: none;
+  border-block: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.list li::before {
+  content: "✓";
+  margin-right: 0.5rem;
+  color: var(--sage);
+}
+
+.summary {
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.ctas {
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
