@@ -19,12 +19,13 @@ export default function PageHero({
   size = "page",
   align = "center",
   scrollIndicator = false,
+  priority = true,
   children,
 }) {
   return (
     <section className={`${styles.hero} ${styles[size]} ${styles[align] || ""}`} data-hero>
       <div className={styles.media} data-hero-media>
-        <HeroImage image={image} portraitImage={portraitImage} alt={imageAlt} className={styles.img} />
+        <HeroImage image={image} portraitImage={portraitImage} alt={imageAlt} className={styles.img} priority={priority} />
         {video && <HeroVideo sources={video} poster={image} className={styles.img} />}
       </div>
       <div className={styles.overlay} aria-hidden="true" />

@@ -52,13 +52,13 @@ export function setupReveals(root, { distance }) {
     });
     tl.fromTo(
       el,
-      { clipPath: "inset(6% 4% 6% 4% round 18px)", autoAlpha: 0 },
-      { clipPath: "inset(0% 0% 0% 0% round 18px)", autoAlpha: 1, duration: 1.1, ease: "power3.out", clearProps: "clipPath" }
+      { clipPath: "inset(4% 3% 4% 3% round 18px)", autoAlpha: 0 },
+      { clipPath: "inset(0% 0% 0% 0% round 18px)", autoAlpha: 1, duration: 0.6, ease: "power3.out", clearProps: "clipPath" }
     );
     // Image settles from a slight zoom while it unmasks. Parallax frames
     // manage their own image scale.
     if (media && !el.hasAttribute("data-parallax")) {
-      tl.fromTo(media, { scale: 1.08 }, { scale: 1, duration: 1.3, ease: "power3.out", clearProps: "transform" }, 0);
+      tl.fromTo(media, { scale: 1.05 }, { scale: 1, duration: 0.8, ease: "power3.out", clearProps: "transform" }, 0);
     }
   });
 }

@@ -8,6 +8,7 @@ export default function NotFound() {
   return (
     <PageHero
       image="/assets/images/venue/sacred-river.webp"
+      priority={false}
       eyebrow="404"
       title={
         <>
