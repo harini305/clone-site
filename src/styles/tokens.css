@@ -44,7 +44,8 @@
   --container: 1320px;
   --container-narrow: 860px;
   --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
-  --section-y: clamp(3.5rem, 2.4rem + 6vw, 9rem);
+  /* Vertical rhythm between sections: 48px on phones up to 96px on wide screens. */
+  --section-y: clamp(3rem, 2.2rem + 3.6vw, 6rem);
   --radius-sm: 10px;
   --radius: 18px;
   --radius-lg: 28px;

@@ -1,6 +1,6 @@
 .heading {
   max-width: 760px;
-  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+  margin-bottom: clamp(2rem, 1.6rem + 1.5vw, 3rem);
 }
 
 .center {
