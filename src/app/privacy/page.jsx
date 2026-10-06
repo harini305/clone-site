@@ -29,7 +29,7 @@ export default function PrivacyPage() {
 
           <h2>What do we use your information for?</h2>
           <ul>
-            <li>To personalise your experience and better respond to your individual needs</li>
+            <li>To personalize your experience and better respond to your individual needs</li>
             <li>To improve our website based on the information and feedback we receive from you</li>
             <li>To improve customer service and respond more effectively to your requests</li>
             <li>
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           <h2>Do we use cookies?</h2>
           <p>
             Yes. Cookies are small files that a site or its service provider transfers to your computer through your web
-            browser (if you allow) so that systems can recognise your browser and remember certain information. Third-party
+            browser (if you allow) so that systems can recognize your browser and remember certain information. Third-party
             vendors, including Google, may use cookies to serve ads based on prior visits. You can opt out of Google’s use
             of cookies via Google’s ad settings, or through the Network Advertising Initiative opt-out page.
           </p>

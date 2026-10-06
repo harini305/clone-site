@@ -18,6 +18,11 @@ export const credentials = [
 
 export const awards = [
   {
+    src: "/assets/badges/tripadvisor-excellence.png",
+    label: "Tripadvisor",
+    text: "Certificate of Excellence",
+  },
+  {
     src: "/assets/badges/retreat-of-the-year.png",
     label: "Prestige Award",
     text: "Bali’s “Yoga Retreat of The Year”",
@@ -27,11 +32,6 @@ export const awards = [
     label: "Travel & Hospitality Awards",
     text: "Bali’s “Yoga School of The Year”",
   },
-  {
-    src: "/assets/badges/tripadvisor-excellence.png",
-    label: "Tripadvisor",
-    text: "Certificate of Excellence",
-  },
 ];
 
 export const registrationId = "46197";
@@ -40,5 +40,5 @@ export const trustPoints = [
   "Winner of Bali’s “Yoga School of The Year” (Travel & Hospitality Awards™) and the Prestige Award™ for Bali’s “Yoga Retreat of The Year”",
   "Hundreds of graduates who now teach in over 50 countries",
   "All of our teachers hold legal documents to work in Bali",
-  "Courses and retreats never get cancelled at the last minute",
+  "Courses and retreats never get canceled at the last minute",
 ];

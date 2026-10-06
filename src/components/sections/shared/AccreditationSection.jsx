@@ -1,10 +1,14 @@
 import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 import { awards, credentials, registrationId, trustPoints } from "@/data/accreditation";
 import { contact } from "@/data/contact";
 import styles from "./AccreditationSection.module.css";
 
-/** Yoga Alliance credentials, awards and trust points. */
+/**
+ * Accreditation card: badge row, one paragraph and the verify button in a
+ * single white card. Inner pages can add a heading and the trust points.
+ */
 export default function AccreditationSection({
   id = "accreditation",
   eyebrow = "Accreditation",
@@ -14,31 +18,25 @@ export default function AccreditationSection({
   return (
     <section id={id} className="section">
       <div className="container">
-        <SectionHeading
-          eyebrow={eyebrow}
-          title={title}
-          align="center"
-          intro="Blooming Lotus Yoga is a Yoga Alliance Registered Yoga School (RYS 200) and Continuing Education Provider (YACEP)."
-        />
+        {title && <SectionHeading eyebrow={eyebrow} title={title} align="center" />}
 
-        <ul className={styles.badges} data-stagger>
-          {[...credentials, ...awards].map((b) => (
-            <li key={b.label} className={styles.badge}>
-              <div className={styles.badgeImg}>
-                <Image src={b.src} alt="" width={140} height={140} />
-              </div>
-              <p className={styles.badgeLabel}>{b.label}</p>
-              <p className={styles.badgeText}>{b.text}</p>
-            </li>
-          ))}
-        </ul>
-
-        <p className={styles.verify} data-reveal>
-          Yoga Alliance Registration ID: {registrationId} ·{" "}
-          <a href={contact.yogaAllianceHref} target="_blank" rel="noopener noreferrer">
-            Verify credentials →
-          </a>
-        </p>
+        <div className={styles.card} data-reveal>
+          <ul className={styles.badges}>
+            {[...credentials, ...awards].map((b) => (
+              <li key={b.label}>
+                <Image src={b.src} alt={`${b.label}: ${b.text}`} width={140} height={140} sizes="96px" />
+              </li>
+            ))}
+          </ul>
+          <p className={styles.text}>
+            Blooming Lotus Yoga is a Yoga Alliance Registered Yoga School (RYS 200) and a Yoga Alliance Continuing
+            Education Provider (YACEP). Graduates are eligible to register as RYT-200.
+          </p>
+          <p className={styles.id}>
+            RYS 200 • E-RYT 500 • YACEP · Registration ID: {registrationId}
+          </p>
+          <Button href={contact.yogaAllianceHref}>Verify credentials</Button>
+        </div>
 
         {showTrust && (
           <ul className={styles.trust} data-stagger>

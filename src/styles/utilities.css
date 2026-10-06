@@ -9,8 +9,14 @@
   max-width: calc(var(--container-narrow) + var(--gutter) * 2);
 }
 
+/* Light sections carry a faint lotus mandala (built from the Blooming Lotus
+   mark); warm sections mirror it to the other side. */
 .section {
   padding-block: var(--section-y);
+  background-image: url("/assets/images/lotus-watermark.webp");
+  background-repeat: no-repeat;
+  background-size: min(820px, 120vw) auto;
+  background-position: right calc(min(820px, 120vw) * -0.42) top 3rem;
 }
 
 .section--tight {
@@ -18,7 +24,8 @@
 }
 
 .section--warm {
-  background: var(--cream-warm);
+  background-color: var(--cream-warm);
+  background-position: left calc(min(820px, 120vw) * -0.42) bottom 2rem;
 }
 
 .section--sand {
@@ -33,6 +40,10 @@
 .section--sage {
   background: var(--sage-deep);
   color: var(--cream);
+}
+
+.section--plain {
+  background-image: none;
 }
 
 .section--dark .muted,
@@ -82,4 +93,30 @@
 
 .block-gap {
   margin-top: clamp(3.5rem, 3rem + 3vw, 6rem);
+}
+
+/* Phones: turn a grid into a native swipe carousel (scroll-snap) that bleeds
+   to the screen edge and shows a peek of the next card. */
+@media (max-width: 699px) {
+  .swipe-mobile {
+    display: grid !important;
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 0.9rem !important;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0.25rem var(--gutter) 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .swipe-mobile::-webkit-scrollbar {
+    display: none;
+  }
+  .swipe-mobile > * {
+    scroll-snap-align: start;
+    min-width: 0;
+  }
 }

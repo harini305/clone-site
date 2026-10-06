@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { primaryNav } from "@/data/navigation";
 import { contact } from "@/data/contact";
 import { useHeaderState } from "@/animations/useHeaderState";
@@ -14,6 +14,19 @@ export default function Header() {
   const pathname = usePathname();
   const { scrolled, hidden } = useHeaderState(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Dropdowns close as soon as the page scrolls, and stay closed until the
+  // pointer moves over the nav again (hover menus otherwise float loose).
+  const [dropdownsClosed, setDropdownsClosed] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setDropdownsClosed(true);
+      if (navRef.current?.contains(document.activeElement)) document.activeElement.blur();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
@@ -39,7 +52,13 @@ export default function Header() {
             />
           </Link>
 
-          <nav className={styles.nav} aria-label="Primary">
+          <nav
+            ref={navRef}
+            className={`${styles.nav} ${dropdownsClosed ? styles.dropdownsClosed : ""}`}
+            aria-label="Primary"
+            onPointerMove={() => dropdownsClosed && setDropdownsClosed(false)}
+            onFocus={() => setDropdownsClosed(false)}
+          >
             <ul className={styles.navList}>
               {primaryNav.map((item) => (
                 <li key={item.href} className={styles.navItem}>
@@ -78,16 +97,16 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Message Us
+              Message us
             </a>
             <button
               type="button"
               className={styles.menuButton}
               aria-expanded={menuOpen}
               aria-controls="site-menu"
+              aria-label={menuOpen ? "Close menu" : "Open full menu"}
               onClick={() => setMenuOpen((v) => !v)}
             >
-              <span className={styles.menuLabel}>{menuOpen ? "Close" : "Menu"}</span>
               <span className={styles.burger} aria-hidden="true">
                 <span />
                 <span />

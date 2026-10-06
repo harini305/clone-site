@@ -12,7 +12,7 @@ Content and imagery come from [blooming-lotus-yoga.com](https://www.blooming-lot
 - Next.js 16 (App Router), React 19, JavaScript
 - CSS Modules + design tokens (`src/styles/tokens.css`)
 - GSAP 3 + ScrollTrigger
-- `next/image` (AVIF/WebP) and `next/font` (Cormorant Garamond + DM Sans)
+- `next/image` (AVIF/WebP) and `next/font` (Bagnard display serif, self-hosted under the SIL OFL, + DM Sans)
 
 ## Scripts
 
@@ -34,7 +34,7 @@ npm run lint
 ```text
 src/
   app/                 routes, metadata, sitemap.js, robots.js, not-found.jsx
-  animations/          GSAP setup + reusable motion (reveals, split headings, parallax, hero, header state)
+  animations/          GSAP setup + reusable motion (reveals, heading reveals, parallax, hero, header state)
   components/
     layout/            Header, MenuOverlay, Footer, WhatsAppButton, SkipLink, MotionProvider
     ui/                Button, Eyebrow, SectionHeading, Accordion, Tabs, Carousel, GlassCard, Badge
@@ -50,17 +50,18 @@ Server components declare their motion with data attributes. `MotionProvider` wi
 
 | Attribute | Effect |
 | --- | --- |
-| `data-reveal` | fade-up on scroll (`="fade"` for opacity only) |
+| `data-reveal` | 0.9s soft fade-up on scroll (`="fade"` for opacity only) |
 | `data-stagger` | staggered reveal of children |
 | `data-reveal-image` | clip-path + scale image reveal |
-| `data-split` | word-by-word masked heading reveal |
+| `data-split` | heading fade-up (whole block, never clipped) |
 | `data-parallax` | subtle scrubbed parallax (desktop only) |
-| `data-hero` / `data-hero-item` | hero intro timeline + scroll fade |
-| `data-count` | count-up numbers |
+| `data-hero` / `data-hero-item` | CSS opacity fade on first paint (no movement, no JS wait) + scroll fade |
 
 Client components handle the rest: the header uses ScrollTrigger to switch from transparent to frosted and to hide on scroll; the menu runs a GSAP timeline with a focus trap and scroll lock; the YTT daily schedule is pinned with ScrollTrigger on desktop only; the in-page nav tracks the active section. The accordion, tabs, gallery lightbox and reviews filter all use GSAP transitions.
 
-`gsap.matchMedia()` gates everything. With `prefers-reduced-motion`, transforms, parallax and pinning are switched off and only simple opacity fades remain.
+Smooth, eased scrolling on every page comes from Lenis (`components/layout/SmoothScroll.jsx`), driven by GSAP's ticker so ScrollTrigger stays in sync; touch devices keep native scrolling, and it pauses while the menu or a lightbox is open. Any content block without its own `data-*` reveal fades up automatically as it scrolls into view.
+
+`gsap.matchMedia()` gates everything. With `prefers-reduced-motion`, smooth scrolling, transforms, parallax and pinning are switched off and only simple opacity fades remain.
 
 ## Deployment
 

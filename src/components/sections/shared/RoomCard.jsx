@@ -43,7 +43,7 @@ export default function RoomCard({ room, priceNote = "per person", ctaHref = "/c
 
 export function RoomGrid({ rooms, twoUp = false, ...cardProps }) {
   return (
-    <div className={`${styles.grid} ${twoUp ? styles.two : ""}`} data-stagger>
+    <div className={`${styles.grid} ${twoUp ? styles.two : ""} swipe-mobile`} data-stagger>
       {rooms.map((room) => (
         <RoomCard key={room.name} room={room} {...cardProps} />
       ))}

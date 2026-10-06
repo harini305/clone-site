@@ -361,9 +361,9 @@ export const byTag = (tag) => testimonials.filter((t) => t.tags?.includes(tag));
 export const featuredTestimonials = testimonials.filter((t) => t.featured);
 
 export const reviewCategories = [
-  { key: "all", label: "All Stories" },
-  { key: "ytt", label: "Teacher Training" },
-  { key: "retreat", label: "Yoga Retreats" },
+  { key: "all", label: "All stories" },
+  { key: "ytt", label: "Teacher training" },
+  { key: "retreat", label: "Yoga retreats" },
   { key: "meditation", label: "Meditation" },
-  { key: "location", label: "The Location" },
+  { key: "location", label: "The location" },
 ];

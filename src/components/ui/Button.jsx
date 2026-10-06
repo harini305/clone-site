@@ -10,7 +10,7 @@ function Arrow() {
 }
 
 /**
- * Pill button. Renders a Next <Link> for internal hrefs, <a> for external/files,
+ * Rounded-rectangle button in sentence case (arrow only on text links). Renders a Next <Link> for internal hrefs, <a> for external/files,
  * or a <button> when no href is given.
  * variant: primary | dark | light | outline | text
  */
@@ -18,7 +18,7 @@ export default function Button({
   href,
   variant = "primary",
   size = "md",
-  arrow = true,
+  arrow = variant === "text",
   external,
   className = "",
   children,

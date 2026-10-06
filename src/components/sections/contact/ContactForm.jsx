@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(
-    `${values.topic || "Enquiry"} — ${values.name}`
+    `${values.topic || "Inquiry"} — ${values.name}`
   )}&body=${encodeURIComponent(`${values.message}\n\n${values.name}\n${values.email}`)}`;
 
   const onSubmit = (e) => {

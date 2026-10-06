@@ -9,7 +9,7 @@ export const teachers = [
       "An international yoga and meditation teacher known for her experiential teachings, ‘poetic’ classes, and mindful approach to life.",
     bio: [
       "With over 15 years of practice and 12 years of teaching, Mandy has dedicated her life to the journey of self-awareness and the ancient teachings of the yogic tradition.",
-      "Her classes, workshops and retreats guide students on an experiential journey through self-inquiry and surrender; a coming home to joy, contentment and personal truth — imbued with mindfulness, pranayama, meditative contemplation, trauma-informed communication and accessibility for all. Mandy is a lead teacher for all courses and personally answers enquiries from prospective students.",
+      "Her classes, workshops and retreats guide students on an experiential journey through self-inquiry and surrender; a coming home to joy, contentment and personal truth — imbued with mindfulness, pranayama, meditative contemplation, trauma-informed communication and accessibility for all. Mandy is a lead teacher for all courses and personally answers inquiries from prospective students.",
     ],
   },
   {
@@ -35,7 +35,7 @@ export const teachers = [
       "For over 20 years Lily has helped thousands of yoga students deepen their practice, find purpose, live healthier and connect to the Divine.",
     bio: [
       "With a master’s degree in Counselling Psychology from the University of B.C. in Canada, and intensive immersion in the traditional ashrams of South India, Lily bridges the mystical practices of the sages of India with a grounded, practical and scientific approach to body/mind dynamics.",
-      "Her unique 8-Step Training Process to “Learn the Sacred Art of Yoga” forms the core of the teacher training and can empower even a beginner to learn the essential principles of practising and teaching yoga correctly in under 4 weeks.",
+      "Her unique 8-Step Training Process to “Learn the Sacred Art of Yoga” forms the core of the teacher training and can empower even a beginner to learn the essential principles of practicing and teaching yoga correctly in under 4 weeks.",
     ],
   },
 ];
@@ -54,6 +54,6 @@ export const lineage = [
   {
     name: "Ratu Pedanda Gunung",
     image: "/assets/images/teachers/ratu-pedanda-gunung.webp",
-    text: "Living lineage holder of an ancient form of yoga and tantra preserved in his family in Bali for over 500 years. Teacher of the high priests, he blessed Blooming Lotus Yoga to share its programmes here in Bali.",
+    text: "Living lineage holder of an ancient form of yoga and tantra preserved in his family in Bali for over 500 years. Teacher of the high priests, he blessed Blooming Lotus Yoga to share its programs here in Bali.",
   },
 ];

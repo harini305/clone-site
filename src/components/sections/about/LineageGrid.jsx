@@ -5,7 +5,7 @@ import styles from "./LineageGrid.module.css";
 /** The masters who inspire the Blooming Lotus Yoga programmes. */
 export default function LineageGrid() {
   return (
-    <ul className={styles.grid} data-stagger>
+    <ul className={`${styles.grid} swipe-mobile`} data-stagger>
       {lineage.map((m) => (
         <li key={m.name} className={styles.item}>
           <div className={styles.portrait}>

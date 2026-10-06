@@ -3,7 +3,7 @@ import styles from "./FeatureGrid.module.css";
 /** Numbered editorial feature cards. */
 export default function FeatureGrid({ items, columns = 3, tone = "light" }) {
   return (
-    <ul className={`${styles.grid} ${styles[`cols${columns}`]} ${styles[tone]}`} data-stagger>
+    <ul className={`${styles.grid} ${styles[`cols${columns}`]} ${styles[tone]} swipe-mobile`} data-stagger>
       {items.map((item, i) => (
         <li key={item.title} className={styles.card}>
           <span className={styles.num} aria-hidden="true">

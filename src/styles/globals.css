@@ -20,6 +20,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: 1.65;
+  /* Never fake bold: Bagnard ships one weight, DM Sans loads real weights. */
+  font-synthesis-weight: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -63,7 +65,7 @@ textarea {
 }
 
 :focus-visible {
-  outline: 2px solid var(--coral);
+  outline: 2px solid var(--sage-btn);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -99,21 +101,32 @@ hr {
 }
 
 .js-motion [data-split],
-.js-motion [data-hero-item],
 .js-motion [data-reveal-image] {
   opacity: 0;
 }
 
-.split-word {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  padding-bottom: 0.1em;
-  margin-bottom: -0.1em;
+/* Hero copy paints with the page: a calm, CSS-only fade (no movement, so
+   nothing shifts) that never waits for JavaScript or the video. */
+[data-hero-item] {
+  animation: hero-in 0.45s ease-out both;
 }
 
-.split-inner {
-  display: inline-block;
+@keyframes hero-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Each page fades in on navigation (see app/template.jsx). Opacity only, so
+   sticky and fixed elements are unaffected. */
+.page-enter {
+  animation: page-in 0.45s ease-out both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
 }
 
 main:focus {

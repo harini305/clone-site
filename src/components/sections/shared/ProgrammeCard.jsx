@@ -2,22 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProgrammeCard.module.css";
 
-/** Large portrait programme card — the whole card is one link. */
+/**
+ * Full-image programme card: price tag pill, title and location overlaid on
+ * the photo. The whole card is one link.
+ */
 export default function ProgrammeCard({ program, headingLevel: H = "h3" }) {
   return (
     <article className={styles.card}>
       <Link href={program.href} className={styles.link}>
-        <div className={styles.media}>
-          <Image src={program.image} alt="" fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" className={styles.img} />
+        <Image
+          src={program.image}
+          alt=""
+          fill
+          sizes="(max-width: 699px) 84vw, (max-width: 1099px) 50vw, 33vw"
+          className={styles.img}
+        />
+        <span className={styles.shade} aria-hidden="true" />
+        <div className={styles.body}>
           <span className={styles.price}>
             {program.price}
             {program.priceNote && <small> · {program.priceNote}</small>}
           </span>
-        </div>
-        <div className={styles.body}>
-          <p className={styles.eyebrow}>{program.eyebrow}</p>
           <H className={styles.title}>{program.title}</H>
-          <p className={styles.text}>{program.text}</p>
+          <p className={styles.location}>
+            <svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true">
+              <path d="M6 13s5-4.6 5-8.2A5 5 0 0 0 1 4.8C1 8.4 6 13 6 13Z" fill="currentColor" />
+              <circle cx="6" cy="5" r="1.7" fill="#1b1f1b" />
+            </svg>
+            {program.location}
+          </p>
           <span className={styles.cta}>
             {program.cta}
             <span className={styles.arrow} aria-hidden="true">
@@ -32,7 +45,7 @@ export default function ProgrammeCard({ program, headingLevel: H = "h3" }) {
 
 export function ProgrammeGrid({ programs }) {
   return (
-    <div className={styles.grid} data-stagger>
+    <div className={`${styles.grid} swipe-mobile`} data-stagger>
       {programs.map((program) => (
         <ProgrammeCard key={program.slug} program={program} />
       ))}

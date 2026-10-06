@@ -2,15 +2,24 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/animations/gsap";
+import Button from "@/components/ui/Button";
 import TestimonialCard from "./TestimonialCard";
 import styles from "./ReviewsBoard.module.css";
 
-/** Filterable masonry of every testimonial; cards fade in on filter change. */
+const PAGE = 9;
+
+/**
+ * Filterable masonry of every testimonial; cards fade in on filter change.
+ * Shows 9 at a time with a "Show more stories" button, so the page stays a
+ * comfortable length (especially on phones).
+ */
 export default function ReviewsBoard({ testimonials, categories }) {
   const [filter, setFilter] = useState("all");
+  const [shown, setShown] = useState(PAGE);
   const gridRef = useRef(null);
   const first = useRef(true);
-  const visible = filter === "all" ? testimonials : testimonials.filter((t) => t.category === filter);
+  const matching = filter === "all" ? testimonials : testimonials.filter((t) => t.category === filter);
+  const visible = matching.slice(0, shown);
 
   useEffect(() => {
     if (first.current) {
@@ -36,7 +45,10 @@ export default function ReviewsBoard({ testimonials, categories }) {
               type="button"
               className={`${styles.filter} ${filter === c.key ? styles.active : ""}`}
               aria-pressed={filter === c.key}
-              onClick={() => setFilter(c.key)}
+              onClick={() => {
+                setFilter(c.key);
+                setShown(PAGE);
+              }}
             >
               {c.label} <span>{count}</span>
             </button>
@@ -44,7 +56,7 @@ export default function ReviewsBoard({ testimonials, categories }) {
         })}
       </div>
       <p className="visually-hidden" aria-live="polite">
-        Showing {visible.length} reviews
+        Showing {visible.length} of {matching.length} reviews
       </p>
       <div ref={gridRef} className={styles.grid}>
         {visible.map((t) => (
@@ -53,6 +65,13 @@ export default function ReviewsBoard({ testimonials, categories }) {
           </div>
         ))}
       </div>
+      {matching.length > shown && (
+        <div className="cta-row cta-row--center">
+          <Button variant="outline" onClick={() => setShown((n) => n + PAGE)}>
+            Show more stories ({matching.length - shown} more)
+          </Button>
+        </div>
+      )}
     </>
   );
 }

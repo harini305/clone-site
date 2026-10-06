@@ -3,15 +3,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  min-height: 48px;
-  padding: 0.85rem 1.6rem;
-  border-radius: var(--radius-pill);
+  min-height: 50px;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-btn);
   border: 1px solid transparent;
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.2;
   text-align: center;
   transition:
@@ -31,16 +29,16 @@
 }
 
 .primary {
-  background: var(--coral);
+  background: var(--sage-btn);
   color: var(--white);
 }
 .primary:hover {
-  background: var(--coral-hover);
+  background: var(--sage-btn-hover);
 }
 
 .dark {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--sage-btn-hover);
+  color: var(--white);
 }
 .dark:hover {
   background: var(--sage-deep);
@@ -86,14 +84,15 @@
 }
 
 .sm {
-  min-height: 42px;
-  padding: 0.65rem 1.2rem;
-  font-size: 0.75rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9375rem;
 }
 
 .lg {
-  min-height: 56px;
-  padding: 1rem 2rem;
+  min-height: 58px;
+  padding: 1.1rem 2.25rem;
+  font-size: 1.0625rem;
 }
 
 @media (max-width: 480px) {

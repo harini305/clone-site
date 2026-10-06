@@ -37,7 +37,7 @@ export default function InPageNav({ sections, label = "On this page" }) {
   }, [active]);
 
   return (
-    <nav className={styles.nav} aria-label={label}>
+    <nav className={styles.nav} aria-label={label} data-sticky-offset>
       <div className="container">
         <ul className={styles.list} ref={listRef}>
           {sections.map((s) => (

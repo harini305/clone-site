@@ -49,9 +49,18 @@ function AccordionItem({ item, isOpen, onToggle, id }) {
         inert={!isOpen}
       >
         <div className={styles.body}>
-          {(Array.isArray(item.a) ? item.a : [item.a]).map((p, i) =>
-            typeof p === "string" ? <p key={i}>{p}</p> : <div key={i}>{p}</div>
-          )}
+          {(Array.isArray(item.a) ? item.a : [item.a]).map((p, i) => {
+            if (typeof p === "string") return <p key={i}>{p}</p>;
+            if (p?.list)
+              return (
+                <ul key={i}>
+                  {p.list.map((li) => (
+                    <li key={typeof li === "string" ? li : li.key}>{li}</li>
+                  ))}
+                </ul>
+              );
+            return <div key={i}>{p}</div>;
+          })}
         </div>
       </div>
     </div>

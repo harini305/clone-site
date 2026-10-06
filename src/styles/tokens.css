@@ -1,5 +1,5 @@
 :root {
-  /* Palette — warm natural neutrals with sage + coral accents */
+  /* Palette — warm natural neutrals with sage accents */
   --cream: #f9f6f0;
   --cream-warm: #f6f2e9;
   --sand: #ece5d8;
@@ -9,6 +9,12 @@
   --sage: #62826b;
   --sage-deep: #3f5a47;
   --sage-light: #91a271;
+  /* Button fill: #556b4d keeps white text at 5.8:1 (WCAG AA). */
+  --sage-btn: #556b4d;
+  --sage-btn-hover: #44573d;
+  --sage-tint: #eef1e8;
+  --heading: #4f4b49;
+  --accent: #a85a2c;
   --brown: #b49884;
   --brown-deep: #7a6352;
   --coral: #ff704e;
@@ -20,16 +26,17 @@
   --line-light: rgba(255, 255, 255, 0.22);
 
   /* Typography */
-  --font-display: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-serif), Georgia, "Times New Roman", serif;
   --font-body: var(--font-sans), "DM Sans", system-ui, sans-serif;
 
-  --fs-eyebrow: 0.75rem;
+  --fs-eyebrow: 0.8125rem;
   --fs-small: 0.875rem;
   --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
   --fs-h4: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
   --fs-h3: clamp(1.5rem, 1.3rem + 0.9vw, 2.125rem);
-  --fs-h2: clamp(2rem, 1.55rem + 2.1vw, 3.5rem);
+  /* One size for every section heading (h2). */
+  --fs-h2: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
   --fs-h1: clamp(2.5rem, 1.7rem + 3.8vw, 5.25rem);
   --fs-display: clamp(2.75rem, 1.6rem + 5.4vw, 6.5rem);
 
@@ -37,11 +44,12 @@
   --container: 1320px;
   --container-narrow: 860px;
   --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
-  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --section-y: clamp(3.5rem, 2.4rem + 6vw, 9rem);
   --radius-sm: 10px;
   --radius: 18px;
   --radius-lg: 28px;
   --radius-pill: 999px;
+  --radius-btn: 15px;
   --header-h: 84px;
 
   /* Effects */

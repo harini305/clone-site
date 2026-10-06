@@ -36,13 +36,21 @@ export default function Carousel({ children, label, tone = "dark", slideClassNam
     };
   }, [update]);
 
+  // Always land exactly on a slide's start edge, so no card is left cut off.
   const scroll = (direction) => {
     const el = trackRef.current;
-    const slide = el?.firstElementChild;
-    if (!el || !slide) return;
-    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    const slides = el ? Array.from(el.children) : [];
+    if (!slides.length) return;
+    const origin = slides[0].offsetLeft;
+    const positions = slides.map((s) => s.offsetLeft - origin);
+    let current = 0;
+    positions.forEach((p, i) => {
+      if (Math.abs(p - el.scrollLeft) < Math.abs(positions[current] - el.scrollLeft)) current = i;
+    });
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    const target = Math.min(Math.max(current + direction, 0), slides.length - 1);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    el.scrollBy({ left: direction * (slide.offsetWidth + gap), behavior: reduce ? "auto" : "smooth" });
+    el.scrollTo({ left: Math.min(positions[target], maxScroll), behavior: reduce ? "auto" : "smooth" });
   };
 
   return (

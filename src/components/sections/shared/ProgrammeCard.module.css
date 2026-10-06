@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .card {
@@ -8,43 +8,58 @@
 }
 
 .link {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   height: 100%;
-  border-radius: var(--radius-lg);
+  min-height: 460px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
   overflow: hidden;
-  background: var(--white);
+  color: var(--white);
+  background: var(--night);
   box-shadow: var(--shadow-card);
   transition:
-    transform 0.7s var(--ease),
-    box-shadow 0.7s var(--ease);
+    transform 0.6s var(--ease),
+    box-shadow 0.6s var(--ease);
 }
 
 .link:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
 }
 
-.media {
-  position: relative;
-  aspect-ratio: 4 / 4.4;
-  overflow: hidden;
-}
-
 .img {
+  z-index: -2;
   object-fit: cover;
-  transition: transform 1.2s var(--ease);
+  transition: transform 1s var(--ease);
 }
 
 .link:hover .img {
-  transform: scale(1.05);
+  transform: scale(1.04);
+}
+
+/* Readable bottom third for the overlaid copy. */
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(16, 20, 16, 0) 35%, rgba(16, 20, 16, 0.55) 62%, rgba(16, 20, 16, 0.86) 100%);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
 }
 
 .price {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  padding: 0.5rem 0.95rem;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
   background: rgba(249, 246, 240, 0.95);
   font-size: 0.8125rem;
@@ -58,43 +73,31 @@
   font-size: 0.75rem;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1.75rem 1.75rem 2rem;
-}
-
-.eyebrow {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 0.65rem;
-}
-
 .title {
   font-size: var(--fs-h3);
-  margin-bottom: 0.85rem;
+  line-height: 1.1;
+  color: var(--white);
 }
 
-.text {
-  color: var(--muted);
-  font-size: 0.9688rem;
-  flex: 1;
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--coral-ink);
+  gap: 0.45rem;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--white);
 }
 
 .arrow {
@@ -114,5 +117,11 @@
 @media (min-width: 1100px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 699px) {
+  .link {
+    min-height: 400px;
   }
 }

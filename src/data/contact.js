@@ -5,6 +5,7 @@ export const contact = {
   phoneHref: "tel:+622129553600",
   whatsapp: "+62 819 9903 6200",
   whatsappHref: "https://wa.me/6281999036200",
+  messengerHref: "https://m.me/bloominglotusyogaretreat",
   whatsappTeacherHref:
     "https://wa.me/6281999036200?text=Hi%20Blooming%20Lotus%20Yoga%2C%20I%27d%20love%20to%20speak%20to%20a%20teacher%20about%20my%20journey.",
   address: {
@@ -23,10 +24,10 @@ export const contact = {
   },
   responseTime: "We reply to all messages & emails within 24 hours.",
   social: [
-    { label: "Instagram", href: "https://www.instagram.com/bloominglotusyoga/", count: "7,417 followers" },
-    { label: "Facebook", href: "https://www.facebook.com/BloomingLotusYogaRetreat", count: "12,680 fans" },
-    { label: "YouTube", href: "https://www.youtube.com/@BloomingLotusYogaBali", count: "461 subscribers" },
-    { label: "X", href: "https://x.com/UbudYogaRetreat", count: "1,554 followers" },
+    { label: "Instagram", href: "https://www.instagram.com/bloominglotusyoga/", count: "7,417", unit: "followers" },
+    { label: "Facebook", href: "https://www.facebook.com/BloomingLotusYogaRetreat", count: "12,680", unit: "fans" },
+    { label: "YouTube", href: "https://www.youtube.com/@BloomingLotusYogaBali", count: "461", unit: "subscribers" },
+    { label: "X", href: "https://x.com/UbudYogaRetreat", count: "1,554", unit: "followers" },
   ],
   reviews: {
     google: "https://www.google.com/maps?cid=3457511928914034048",
@@ -36,9 +37,10 @@ export const contact = {
   yogaAllianceHref: "https://app.yogaalliance.org/schoolpublicprofile/0013g000002phUpAAI/blooming-lotus-yoga",
 };
 
+// Same options and order as the source contact form.
 export const enquiryTopics = [
-  "Yoga Teacher Training",
   "Yoga Retreats",
+  "Yoga Teacher Training",
   "Meditation Retreats",
   "Online Courses",
   "Other",

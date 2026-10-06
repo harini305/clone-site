@@ -8,12 +8,16 @@
   text-align: center;
 }
 
-.center > p:first-child {
+.center .lead > p:first-child {
   justify-content: center;
 }
 
 .title {
   font-size: var(--fs-h2);
+}
+
+.dark .title {
+  color: var(--heading);
 }
 
 .large .title {
@@ -37,4 +41,21 @@
 
 .light .intro {
   color: rgba(249, 246, 240, 0.78);
+}
+
+/* Split: eyebrow + heading on the left, intro paragraph on the right. */
+.split {
+  max-width: none;
+}
+
+@media (min-width: 900px) {
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 5rem;
+    align-items: end;
+  }
+  .split .intro {
+    margin-top: 0;
+  }
 }

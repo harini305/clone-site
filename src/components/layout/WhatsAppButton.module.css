@@ -42,8 +42,6 @@
   background: var(--ink);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   white-space: nowrap;
   opacity: 0;
   transform: translateX(6px);
@@ -57,4 +55,25 @@
 .button:focus-visible .label {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Phones: smaller and tucked into the corner so it covers as little text as
+   possible, and out of the way while reading (scrolling down) — it returns as
+   soon as the visitor scrolls up, together with the header. */
+@media (max-width: 699px) {
+  .button {
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    width: 46px;
+    height: 46px;
+  }
+  .button svg {
+    width: 22px;
+    height: 22px;
+  }
+  :global(html[data-header="hidden"]) .visible {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.9);
+  }
 }

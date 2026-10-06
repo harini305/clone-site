@@ -1,15 +1,15 @@
 export const primaryNav = [
   {
-    label: "Teacher Training",
+    label: "Teacher training",
     short: "YTT",
     href: "/yoga-teacher-training",
   },
   {
-    label: "Yoga Retreats",
+    label: "Yoga retreats",
     short: "Retreats",
     href: "/yoga-retreats",
     children: [
-      { label: "All Yoga Retreats", href: "/yoga-retreats" },
+      { label: "All yoga retreats", href: "/yoga-retreats" },
       { label: "4-Day Escape", href: "/yoga-retreats/4-day-escape" },
       { label: "7-Day Bliss", href: "/yoga-retreats/7-day-bliss" },
     ],
@@ -24,9 +24,9 @@ export const primaryNav = [
     short: "About",
     href: "/about",
     children: [
-      { label: "Our Story & Lineage", href: "/about" },
-      { label: "The Retreat Center", href: "/retreat-center" },
-      { label: "Student Reviews", href: "/reviews" },
+      { label: "Our story & lineage", href: "/about" },
+      { label: "The retreat center", href: "/retreat-center" },
+      { label: "Student reviews", href: "/reviews" },
     ],
   },
   {
@@ -38,30 +38,55 @@ export const primaryNav = [
 
 export const footerNav = [
   {
-    title: "Courses & Retreats",
+    title: "Courses & retreats",
     links: [
-      { label: "Yoga Teacher Training", href: "/yoga-teacher-training" },
+      { label: "Yoga teacher training", href: "/yoga-teacher-training" },
       { label: "4-Day Yoga Escape", href: "/yoga-retreats/4-day-escape" },
       { label: "7-Day Yoga Bliss", href: "/yoga-retreats/7-day-bliss" },
-      { label: "Meditation Retreats", href: "/meditation-retreats" },
+      { label: "Meditation retreats", href: "/meditation-retreats" },
     ],
   },
   {
-    title: "Who We Are",
+    title: "Location",
     links: [
-      { label: "About Us", href: "/about" },
       { label: "The Retreat Center", href: "/retreat-center" },
-      { label: "Reviews", href: "/reviews" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "The Villas", href: "/retreat-center#villas" },
+      { label: "Amrita Restaurant & Spa", href: "/retreat-center#amrita-food" },
+      { label: "Facilities & Amenities", href: "/retreat-center#amenities" },
     ],
   },
   {
-    title: "Good To Know",
+    title: "Who we are",
     links: [
-      { label: "YTT Unfiltered Guide", href: "/assets/docs/ytt-unfiltered.pdf" },
-      { label: "Amrita Menu", href: "/assets/docs/amrita-menu.pdf" },
-      { label: "Terms & Conditions", href: "/terms" },
-      { label: "Privacy Policy", href: "/privacy" },
+      { label: "About us", href: "/about" },
+      { label: "Reviews", href: "/reviews" },
+      { label: "Contact us", href: "/contact" },
     ],
   },
+  {
+    title: "Community",
+    links: [
+      { label: "Graduate Students", href: "/graduate-students" },
+      { label: "Continuing Education", href: "/continuing-education" },
+      { label: "Charitable Activities", href: "/charitable-activities" },
+      { label: "Blog", href: "/blog" },
+      { label: "Podcast", href: "/podcast" },
+    ],
+  },
+  {
+    title: "Good to know",
+    links: [
+      { label: "YTT Unfiltered guide", href: "/assets/docs/ytt-unfiltered.pdf" },
+      { label: "Amrita menu", href: "/assets/docs/amrita-menu.pdf" },
+      { label: "Terms & conditions", href: "/terms" },
+      { label: "Privacy policy", href: "/privacy" },
+    ],
+  },
+];
+
+// Source menu group "Explore student resources".
+export const resourceLinks = [
+  { label: "Online learning", href: "/continuing-education" },
+  { label: "BLISS! Magazine", href: "/blog" },
+  { label: "Our podcast", href: "/podcast" },
 ];

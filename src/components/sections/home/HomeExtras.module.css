@@ -1,0 +1,87 @@
+/* Featured on */
+.featuredTitle {
+  margin-bottom: 1.75rem;
+  font-size: var(--fs-h2);
+  text-align: center;
+  color: var(--heading);
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logos li {
+  display: grid;
+  place-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+}
+
+.logos img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  .logos {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* Closing: contact band + form */
+.band {
+  max-width: 860px;
+  margin-inline: auto;
+  padding: clamp(2rem, 1.5rem + 2.5vw, 3.5rem) clamp(1.25rem, 1rem + 2vw, 3rem);
+  border-radius: var(--radius);
+  background: var(--sage-tint);
+  text-align: center;
+}
+
+.bandTitle {
+  font-size: var(--fs-h2);
+  color: var(--heading);
+}
+
+.bandText {
+  max-width: 54ch;
+  margin: 1rem auto 0;
+  color: var(--ink-soft);
+}
+
+.band :global(.cta-row) {
+  margin-top: 1.75rem;
+}
+
+.form {
+  margin-top: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.formCard {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 18px 50px -24px rgba(32, 28, 20, 0.25);
+}
+
+@media (max-width: 699px) {
+  .band {
+    padding: 1.75rem 1.1rem;
+  }
+  .form {
+    margin-top: 3rem;
+  }
+  .formCard {
+    padding: 1.25rem 1rem;
+  }
+}

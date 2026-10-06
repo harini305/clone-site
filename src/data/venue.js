@@ -66,13 +66,6 @@ export const venueGallery = [
   { src: "/assets/images/venue/pool-river.webp", alt: "Pool above the river" },
 ];
 
-export const locationFacts = [
-  { value: "15 min", label: "to central Ubud" },
-  { value: "1 hr", label: "from Denpasar airport (DPS)" },
-  { value: "10 min", label: "to an epic waterfall" },
-  { value: "35 min", label: "to Bali’s southern beaches" },
-];
-
 export const foodGallery = [
   { src: "/assets/images/food/smoothie-bowl.webp", alt: "Vegan breakfast bowl with fresh fruit" },
   { src: "/assets/images/food/spring-rolls.webp", alt: "Fresh spring rolls with dipping sauce" },
@@ -94,5 +87,9 @@ export const gettingThere = [
   {
     title: "Into Ubud",
     text: "A free shuttle runs to central Ubud every Monday, Wednesday and Friday, or grab a scooter taxi for a couple of dollars.",
+  },
+  {
+    title: "Getting around",
+    text: "Ubud is 15 minutes away, a waterfall 10 minutes, and Bali’s southern beaches about 35 minutes.",
   },
 ];

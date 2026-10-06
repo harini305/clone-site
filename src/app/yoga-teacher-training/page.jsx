@@ -142,7 +142,7 @@ export default function YTTPage() {
         </div>
       </section>
 
-      <TestimonialsSection testimonials={byCategory("ytt")} title="What graduates are saying…" tone="dark" />
+      <TestimonialsSection id="testimonials" testimonials={byCategory("ytt")} title="What graduates are saying…" tone="dark" />
 
       <section id="pricing" className="section">
         <div className="container">
@@ -186,7 +186,7 @@ export default function YTTPage() {
         </div>
       </section>
 
-      <section className="section section--dark">
+      <section id="register" className="section section--dark">
         <div className="container">
           <SectionHeading
             eyebrow="Registering is a simple 3-step process"

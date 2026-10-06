@@ -27,7 +27,7 @@
 }
 
 .title {
-  font-size: var(--fs-display);
+  font-size: var(--fs-h2);
   font-weight: 400;
 }
 
@@ -52,5 +52,14 @@
   .grid {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 5rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .grid {
+    gap: 2rem;
+  }
+  .cover {
+    width: min(260px, 64%);
   }
 }

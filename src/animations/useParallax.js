@@ -1,7 +1,6 @@
 "use client";
 
 import { gsap } from "./gsap";
-import { EASE, EASE_SOFT } from "./presets";
 
 /**
  * Subtle scroll parallax for selected large images. The image is scaled just
@@ -28,23 +27,15 @@ export function setupParallax(root) {
   });
 }
 
-/** Page hero intro: media eases in from a slight zoom, copy rises softly. */
+/**
+ * Page hero: the copy fades in with CSS on first paint (see [data-hero-item]
+ * in globals.css). The media is never scaled on load — a zoom-settle reads as
+ * a shake — so GSAP only adds the gentle drift as the hero scrolls away.
+ */
 export function setupHero(root, { desktop }) {
   const hero = root.querySelector("[data-hero]");
   if (!hero) return;
-  const media = hero.querySelector("[data-hero-media]");
-  const items = hero.querySelectorAll("[data-hero-item]");
   const content = hero.querySelector("[data-hero-content]");
-
-  const tl = gsap.timeline({ defaults: { ease: EASE } });
-  // Subtle settle only: a large scale-up visibly softens the hero image.
-  if (media) tl.fromTo(media, { scale: 1.03 }, { scale: 1, duration: 2, ease: EASE_SOFT, clearProps: "transform" }, 0);
-  tl.fromTo(
-    items,
-    { autoAlpha: 0, y: desktop ? 30 : 18 },
-    { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.12 },
-    0.35
-  );
 
   // As the hero scrolls away the copy drifts up and fades — desktop only.
   if (desktop && content) {

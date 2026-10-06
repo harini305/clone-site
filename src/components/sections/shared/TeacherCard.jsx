@@ -26,7 +26,7 @@ export default function TeacherCard({ teacher, detailed = false }) {
 
 export function TeacherGrid({ teachers, detailed = false }) {
   return (
-    <div className={`${styles.grid} ${detailed ? styles.detailed : ""}`} data-stagger>
+    <div className={`${styles.grid} ${detailed ? styles.detailed : ""} swipe-mobile`} data-stagger>
       {teachers.map((t) => (
         <TeacherCard key={t.slug} teacher={t} detailed={detailed} />
       ))}

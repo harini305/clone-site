@@ -1,18 +1,23 @@
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipLink from "@/components/layout/SkipLink";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import MotionProvider from "@/components/layout/MotionProvider";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import { defaultDescription, siteName, siteUrl } from "@/data/site";
 import "@/styles/globals.css";
 
-const serif = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+// Heavy display serif for headings — Bagnard by Sébastien Sanfilippo,
+// SIL Open Font License (see ./fonts/OFL.txt).
+const serif = localFont({
+  src: "./fonts/Bagnard.otf",
+  weight: "400",
+  style: "normal",
   variable: "--font-serif",
   display: "swap",
+  fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
 const sans = DM_Sans({
@@ -53,10 +58,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
-        {/* Flag JS before first paint so reveal targets start hidden (no flash). */}
+        {/* Flag JS before first paint so reveal targets start hidden (no flash).
+            Failsafe: if the motion code has not started within 3s (e.g. a script
+            failed to load), drop the flag so all content shows unanimated. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js-motion')",
+            __html:
+              "document.documentElement.classList.add('js-motion');setTimeout(function(){if(!window.__blyMotion)document.documentElement.classList.remove('js-motion')},3000)",
           }}
         />
       </head>
@@ -68,6 +76,7 @@ export default function RootLayout({ children }) {
         </main>
         <Footer />
         <WhatsAppButton />
+        <SmoothScroll />
         <MotionProvider />
       </body>
     </html>

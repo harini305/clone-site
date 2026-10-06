@@ -1,22 +1,21 @@
 import HomeHero from "@/components/sections/home/HomeHero";
+import HomeStory from "@/components/sections/home/HomeStory";
+import { ContactClosing, FeaturedOn, Resources } from "@/components/sections/home/HomeExtras";
 import SplitFeature from "@/components/sections/shared/SplitFeature";
-import StatsBand from "@/components/sections/shared/StatsBand";
 import GlanceGrid from "@/components/sections/shared/GlanceGrid";
 import { ProgrammeGrid } from "@/components/sections/shared/ProgrammeCard";
-import { TeacherGrid } from "@/components/sections/shared/TeacherCard";
 import LocationSection from "@/components/sections/shared/LocationSection";
 import TestimonialsSection from "@/components/sections/shared/TestimonialsSection";
 import AccreditationSection from "@/components/sections/shared/AccreditationSection";
 import GivingSection from "@/components/sections/shared/GivingSection";
+import VideoEmbed from "@/components/sections/shared/VideoEmbed";
 import GuideCTA from "@/components/sections/shared/GuideCTA";
 import FAQSection from "@/components/sections/shared/FAQSection";
-import CTASection from "@/components/sections/shared/CTASection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
-import { homeFacts, homeGlance, programs } from "@/data/programs";
-import { teachers } from "@/data/teachers";
+import ShowMore from "@/components/ui/ShowMore";
+import { homeFacts, homeGlanceIntro, programs } from "@/data/programs";
 import { featuredTestimonials } from "@/data/testimonials";
-import { homeFaqs } from "@/data/faqs";
+import { homeFaqs, peopleAlsoAsk } from "@/data/faqs";
 import { pageMetadata } from "@/data/site";
 
 export const metadata = {
@@ -33,92 +32,103 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <section id="content" className="section">
-        <div className="container">
-          <SplitFeature
-            image="/assets/images/practice/shala-crow.webp"
-            imageAlt="Students practising crow pose together in the yoga shala"
-            secondaryImage="/assets/images/practice/water-blessing.webp"
-            secondaryAlt="A student receiving a Balinese water blessing"
-            eyebrow="Welcome to Blooming Lotus Yoga"
-            title="Let us guide you on a journey back home"
-            cta={{ label: "Our story", href: "/about" }}
-            secondaryCta={{ label: "Visit the retreat center", href: "/retreat-center" }}
-          >
-            <p>
-              Blooming Lotus Yoga has taught yoga in Ubud, Bali for more than ten years, welcoming students from over 30
-              countries for yoga teacher training, yoga retreats and meditation retreats.
-            </p>
-            <p>
-              Listen to the exotic birds and the trickling waters of the holy river below, and be absorbed in the
-              breathtaking views of our jungle location. With gifted teachers who teach from their hearts and the
-              tradition of Yoga, take this precious time to immerse yourself in deeply healing and transformative practice
-              on the “Island of the Gods”.
-            </p>
-          </SplitFeature>
-        </div>
-      </section>
-
       <section className="section section--warm" aria-labelledby="glance-heading">
         <div className="container">
           <SectionHeading
+            layout="split"
             eyebrow="At a glance"
             title={<span id="glance-heading">Bali yoga teacher training &amp; retreats in Ubud</span>}
-            intro="A 200-hour Yoga Alliance registered teacher training with an additional 25-hour meditation certification — Hatha, Vinyasa and Restorative/Yin, plus guided meditation and Yoga Nidra. A maximum of 18 students and free lifetime re-attendance for every graduate."
+            intro={homeGlanceIntro}
           />
-          <StatsBand stats={homeGlance} />
-          <div className="block-gap">
-            <GlanceGrid items={homeFacts} />
-          </div>
+          <GlanceGrid items={homeFacts} columns={4} variant="cards" swipe />
         </div>
       </section>
 
-      <section id="programmes" className="section">
+      <HomeStory />
+
+      <section id="courses" className="section section--warm">
         <div className="container">
           <SectionHeading
+            layout="split"
             eyebrow="Courses & retreats"
-            title="Find the path that’s calling you"
+            title="Find your next retreat or training course"
             intro="Our 225-hour training takes a maximum of 18 students. 4-day retreats start Sundays and Wednesdays, 7-day retreats start Sundays — and both welcome complete beginners."
           />
           <ProgrammeGrid programs={programs} />
         </div>
       </section>
 
-      <section className="section section--warm" id="teachers">
+      <AccreditationSection title={null} showTrust={false} />
+
+      <LocationSection />
+
+      <section id="online-courses" className="section section--warm">
+        <div className="container">
+          <SplitFeature
+            reverse
+            image="/assets/images/meditation/namaste-pair.webp"
+            imageAlt="Two students with hands in prayer at the end of a practice"
+            eyebrow="Vidya online learning"
+            title="Online yoga trainings and courses"
+            cta={{ label: "Explore online courses", href: "https://courses.blooming-lotus-yoga.com/", variant: "primary" }}
+          >
+            <p>
+              Discover the future of online yoga training and self-growth with our new collection of illuminating online
+              courses, audio recordings, and eBooks that will help you deepen your practice &amp; understanding of the
+              depths of yoga in the comfort of your own home.
+            </p>
+            <ShowMore>
+              <p>
+                “Vidya” is Blooming Lotus Yoga’s integrated suite of online resources full of self-transformation
+                techniques and learning tools aimed at enhancing the study of all facets of yogic knowledge. This holistic
+                collection of in-depth learning resources encompasses the wisdom of yoga, tantra, Vedanta, as well as the
+                greater Vedic tradition of which they are a part, to accelerate the integration of yoga into every facet of
+                your life.
+              </p>
+              <p>
+                Spread out over numerous online courses, ebooks &amp; audio recordings, these comprehensive guides will
+                allow you to climb the great mountain of Self-Realization one step at a time. Combining both theory and
+                practice, the Vidya collection allows you to absorb the perennial wisdom of classical yoga while learning
+                empowering techniques that can awaken your highest potential.
+              </p>
+            </ShowMore>
+          </SplitFeature>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="video-heading">
         <div className="container">
           <SectionHeading
-            eyebrow="Our lineage & teachers"
-            title="Women-led · Trauma-informed · Goddess empowered"
-            intro="Founded by Lily Goncalves, Blooming Lotus Yoga teaches in the lineage of Sri Vidya — one of the world’s oldest living Goddess traditions — bridging the authentic, spiritually focused practice of classical yoga with the needs of the modern world."
+            align="center"
+            eyebrow="Watch"
+            title={<span id="video-heading">Experience oneness</span>}
+            intro="A journey into the essence of Blooming Lotus Yoga."
           />
-          <TeacherGrid teachers={teachers} />
-          <div className="cta-row" data-reveal>
-            <Button href="/about#lineage" variant="outline">
-              Discover our lineage
-            </Button>
+          {/* Source thumbnail is 510px wide, so it is shown close to native size. */}
+          <div style={{ maxWidth: 600, marginInline: "auto" }}>
+            <VideoEmbed
+              youtubeId="u7wAg0IAd3Y"
+              poster="/assets/images/video/experience-oneness.webp"
+              title="Experience Oneness – A Journey Into the Essence of Blooming Lotus Yoga"
+              showLabel={false}
+            />
           </div>
         </div>
       </section>
 
-      <LocationSection />
-
       <TestimonialsSection testimonials={featuredTestimonials} />
 
-      <AccreditationSection />
+      <FeaturedOn />
 
       <GivingSection />
 
+      <Resources />
+
       <GuideCTA />
 
-      <FAQSection faqs={homeFaqs} />
+      <FAQSection faqs={homeFaqs} defaultOpen={null} secondary={{ title: "People also ask…", items: peopleAlsoAsk }} />
 
-      <CTASection
-        image="/assets/images/hero/jungle-infinity.webp"
-        title="Come home to yourself in Bali"
-        text="Join us on the “Island of the Gods” for a teacher training, retreat or silent meditation — and fill yourself with bliss."
-        primary={{ label: "Explore your path to teaching", href: "/yoga-teacher-training" }}
-        secondary={{ label: "Discover your next retreat", href: "/yoga-retreats" }}
-      />
+      <ContactClosing />
     </>
   );
 }

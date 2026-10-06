@@ -86,13 +86,13 @@ const sections = [
   {
     h: "Force majeure",
     p: [
-      "Neither Blooming Lotus Yoga Limited nor PT. Olah Cipta Karya shall be liable for delays or failures in performance resulting from acts beyond their reasonable control — including acts of God, fire, flood, earthquake, volcanic eruptions, pandemic, war, civil unrest or labour disturbance. Each party agrees to make a good faith effort to perform its obligations.",
+      "Neither Blooming Lotus Yoga Limited nor PT. Olah Cipta Karya shall be liable for delays or failures in performance resulting from acts beyond their reasonable control — including acts of God, fire, flood, earthquake, volcanic eruptions, pandemic, war, civil unrest or labor disturbance. Each party agrees to make a good faith effort to perform its obligations.",
     ],
   },
   {
     h: "Code of conduct and ethics",
     p: [
-      "We are committed to a safe, respectful and inclusive environment. Treat every individual with kindness, dignity and respect; embrace diversity; and practise mindfulness on and off the mat. Promoting or selling personal sessions, goods or services to other customers is not permitted.",
+      "We are committed to a safe, respectful and inclusive environment. Treat every individual with kindness, dignity and respect; embrace diversity; and practice mindfulness on and off the mat. Promoting or selling personal sessions, goods or services to other customers is not permitted.",
     ],
   },
 ];

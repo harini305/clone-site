@@ -26,6 +26,16 @@ export function useHeaderState(pathname) {
       }
     };
 
+    // Jumps to a #section or the page top (bly:show-header from SmoothScroll)
+    // keep the header shown for the length of the glide, so the target
+    // heading isn't left under an empty band where the header was.
+    let holdUntil = 0;
+    const onShow = () => {
+      holdUntil = performance.now() + 1400;
+      apply(window.scrollY > 60, false);
+    };
+    window.addEventListener("bly:show-header", onShow);
+
     const trigger = ScrollTrigger.create({
       start: 0,
       end: "max",
@@ -33,7 +43,8 @@ export function useHeaderState(pathname) {
         const y = self.scroll();
         const deep = y > window.innerHeight * 0.9;
         let nextHidden = current.current.hidden;
-        if (self.direction === 1 && deep) nextHidden = true;
+        if (performance.now() < holdUntil) nextHidden = false;
+        else if (self.direction === 1 && deep) nextHidden = true;
         else if (self.direction === -1 || !deep) nextHidden = false;
         apply(y > 60, nextHidden);
       },
@@ -43,6 +54,7 @@ export function useHeaderState(pathname) {
     const raf = requestAnimationFrame(() => apply(window.scrollY > 60, false));
     return () => {
       cancelAnimationFrame(raf);
+      window.removeEventListener("bly:show-header", onShow);
       trigger.kill();
     };
   }, [pathname]);

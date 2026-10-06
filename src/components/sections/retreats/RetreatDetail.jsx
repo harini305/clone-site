@@ -71,7 +71,7 @@ export default function RetreatDetail({ retreatKey, testimonials, faqs, intro, s
             image={splitImage}
             imageAlt={splitAlt}
             portrait
-            eyebrow="The programme"
+            eyebrow="The program"
             title="Deepen your practice & immerse in the magic of Bali"
             cta={{ label: `Compare with the ${other.short}`, href: other.href, variant: "outline" }}
           >

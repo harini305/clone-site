@@ -1,74 +1,80 @@
 import Image from "next/image";
-import Eyebrow from "@/components/ui/Eyebrow";
+import Link from "next/link";
+import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
-import { locationFacts } from "@/data/venue";
+import ShowMore from "@/components/ui/ShowMore";
 import styles from "./LocationSection.module.css";
 
-const strip = [
-  { src: "/assets/images/venue/gangga-pool.webp", alt: "The Gangga pool surrounded by jungle" },
-  { src: "/assets/images/venue/water-temple.webp", alt: "The sacred water temple across the river" },
-  { src: "/assets/images/rooms/bedroom-view.webp", alt: "A villa bedroom opening onto the jungle" },
-  { src: "/assets/images/venue/dining-view.webp", alt: "The view from Amrita restaurant" },
+const bullets = [
+  "Tropical jungle above a sacred holy river",
+  "A private plunge pool in every villa complex",
+  "Yoga shala, healing spa & Amrita vegan restaurant",
 ];
 
-/** Immersive Bali / Ubud location section with parallax backdrop. */
+function LotusBullet() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 52 52" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+      <path d="M26 12c4.5 5 6.5 10 6.5 15S30.5 37 26 41c-4.5-4-6.5-9-6.5-14S21.5 17 26 12Z" />
+      <path d="M19.5 22.5c-4.2-1.6-8.4-1.6-11.5-.3 1 6.8 5.7 13.5 13.6 17.4M32.5 22.5c4.2-1.6 8.4-1.6 11.5-.3-1 6.8-5.7 13.5-13.6 17.4" />
+    </svg>
+  );
+}
+
+/** Our spectacular location: one tinted card for Ubud with a photo beside it. */
 export default function LocationSection({ id = "location", cta = { label: "Explore the retreat center", href: "/retreat-center" } }) {
   return (
-    <section id={id} className={styles.location}>
-      <div className={styles.bg} data-parallax="4">
-        <Image
-          src="/assets/images/hero/aerial-pool.webp"
-          alt=""
-          fill
-          quality={95}
-          // Phones show a height-filled crop of the full photo (~2080 CSS px wide);
-          // desktop adds ~8% for the parallax travel.
-          sizes="(max-width: 899px) 2080px, 108vw"
-          className="media-cover"
-          data-parallax-target
-        />
-      </div>
-      <div className={styles.overlay} aria-hidden="true" />
+    <section id={id} className="section">
+      <div className="container">
+        <SectionHeading eyebrow="Our location" title="Our spectacular location" align="center" />
 
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.copy}>
-          <Eyebrow tone="light" data-reveal="fade">
-            Our spectacular location
-          </Eyebrow>
-          <h2 className={styles.title} data-split>
-            A slice of heaven above a sacred river in Ubud
-          </h2>
-          <p className={styles.text} data-reveal>
-            Blooming Lotus Yoga sits in tropical jungle above a sacred holy river, directly across from a traditional
-            Balinese water temple. Every villa complex has a private plunge pool, kitchen and living room — with a large
-            outdoor pool, a yoga shala, a healing spa and the Amrita vegan restaurant.
-          </p>
-          <ul className={styles.facts} data-stagger>
-            {locationFacts.map((f) => (
-              <li key={f.label}>
-                <strong>{f.value}</strong>
-                <span>{f.label}</span>
-              </li>
-            ))}
-          </ul>
-          {cta && (
-            <div className="cta-row" data-reveal>
-              <Button href={cta.href} variant="light">
-                {cta.label}
-              </Button>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className={`container ${styles.stripWrap}`}>
-        <ul className={styles.strip} data-stagger>
-          {strip.map((img) => (
-            <li key={img.src} className={styles.stripItem}>
-              <Image src={img.src} alt={img.alt} fill sizes="(max-width: 700px) 70vw, 25vw" className="media-cover" />
-            </li>
-          ))}
-        </ul>
+        <article className={styles.card} data-reveal>
+          <div className={styles.copy}>
+            <h3 className={styles.place}>Ubud</h3>
+            <p className={styles.tagline}>Jungle • River • Temple</p>
+            <p className={styles.text}>
+              Blooming Lotus Yoga sits in tropical jungle above a sacred holy river in Ubud, directly across from a
+              traditional Balinese temple.
+            </p>
+            <ul className={styles.bullets}>
+              {bullets.map((b) => (
+                <li key={b}>
+                  <LotusBullet />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <ShowMore>
+              <p>
+                With affordable prices, an intimate group experience, &amp; luxurious accommodation nestled in a
+                spectacular jungle and temple setting, we offer you a <Link href="/yoga-retreats">Bali yoga retreat</Link>{" "}
+                experience in a slice of heaven.
+              </p>
+              <p>
+                We are situated in a stunningly beautiful tropical jungle, nested above a sacred holy river, and receiving
+                the divine vibrations of a traditional Balinese Temple directly across our way. This oasis is truly a
+                blessing from the “Island of the Gods”. Our 200hr. yoga training, yoga retreat and meditation retreat
+                accommodations include a private plunge pool, kitchen and living room in each villa complex, and an
+                additional large outdoor pool facility to play and rejuvenate in. Our Yoga Shala is built with intention and
+                love, and the vegan cuisine is utterly divine. This is luxury living for well-deserved Yogis! Join us for
+                this unforgettable experience into the heart of yoga and experience a Bali spiritual retreat like no other.
+              </p>
+            </ShowMore>
+            {cta && (
+              <div className={styles.cta}>
+                <Button href={cta.href}>{cta.label}</Button>
+              </div>
+            )}
+          </div>
+          <div className={styles.media}>
+            <Image
+              src="/assets/images/hero/aerial-pool.webp"
+              alt="The Blooming Lotus Yoga villas and pool in the jungle above the river in Ubud"
+              fill
+              sizes="(max-width: 899px) 92vw, 46vw"
+              className="media-cover"
+            />
+          </div>
+        </article>
       </div>
     </section>
   );

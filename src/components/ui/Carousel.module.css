@@ -20,6 +20,7 @@
 
 .slide {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   min-width: 0;
   display: flex;
 }

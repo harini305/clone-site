@@ -2,28 +2,31 @@
 
 import { useEffect, useRef } from "react";
 
-const PHONE = "(max-width: 600px)";
+const escape = (value) => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 
 /**
- * Muted background loop layered over the HD hero photo (which doubles as the
- * poster and LCP image). Rendered from the same HD stills, so the photo and
- * the first video frame match.
- * - Screens > 600px: 1920×1080 loop. Phones: 1080×1920 portrait loop.
- * - Never loads with prefers-reduced-motion or data-saver enabled.
- * - Pauses whenever the hero is off-screen.
+ * Muted background loop that autoplays from the first HTML response:
+ * `autoplay muted loop playsinline preload="metadata"`, with the still image as
+ * poster. The tag is written as raw markup because React does not render the
+ * `muted` attribute on the server, and iOS only autoplays when it is present.
+ * - Paused for prefers-reduced-motion and data-saver.
+ * - Paused while the hero is off-screen.
+ * sources: [{ src, type, media? }] in order of preference — `media` lets phones
+ * pick a portrait file.
  */
-export default function HeroVideo({ src, portraitSrc, className }) {
+export default function HeroVideo({ sources, poster, className = "" }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    const video = ref.current;
+    const video = ref.current?.querySelector("video");
     if (!video) return undefined;
+    video.muted = true;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || navigator.connection?.saveData) return undefined;
-
-    video.src = portraitSrc && window.matchMedia(PHONE).matches ? portraitSrc : src;
-    const onReady = () => video.classList.add("is-ready");
-    video.addEventListener("playing", onReady, { once: true });
+    if (reduce || navigator.connection?.saveData) {
+      video.removeAttribute("autoplay");
+      video.pause();
+      return undefined;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,11 +36,16 @@ export default function HeroVideo({ src, portraitSrc, className }) {
       { threshold: 0.05 }
     );
     observer.observe(video);
-    return () => {
-      observer.disconnect();
-      video.removeEventListener("playing", onReady);
-    };
-  }, [src, portraitSrc]);
+    return () => observer.disconnect();
+  }, []);
 
-  return <video ref={ref} className={className} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />;
+  const markup =
+    `<video class="${escape(className)}" autoplay muted loop playsinline preload="metadata"` +
+    `${poster ? ` poster="${escape(poster)}"` : ""} aria-hidden="true" tabindex="-1">` +
+    sources
+      .map((s) => `<source src="${escape(s.src)}" type="${escape(s.type)}"${s.media ? ` media="${escape(s.media)}"` : ""}>`)
+      .join("") +
+    "</video>";
+
+  return <div ref={ref} style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: markup }} />;
 }

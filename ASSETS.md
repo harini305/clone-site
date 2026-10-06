@@ -16,7 +16,7 @@ Source: [blooming-lotus-yoga.com](https://www.blooming-lotus-yoga.com/) (WordPre
 | `images/community/` | Guests and staff |
 | `images/food/` | Amrita restaurant dishes |
 | `images/teachers/` | Mandy, Via, Lily and the lineage masters |
-| `images/giving/` | Charitable fund posters |
+| `images/giving/` | Charity project photos (Bali Children’s Project, food and disaster relief) |
 | `images/guide/` | “YTT Unfiltered” guide cover |
 | `logos/`, `badges/`, `icons/` | Wordmark, lotus mark, Amrita logo, Yoga Alliance / award badges, favicon |
 | `video/` | Home hero loops (rendered from the HD aerial photos) |
@@ -28,27 +28,31 @@ Images were exported from the largest original available on the source site (Wor
 
 ## Home hero
 
-The home hero is a slow, drone-style video loop rendered from HD aerial photographs supplied for this project (the original drone footage on the source site was 1080p and visibly soft). The HD photo sits underneath as the poster / first paint, and the video fades in over it.
+A crisp drone-style loop rendered from the HD aerial photos supplied for this project. The source site's own hero video (`Yoga+Retreats+Bali.mp4`) was tried, but it is 720p with a misty watercolor effect, so it was replaced for quality.
 
 | File | Size | Used on |
 | --- | --- | --- |
-| `video/villas-aerial-1080p.mp4` | 1920×1080, 30 fps, 15 s, ~8 MB | Screens wider than 600px |
-| `video/villas-aerial-portrait.mp4` | 1080×1920, 30 fps, 15 s, ~6 MB | Phones (≤600px) |
-| `images/hero/villas-aerial.webp` | 2096×1184 | Poster / first paint, screens > 600px |
-| `images/hero/villas-aerial-portrait.webp` | 1152×2032 | Poster / first paint on phones |
-| `images/hero/aerial-pool.webp` | 2080×1136 | 7-Day Bliss hero and the location section |
+| `video/villas-aerial-1080p.mp4` | 1920×1080, 30 fps, 15 s, ~8.8 MB | Screens wider than 600px |
+| `video/villas-aerial-portrait.mp4` | 1080×1920, 30 fps, 15 s, ~6 MB | Phones (≤600px, via `<source media>`) |
+| `images/hero/villas-aerial.webp` | 2096×1184 | First paint, screens > 600px |
+| `images/hero/villas-aerial-portrait.webp` | 1152×2032 | First paint on phones |
 
-How the video was made:
+- **Playback:** `autoplay muted loop playsinline preload="metadata"`, written as raw markup so `muted` is in the first HTML (iOS autoplay needs it). Paused with `prefers-reduced-motion`, data-saver, or when the hero is off-screen.
+- **Overlay:** a clean vertical shade only (no haze or glow), deepest under the header and the trust cards.
+- **Reproducible:** `scripts/render-hero.py desktop|portrait out.mp4` (Python, Pillow, imageio-ffmpeg; photos in `scripts/source-photos/`).
 
-- **Desktop loop:** opens on the whole villas photo, holds briefly, then a drone-style camera glides in over the upper villas, travels right along the terraces, and pulls back out to the full photo, so the loop is seamless.
-- **Phone loop:** the same move on the tall villas photo, travelling down the terraces toward the pool.
-- **Why one photo per screen shape:** putting the tall photo into the wide frame (or the reverse) would mean enlarging it about 1.6×, so each screen shape uses the photo that matches it.
-- **Resampling:** each frame is cut with sub-pixel Lanczos resampling along a smooth keyframed camera path.
-- **How far it zooms:** the tightest framing is about 1.65× the photo's native resolution (desktop), so the travel reads clearly while staying clean. The opening and closing frames are the full photo.
-- **Encoding:** x264, CRF 21 (desktop) and CRF 23 (phone).
-- **Photos:** saved as WebP (quality 92) at native size, with no sharpening. Phones get the portrait photo through `<picture>` art direction (`next/image` `getImageProps`), served at quality 95.
-- **Reproducible:** the loops can be regenerated with `scripts/render-hero.py` (needs Python, Pillow and imageio-ffmpeg; place the photos in `scripts/source-photos/` as `villas-wide.jpg` and `villas-tall.jpg`).
-- **Loading:** the video never loads with `prefers-reduced-motion` or data-saver enabled, and pauses when the hero is off-screen.
+## Other assets added for the correction pass
+
+| Folder / file | Source |
+| --- | --- |
+| `src/app/fonts/Bagnard.otf` | Bagnard by Sébastien Sanfilippo (github.com/sebsan/Bagnard), SIL Open Font License — `OFL.txt` alongside |
+| `images/lotus-watermark.webp` | Built from the gold outline of `logos/lotus-mark.png`, repeated radially, at low opacity |
+| `logos/featured/` | “We’re Featured On” logos from the source homepage (270×94) |
+| `images/giving/*.webp` (backpacks, school, food-aid, disaster-relief, donations) | Photos from the source article “Spreading the Light” (500×500) |
+| `images/blog/` | Featured images of the 32 BLISS! Magazine posts (blog page and homepage carousel) |
+| `images/vidya/` | Course, album and eBook covers from the Vidya online-learning page and courses site |
+| `images/giving/` posters (spreading-the-light, empower, bali-projects, india-projects) | Charitable Fund posters from the source /giving page, shown full size on /charitable-activities |
+| `images/video/experience-oneness.webp` | The source's thumbnail for the “Experience Oneness” YouTube video (510×287) |
 
 ## PDFs
 

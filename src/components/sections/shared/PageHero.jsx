@@ -12,7 +12,6 @@ export default function PageHero({
   imageAlt = "",
   portraitImage,
   video,
-  portraitVideo,
   eyebrow,
   title,
   subtitle,
@@ -26,7 +25,7 @@ export default function PageHero({
     <section className={`${styles.hero} ${styles[size]} ${styles[align] || ""}`} data-hero>
       <div className={styles.media} data-hero-media>
         <HeroImage image={image} portraitImage={portraitImage} alt={imageAlt} className={styles.img} />
-        {video && <HeroVideo src={video} portraitSrc={portraitVideo} className={`${styles.img} ${styles.video}`} />}
+        {video && <HeroVideo sources={video} poster={image} className={styles.img} />}
       </div>
       <div className={styles.overlay} aria-hidden="true" />
 
@@ -36,7 +35,7 @@ export default function PageHero({
             {eyebrow}
           </p>
         )}
-        <h1 className={styles.title} data-split>
+        <h1 className={styles.title} data-hero-item>
           {title}
         </h1>
         {subtitle && (

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // FAQ answers condensed from blooming-lotus-yoga.com (Oct 2026).
 
 const shared = {
@@ -9,9 +11,9 @@ const shared = {
     ],
   },
   solo: {
-    q: "I’m travelling to Bali alone. Is this suitable for solo female travellers?",
+    q: "I’m traveling to Bali alone. Is this suitable for solo female travelers?",
     a: [
-      "Yes. Solo female guests who book a shared room are placed only with other women, and single male travellers book private rooms. Airport pickup from Denpasar (DPS) is included free on teacher trainings and can be arranged for US$35 for retreats. Our retreat centre has a 24-hour front desk to assist you.",
+      "Yes. Solo female guests who book a shared room are placed only with other women, and single male travelers book private rooms. Airport pickup from Denpasar (DPS) is included free on teacher trainings and can be arranged for US$35 for retreats. Our retreat center has a 24-hour front desk to assist you.",
     ],
   },
   restaurant: {
@@ -24,7 +26,7 @@ const shared = {
   location: {
     q: "Where in Bali are you located?",
     a: [
-      "Blooming Lotus Yoga is in Lodtunduh, Ubud, in the Gianyar Regency of Bali — about 15 minutes from central Ubud and one hour from Bali’s international airport in Denpasar (DPS). All trainings and retreats are held at our own retreat centre.",
+      "Blooming Lotus Yoga is in Lodtunduh, Ubud, in the Gianyar Regency of Bali — about 15 minutes from central Ubud and one hour from Bali’s international airport in Denpasar (DPS). All trainings and retreats are held at our own retreat center.",
     ],
   },
   visa: {
@@ -41,44 +43,290 @@ const shared = {
   },
 };
 
+const PRICE_REVIEW = "https://www.blooming-lotus-yoga.com/bali-yoga-teacher-training-cost/";
+
+// Homepage FAQ — all 12 questions with the full answers from the source homepage.
 export const homeFaqs = [
   {
     q: "What makes the Blooming Lotus Yoga teacher training so unique?",
     a: [
-      "Our yoga teacher training is a synthesis of the essence of Yoga, Tantra and Vedanta adapted for the modern world — a mystical yet modern approach that is grounded and practical.",
-      "It has two main objectives: a strong foundation in yoga asana (60+ postures, intelligent sequencing and variations for every level) so you can teach with confidence, and a personal spiritual practice using pranayama, mudras, self-inquiry and mantra to experience the deeper dimensions of yoga.",
+      "Our yoga teacher training is a beautiful synthesis of the essence of Yoga, Tantra and Vedanta adapted for the modern world. It is a rare opportunity to fully immerse yourself in the essence of the yogic way of life—which abounds in truth, love and bliss. It is designed for both aspiring teachers and those that wish to deepen their practice by living Yoga to the fullest.",
+      "The content and focus of various yoga teacher training programs around the world can be quite dramatically different, and our particular 225-hour yoga and meditation teacher training course offers a mystical, yet modern approach, that is grounded and practical as it integrates the authentic and spiritual yoga of the Vedic tradition with the needs of the modern yogi.",
+      "If you’re wanting to deepen your personal practice or want to share the gift of yoga through teaching, this yoga teacher training course offers one of the most authentic and spiritually focused trainings in the world so you can awaken your highest potential & live your best life.",
+      "In the yoga teacher training, we have two main objectives:",
+      {
+        list: [
+          "To provide you with a strong foundation in yoga asana so that you may teach yoga classes with confidence and skill. This comprises developing an in-depth knowledge of 60+ yoga asanas, as well as understanding how to intelligently and safely sequence postures while offering variations to meet the needs of people at different levels.",
+          "To develop a personal spiritual practice that will allow you to directly experience the deeper dimensions of yoga that are beyond yoga asana. For this, we teach the theory and practical application of the four paths of yoga. We focus on developing a meditation practice that utilizes pranayama, mudras, self-inquiry, and mantra as aids to developing awareness, focus, and stilling the mind.",
+        ],
+      },
+      <>
+        If you look at <Link href="/yoga-teacher-training#testimonials">our testimonials</Link>, you can get a feel for
+        the course content and what our students have experienced through the program. What we offer tends to be
+        drastically different than the majority of yoga teacher training programs worldwide.
+      </>,
     ],
   },
   {
-    q: "How are the teacher training courses and the yoga retreats different?",
+    q: "How are the yoga teacher training courses and the yoga retreats different?",
     a: [
-      "The 225-hour YTT is designed for beginner and intermediate practitioners who wish to teach or deepen their practice, with yoga classes, asana breakdown workshops, lectures on the art of teaching, philosophy and homework.",
-      "Our 4-day retreats start every Sunday and Wednesday and our 7-day retreats start every Sunday. There are 2 yoga and meditation classes each day (about 2 hours each), plus yin classes and workshops on yogic lifestyle and meditation.",
+      <>
+        Our 225-hour <Link href="/yoga-teacher-training">YTT program</Link> is designed for beginner and intermediate
+        yoga practitioners who wish to start teaching yoga to others or deepen their own practice. Our daily sessions
+        include yoga classes, asana breakdown workshops, lectures on the art of teaching, as well as yogic philosophy and
+        homework assignments.
+      </>,
+      "If you’re wanting to deepen your personal practice or want to share the gift of yoga through teaching, this yoga teacher training course offers one of the most holistic and spiritually focused trainings in the world, with a strong emphasis on self-growth and self-realization so you can awaken your highest potential & live your best life.",
+      <>
+        Our <Link href="/yoga-retreats/4-day-escape">4-day yoga retreats</Link> start every Sunday and Wednesday, and
+        our <Link href="/yoga-retreats/7-day-bliss">7-day yoga retreats</Link> start every Sunday. Both are open to
+        beginning and intermediate students, and each class is adapted to the general needs of the group.
+      </>,
+      "There are 2 yoga and meditation classes each day, and each class is approximately 2 hours long. Each class includes:",
+      {
+        list: [
+          "Easy-to-understand instructions on yoga, meditation and technique",
+          "15–30 minutes of meditation (building progressively class by class)",
+          "90 minutes of Yoga Asana (poses)",
+        ],
+      },
+      "In addition, during our yoga retreats, we also offer yin yoga classes, plus workshops that focus on philosophical and practical aspects of yoga such as lifestyle, how to practice meditation, and other yogic themes.",
     ],
   },
-  shared.beginner,
-  shared.solo,
+  {
+    q: "I’m a beginner, will I be able to participate in a yoga retreat?",
+    a: [
+      <>
+        We love beginners! All of our <Link href="/yoga-retreats">yoga retreat classes</Link> are specifically tailored
+        to meet each person at their own personal level with an emphasis on awareness of the present moment, safety, a
+        sequentially balanced class, and an opportunity for each person to witness where they are at mentally,
+        emotionally, physically, and spiritually at each moment. We encourage our students to honor and respect their own
+        bodies and intuition in order to determine what is best for them as each moment unfolds, engaging in the way that
+        feels right for them.
+      </>,
+      <>
+        Our sessions focus on love, compassion, fun, letting go and being as you are, as we align and open our body and
+        energy fields to allow for the fullest growth and expansion into who we truly are. We definitely encourage
+        intermediate practitioners to join us as we explore the depths of Yoga, however advanced students may find that
+        the yoga asana component of the retreat is not challenging enough. As such, we recommend that advanced yoga asana
+        students join us for silent <Link href="/meditation-retreats">meditation retreats</Link> and learn the higher
+        limbs of yoga.
+      </>,
+    ],
+  },
+  {
+    q: "I’m traveling to Bali alone. Is this suitable for solo female travelers?",
+    a: [
+      "Yes. Solo female guests at Blooming Lotus Yoga who book a shared room are placed only with other women, and single male travelers can only book private rooms. Airport pickup from Denpasar (DPS) is included free on teacher trainings, and can be arranged for US$35 for retreats. Our retreat center has a 24-hour front desk to assist you.",
+    ],
+  },
   {
     q: "How much does a yoga teacher training or retreat in Bali cost?",
     a: [
-      "The 225-hour yoga and meditation teacher training costs from US$2,770 per person all-inclusive in a shared room, or from US$3,670 in a private room — covering tuition, accommodation, three meals a day on training days, airport pickup, a Balinese massage and a trip to the beach. There are no added fees, taxes or payment-processing charges.",
-      "A 7-day yoga retreat costs from US$700 per person and a 4-day retreat from US$350, including accommodation, breakfast and dinner, twice-daily yoga classes, workshops and daily meditation.",
+      "The 225-hour yoga and meditation teacher training at Blooming Lotus Yoga costs from US$2,770 per person all-inclusive in a shared room, or from US$3,670 in a private room. The price covers tuition, accommodation for the whole course, three meals a day on training days, airport pickup, a Balinese massage and a trip to the beach. There are no added fees, taxes or payment processing charges, so the price shown is the price you pay.",
+      <>
+        Across Bali, a 200-hour yoga teacher training costs US$2,858 on average for an all-inclusive package in 2026–27,
+        with prices from US$1,450 to US$5,252. Tuition-only courses look cheaper, at US$2,366 on average, but a room and
+        meals add about US$40 a day, and 8 of 29 schools add card or payment fees of up to 8%, so compare the full cost
+        rather than the headline price.{" "}
+        <a href={PRICE_REVIEW} target="_blank" rel="noopener noreferrer">
+          See our 2026–27 price review of 29 Bali schools
+        </a>
+        .
+      </>,
+      "A 7-day yoga retreat at Blooming Lotus Yoga costs from US$700 per person, and a 4-day retreat from US$350, including accommodation, breakfast and dinner, twice-daily yoga classes, workshops and daily meditation.",
     ],
   },
   {
-    q: "Is the teacher training recognised by Yoga Alliance?",
+    q: "Is this yoga teacher training Bali program (YTT) recognized by the Yoga Alliance?",
     a: [
-      "Yes. Blooming Lotus Yoga is a Yoga Alliance Registered Yoga School (RYS 200) and Continuing Education Provider (YACEP). Graduates are eligible to register as RYT-200 — though registration is optional, so check what the studios you’d like to teach at require.",
+      "Yes, we are a Yoga Alliance certified school. However, it is good to know that being a part of this organization is not a necessity to teach yoga.",
+      "The Yoga Alliance is an American company that simply acts as a registry for yoga schools and teachers. You can choose to register with them, or choose from any of the numerous other international registries – but this is not mandatory.",
+      <>
+        Once you receive a certificate from us, you can then submit it to Yoga Alliance and pay an annual fee to be on
+        their registry. But make sure to check with the studios you want to teach in before you register with Yoga
+        Alliance. Because, even though you are eligible to register with them after completing our course, your studio
+        may only require the certificate you obtain from our{" "}
+        <Link href="/yoga-teacher-training">yoga teacher training courses</Link>.
+      </>,
     ],
   },
   {
-    q: "What type of yoga classes do you offer?",
+    q: "Are there any pre-requisites required for a yoga teacher training (YTT)?",
     a: [
-      "We offer Hatha-Vinyasa and Restorative-Yin style classes — postures sequenced in a graceful, flowing way synchronised with the breath. If you are looking for Ashtanga, Bikram or Hot yoga, it is best to look elsewhere.",
+      "There is no minimum number of years of practice required to join our yoga teacher training. Blooming Lotus Yoga welcomes both beginner and intermediate practitioners, and our teachers adapt instruction to meet each student at their own level.",
+      "We recommend arriving with some yoga practice behind you — and make sure to practice more regularly before the course begins. A little background in meditation or healing practices is also a real advantage.",
+      "Courses are conducted in English, and therefore we ask that all students have a good grasp of the English language in order to understand, read, write, and communicate the course material.",
     ],
   },
-  shared.restaurant,
-  shared.location,
+  {
+    q: "Can I start teaching after I receive my yoga training certification?",
+    a: [
+      "Yes. You can start teaching yoga after the yoga teacher training (YTT) is complete.",
+      "During the YTT course, you will learn all the essential skills needed to teach safe vinyasa, hatha, and yin-restorative classes to your own students.",
+    ],
+  },
+  {
+    q: "What type of yoga classes do you offer during a retreat?",
+    a: [
+      "We offer Hatha-Vinyasa and Restorative-Yin style yoga classes.",
+      "Our main approach to yoga asana could be best described as Hatha-Flow or Vinyasa. Yoga asanas are sequenced in a graceful, flowing way in order to create a seamless movement pattern, that is synchronized with the breath, so that unbroken awareness in the present moment can be established.",
+      "If you are looking for Ashtanga, Bikram, or Hot yoga classes it is best to look elsewhere.",
+    ],
+  },
+  {
+    q: "Is there a restaurant? Where do we eat?",
+    a: [
+      "Yes, our Amrita restaurant serves organic and vegan cuisine made fresh with locally sourced ingredients.",
+      "Amrita restaurant’s healthy menu serves food that is good for you, good for our planet and good for all of its creatures. Following the yogic principle of ahimsa (non-violence), Amrita’s healthy vegan menu contains no animal products. Our healthy menu is completely free of meat, dairy and eggs – an ideal yogic diet that supports your practices.",
+    ],
+  },
+  {
+    q: "Do you have a spa for massage & healing treatments?",
+    a: [
+      <>
+        Yes, there is an in-house <Link href="/retreat-center">healing spa</Link> overlooking the river and temple where
+        various massages and healing treatments can be booked.
+      </>,
+    ],
+  },
+  {
+    q: "Where in Bali are you located, and do you travel?",
+    a: [
+      "Blooming Lotus Yoga is located in Lodtunduh, Ubud, in the Gianyar Regency of Bali — about 15 minutes from central Ubud and one hour from Bali’s international airport in Denpasar (DPS). All our teacher trainings, yoga retreats and meditation retreats are held here at our own retreat center.",
+      "We also teach private yoga classes at homes, hotels and villas in Ubud and the surrounding area. If you’re elsewhere in Bali, contact us and we’ll let you know what’s possible.",
+    ],
+  },
+];
+
+// “People also ask…” — the four long answers from the source homepage.
+export const peopleAlsoAsk = [
+  {
+    q: "How do I become a yoga instructor in Bali?",
+    a: [
+      "There are two different questions hiding inside this one, and most guides blur them together. Training in Bali and working in Bali have almost nothing to do with each other legally.",
+      <>
+        <strong>Training in Bali is straightforward.</strong> You attend a 200-hour yoga teacher training as a tourist.
+        Most nationalities can enter on a visa on arrival, currently around IDR 500,000 (about US$28), valid for 30 days
+        and extendable once for a further 30. Because most Bali trainings run 16 to 27 days, a visa on arrival usually
+        covers a 200-hour course with a few days to spare — but if you want time to travel afterwards, the 60-day C1
+        visit visa (roughly US$100–150, applied for before you fly, extendable twice to a maximum of 180 days) removes the
+        pressure entirely.
+      </>,
+      <>
+        Two things now catch people out at Ngurah Rai airport. Every foreign visitor must pay the{" "}
+        <strong>Bali Tourist Levy of IDR 150,000</strong> (about US$10) per entry, separate from your visa — pay it in
+        advance at the official Love Bali portal and keep the QR code, because enforcement tightened significantly in
+        2026. And immigration officers may ask for <strong>proof of funds</strong>, typically three months of bank
+        statements showing around US$2,000.
+      </>,
+      <>
+        <strong>Working in Bali afterwards is an entirely different matter,</strong> and it’s where most people’s plans
+        quietly fall apart. Completing a training in Bali gives you no right to teach here. See the next question.
+      </>,
+      <>
+        <strong>What actually makes you employable</strong> is less about where you trained than what you can do when
+        you finish. Studios and retreat centers hire teachers who can hold a room, sequence intelligently and adapt to
+        mixed levels — not teachers who can list asanas. That comes from practicum time: actually teaching, being
+        watched, and being corrected. When you compare courses, ask how many hours you will spend teaching in front of
+        other people, and how many teachers will be there to give you feedback. Blooming Lotus Yoga graduates may also
+        retake the YTT free of charge, without limit, which means the learning does not stop on graduation day.
+      </>,
+    ],
+  },
+  {
+    q: "Can you work as a yoga teacher in Bali?",
+    a: [
+      <>
+        <strong>Yes, but only with a work permit.</strong> Teaching yoga for payment in Indonesia requires a{" "}
+        <strong>Working KITAS</strong>, issued under the business classification for sports and recreation education
+        services. It must be sponsored by an Indonesian company that employs you and holds the necessary RPTKA and work
+        permit notification. A tourist visa does not permit paid work of any kind, including teaching a single paid
+        class.
+      </>,
+      "All teaching staff at Blooming Lotus Yoga hold current Indonesian work permits, which is why we can describe this process from direct experience rather than from research.",
+      <>
+        <strong>What it costs.</strong> The Indonesian government levies a DPKK fee of{" "}
+        <strong>US$600 for a six-month permit or US$1,200 for twelve months</strong>, paid by the sponsoring employer.
+        Applying from outside Indonesia typically takes about three weeks for the e-visa plus roughly ten days to convert
+        to a KITAS after arrival; switching onshore from an existing visa takes around four weeks and costs approximately
+        IDR 2,500,000 more.
+      </>,
+      <>
+        <strong>What you’ll need:</strong> a passport valid at least 18 months, a CV, a certificate of your
+        qualification, a reference letter evidencing around five years of cumulative work experience, health insurance,
+        and a bank statement showing roughly US$2,000.
+      </>,
+    ],
+  },
+  {
+    q: "What is the best yoga teacher training course?",
+    a: [
+      "There is no single best course, but there are questions that separate a serious training from a holiday with a certificate at the end. These are the ones we’d ask if we were choosing.",
+      <>
+        <strong>Ask how the course handles mixed levels.</strong> Almost nobody asks this, and it has a bigger effect on
+        what you actually learn than anything else on the brochure. Every training takes in students at different stages.
+        The question is whether the school has a real method for that, or whether it simply teaches to the middle and lets
+        the rest fall behind or coast. Ask what happens if a posture is beyond you on day three, and ask what happens if it
+        is too easy. A school that cannot answer specifically has not thought about it. At Blooming Lotus Yoga we teach to
+        the individual, offer variations in every session, and place as much weight on philosophy, pranayama and
+        meditation as on asana — which is why beginners and experienced practitioners can train together.
+      </>,
+      <>
+        <strong>Ask for the all-in price, not the tuition.</strong> Two in three Bali trainings advertise a price without
+        a room. A shared room and three meals a day add about US$40 a day at the schools’ own rates, so two courses
+        advertised at the same price can end up roughly US$900 apart over a 22-day course. Tuition-only courses look
+        cheaper, at US$2,366 on average, but once a room and meals are added they usually cost more than an all-inclusive
+        package, which averages US$2,858. It’s also worth asking whether paying by card or PayPal adds a fee: 8 of 29
+        schools charge one.{" "}
+        <a href={PRICE_REVIEW} target="_blank" rel="noopener noreferrer">
+          See our 2026–27 price review of 29 Bali schools
+        </a>
+        .
+      </>,
+      <>
+        <strong>Ask how many students are in the group, and how many teachers.</strong> Twenty-four students with one
+        teacher is a very different training from twelve with three. Practicum time — actually teaching, and being
+        corrected — is where confidence comes from, and it divides by group size.
+      </>,
+      <>
+        <strong>Ask whether the teachers hold Indonesian work permits.</strong> Almost nobody asks this, and it tells you a
+        great deal about how the school operates. Trainings led by teachers working on tourist visas are vulnerable to
+        disruption.
+      </>,
+      <>
+        <strong>Ask what happens if the course doesn’t fill.</strong> Small schools cancel under-subscribed courses,
+        sometimes weeks out, after you’ve booked flights. Ask directly whether courses have ever been canceled and what
+        the policy is.
+      </>,
+      <>
+        <strong>Ask about the refund and transfer policy before you pay a deposit.</strong> Deposits are commonly
+        non-refundable. Find out what happens if you get ill, if your visa is refused, or if your circumstances change.
+      </>,
+      <>
+        <strong>Ask what you get afterwards.</strong> Some schools hand you a certificate and end the relationship. Ask
+        about continuing support, alumni access, and whether you can retake the course. We allow our graduates to retake
+        the YTT free of charge, without limit, because learning to teach doesn’t finish on graduation day.
+      </>,
+    ],
+  },
+  {
+    q: "How long is yoga teacher training in Bali?",
+    a: [
+      <>
+        200-hour yoga teacher trainings in Bali run anywhere from 16–28 days.{" "}
+        <strong>The number of days matters less than how those days are structured</strong>, and this is where courses
+        differ most.
+      </>,
+      "Yoga Alliance requires 200 contact hours, and every registered school delivers them — but a school can fit 200 hours into 16 days or spread them across 28. A compressed course is ideal for those who don’t have the ability to spend a lot of time abroad and is significantly cheaper due to the reduced price of daily accommodations and food. A longer course covers the same syllabus at a slower pace but will cost more.",
+      "Blooming Lotus Yoga offers 21-day and 23-day long YTT courses depending on the cohort.",
+      <>
+        <strong>Practical note on visas:</strong> a 30-day visa on arrival covers most 200-hour trainings but leaves
+        little margin. If your course runs longer and you want any time to travel, either plan to extend on arrival or
+        apply for a 60-day visit visa before you fly.
+      </>,
+    ],
+  },
 ];
 
 export const yttFaqs = [
@@ -136,9 +384,9 @@ export const retreatsFaqs = [
     a: ["No. Our retreats are open to beginner and intermediate practitioners, and no previous yoga experience is required."],
   },
   {
-    q: "Are Bali yoga retreats good for solo female travellers?",
+    q: "Are Bali yoga retreats good for solo female travelers?",
     a: [
-      "Yes. Solo female guests who book a shared room are placed only with other women, airport pickup can be arranged, and the retreat centre has a 24-hour front desk. Retreats are capped at 16 guests, so groups stay small.",
+      "Yes. Solo female guests who book a shared room are placed only with other women, airport pickup can be arranged, and the retreat center has a 24-hour front desk. Retreats are capped at 16 guests, so groups stay small.",
     ],
   },
   {
@@ -164,7 +412,7 @@ const retreatCommon = [
   {
     q: "How are people paired in shared rooms?",
     a: [
-      "The Shared Suite, Shared Deluxe and Shared Villa options are for 2 people per room. If you register together as a couple or friends you will share a room. Solo female travellers only share with another woman; single male travellers book a private room.",
+      "The Shared Suite, Shared Deluxe and Shared Villa options are for 2 people per room. If you register together as a couple or friends you will share a room. Solo female travelers only share with another woman; single male travelers book a private room.",
     ],
   },
   {

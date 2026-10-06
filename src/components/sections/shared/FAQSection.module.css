@@ -27,3 +27,13 @@
     top: calc(var(--header-h) + 2rem);
   }
 }
+
+.secondary {
+  margin-top: clamp(3rem, 2.5rem + 2vw, 4.5rem);
+}
+
+.secondaryTitle {
+  margin-bottom: 1rem;
+  font-size: var(--fs-h3);
+  color: var(--heading);
+}

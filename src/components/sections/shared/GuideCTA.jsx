@@ -18,7 +18,7 @@ export default function GuideCTA() {
           />
         </div>
         <div>
-          <Eyebrow tone="coral" data-reveal="fade">
+          <Eyebrow tone="brown" data-reveal="fade">
             Feeling overwhelmed?
           </Eyebrow>
           <h2 className={styles.title} data-split>

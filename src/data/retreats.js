@@ -13,19 +13,19 @@ export const retreatInclusions = [
 
 export const retreatFeatures = [
   {
-    title: "Daily Yoga Classes That Energize Body & Mind",
-    text: "Vinyasa Flow taught as a morning Sunrise Sequence to energise you for the day and an afternoon Sunset Sequence to unwind with gentle, nourishing postures. Classes are tailored to individual needs — challenging, yet never overwhelming.",
+    title: "Daily yoga classes that energize body & mind",
+    text: "Vinyasa Flow taught as a morning Sunrise Sequence to energize you for the day and an afternoon Sunset Sequence to unwind with gentle, nourishing postures. Classes are tailored to individual needs — challenging, yet never overwhelming.",
   },
   {
-    title: "Transformative Workshops",
+    title: "Transformative workshops",
     text: "Heart-to-heart sessions on Yoga Nidra, the chakras, Ayurveda and yogic philosophy — plus healthy eating patterns, daily rituals that promote inner peace and psychological attitudes that nurture self-healing.",
   },
   {
-    title: "A Step-By-Step Meditation Technique",
+    title: "A step-by-step meditation technique",
     text: "Learn how to breathe, how to sit and what to focus on, with powerful pranayama techniques that reduce stress and promote mental clarity — so you leave with the tools to meditate confidently on your own.",
   },
   {
-    title: "Cultural Experiences in Sacred Bali",
+    title: "Cultural experiences in sacred Bali",
     text: "The magic of Bali is no myth. Enjoy enriching cultural experiences, including a Balinese water purification ceremony, and discover the beauty of Ubud and its people.",
   },
 ];
@@ -44,7 +44,7 @@ export const retreatAmenities = [
 const roomBase = {
   sharedSuite: {
     name: "Shared Suite",
-    tag: "Lowest price · best for budget travellers",
+    tag: "Lowest price · best for budget travelers",
     image: "/assets/images/rooms/shared-suite.webp",
     specs: ["2 people per room", "2 twin beds", "Small bathroom", "Air conditioning", "River & jungle views"],
     text: "The cosiest and most affordable option, and very often where the closest friendships begin — inside a large three-room villa with a shared living room, kitchen and pool.",
@@ -72,7 +72,7 @@ const roomBase = {
   },
   privateDeluxe: {
     name: "Private Deluxe",
-    tag: "Popular with solo travellers",
+    tag: "Popular with solo travelers",
     image: "/assets/images/rooms/private-deluxe.webp",
     specs: ["1 person per room", "1 king bed", "Large private bathroom", "Balcony, desk & lounge chair", "River & jungle views"],
     text: "A large and spacious private room with a king bed, full-size bathroom and your own balcony, within a three-room villa with shared pool and kitchen.",
@@ -82,7 +82,7 @@ const roomBase = {
     tag: "In high demand",
     image: "/assets/images/rooms/private-villa.webp",
     specs: ["1 person per villa", "1 king bed", "2 private bathrooms", "Private pool, living room & kitchen", "Jungle, river & temple views"],
-    text: "The ultimate luxury experience for a solo traveller — a 1-bedroom villa with its own pool, living room, kitchen and dining area. No other guests.",
+    text: "The ultimate luxury experience for a solo traveler — a 1-bedroom villa with its own pool, living room, kitchen and dining area. No other guests.",
   },
 };
 
@@ -116,11 +116,11 @@ export const retreats = {
     summary:
       "A perfect choice if you have a short trip to Bali planned and want to relax, unwind and slow down for a few days. Ideal for beginner and intermediate students, or anyone trying a yoga retreat for the first time.",
     glance: [
-      { title: "Who It’s For", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
-      { title: "How Long", text: "4 days / 3 nights, starting every Sunday and Wednesday." },
-      { title: "What It Costs", text: "From US$350 per person, including accommodation, two meals a day and all classes." },
-      { title: "Where You’ll Stay", text: "15 minutes south of central Ubud and one hour from Denpasar airport (DPS)." },
-      { title: "Group Size", text: "A maximum of 16 retreat guests at a time." },
+      { title: "Who it’s for", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
+      { title: "How long", text: "4 days / 3 nights, starting every Sunday and Wednesday." },
+      { title: "What it costs", text: "From US$350 per person, including accommodation, two meals a day and all classes." },
+      { title: "Where you’ll stay", text: "15 minutes south of central Ubud and one hour from Denpasar airport (DPS)." },
+      { title: "Group size", text: "A maximum of 16 retreat guests at a time." },
       { title: "Check-in", text: "1:30–3:30 pm on the first day; check-out by 12:00 noon on the last day." },
     ],
     rooms: withPrices({
@@ -151,13 +151,13 @@ export const retreats = {
     ctaImage: "/assets/images/venue/infinity-villa.webp",
     checkIn: "Check-in Sunday 1:30–3:30 pm, orientation at 5:00 pm · check-out Saturday by 12:00 noon",
     summary:
-      "The perfect choice if you are ready to deepen your practice while enjoying the stunning beauty of Bali — a strong foundation in the essential practices of yoga asana and meditation so you can practise with confidence on your own.",
+      "The perfect choice if you are ready to deepen your practice while enjoying the stunning beauty of Bali — a strong foundation in the essential practices of yoga asana and meditation so you can practice with confidence on your own.",
     glance: [
-      { title: "Who It’s For", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
-      { title: "How Long", text: "7 days / 6 nights, from Sunday to the following Saturday." },
-      { title: "What It Costs", text: "From US$700 per person, including accommodation, two meals a day, all classes and workshops." },
-      { title: "Where You’ll Stay", text: "15 minutes south of central Ubud and one hour from Denpasar airport (DPS)." },
-      { title: "Group Size", text: "A maximum of 16 guests per week." },
+      { title: "Who it’s for", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
+      { title: "How long", text: "7 days / 6 nights, from Sunday to the following Saturday." },
+      { title: "What it costs", text: "From US$700 per person, including accommodation, two meals a day, all classes and workshops." },
+      { title: "Where you’ll stay", text: "15 minutes south of central Ubud and one hour from Denpasar airport (DPS)." },
+      { title: "Group size", text: "A maximum of 16 guests per week." },
       { title: "Check-in", text: "Sunday 1:30–3:30 pm, with a group orientation at 5:00 pm." },
     ],
     rooms: withPrices({
@@ -180,23 +180,23 @@ export const retreatComparison = [
   { label: "Daily meditation", escape: "Included", bliss: "Included" },
   { label: "Meals", escape: "Breakfast & dinner", bliss: "Breakfast & dinner" },
   { label: "Classes only (off-site)", escape: "US$150", bliss: "US$300" },
-  { label: "Best for", escape: "Short trips & first retreats", bliss: "Going deeper & long-haul travellers" },
+  { label: "Best for", escape: "Short trips & first retreats", bliss: "Going deeper & long-haul travelers" },
 ];
 
 export const retreatForYou = [
   "You are looking for transformation, an extraordinary experience in Bali with like-minded people, and powerful new tools for your practice and life.",
   "You want modern, luxurious accommodation in a naturally stunning location — close enough to Ubud to enjoy its shops and restaurants.",
-  "You want to eat healthy, organic, delicious food and feel more energised and alive.",
-  "You want expert help refining your asana or learning the basics, so you can practise with greater confidence at home.",
+  "You want to eat healthy, organic, delicious food and feel more energized and alive.",
+  "You want expert help refining your asana or learning the basics, so you can practice with greater confidence at home.",
   "You want a step-by-step meditation technique to find inner peace, focus your mind and unleash your creativity.",
-  "You are travelling solo and slightly nervous — our team will make your journey effortless, easy and safe.",
+  "You are traveling solo and slightly nervous — our team will make your journey effortless, easy and safe.",
   "You need to disconnect from the hectic pace of life and take some serious ‘me’ time to recharge.",
 ];
 
 export const retreatNotForYou = [
-  "You only want a body-image-centred fitness regime. We teach real yoga here.",
+  "You only want a body-image-centered fitness regime. We teach real yoga here.",
   "You can’t wake up by 7:00 each morning to dedicate yourself to your practice.",
-  "You wish to practise Ashtanga, Bikram or Hot yoga — we teach Vinyasa, Hatha and Restorative/Yin.",
+  "You wish to practice Ashtanga, Bikram or Hot yoga — we teach Vinyasa, Hatha and Restorative/Yin.",
   "You are an advanced asana practitioner — these retreats are for beginner and intermediate levels.",
 ];
 

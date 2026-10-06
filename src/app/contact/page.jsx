@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 export const metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Contact Blooming Lotus Yoga in Lodtunduh, Ubud, Bali — email admin@blooming-lotus-yoga.com or WhatsApp +62 819 9903 6200. We reply to all enquiries within 24 hours.",
+    "Contact Blooming Lotus Yoga in Lodtunduh, Ubud, Bali — email admin@blooming-lotus-yoga.com or WhatsApp +62 819 9903 6200. We reply to all inquiries within 24 hours.",
   path: "/contact",
   image: "/assets/images/rooms/private-villa.webp",
 });
@@ -35,7 +35,7 @@ const purposes = [
     href: `mailto:${contact.email}?subject=${encodeURIComponent("Meditation retreat application")}`,
   },
   {
-    title: "General enquiries",
+    title: "General inquiries",
     text: "Questions about payments, travel, visas or anything else — we’re here to help.",
     label: "Email us",
     href: `mailto:${contact.email}`,
@@ -61,7 +61,7 @@ export default function ContactPage() {
       <section className="section">
         <div className={`container ${styles.grid}`}>
           <div>
-            <SectionHeading eyebrow="Send a message" title="Questions? Feel free to contact us…" size="small" />
+            <SectionHeading eyebrow="Send a message" title="Questions? Feel free to contact us…" />
             <div data-reveal>
               <ContactForm />
             </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               </address>
               <dl className={styles.details}>
                 <div>
-                  <dt>Email · general enquiries</dt>
+                  <dt>Email · general inquiries</dt>
                   <dd>
                     <a href={`mailto:${contact.email}`}>{contact.email}</a>
                   </dd>

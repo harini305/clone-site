@@ -1,0 +1,58 @@
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
+}
+
+.open .panel {
+  grid-template-rows: 1fr;
+}
+
+.inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.open .inner {
+  opacity: 1;
+}
+
+.inner > :first-child {
+  margin-top: 1em;
+}
+
+.inner p + p {
+  margin-top: 1em;
+}
+
+.inner a {
+  color: var(--sage-btn);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--sage-btn);
+}
+
+.toggle svg {
+  transition: transform 0.3s var(--ease);
+}
+
+.open .toggle svg {
+  transform: rotate(180deg);
+}
+
+.light .toggle,
+.light .inner a {
+  color: var(--cream);
+}

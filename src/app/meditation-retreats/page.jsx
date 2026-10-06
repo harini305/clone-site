@@ -25,26 +25,26 @@ export const metadata = pageMetadata({
 
 const pillars = [
   {
-    title: "Master Your Body & Mind",
+    title: "Master your body & mind",
     text: "Awaken your highest potential with immersive training and body/mind strategies for developing inner peace and radiant health.",
   },
   {
-    title: "Expand Your Awareness",
+    title: "Expand your awareness",
     text: "Learn the foundations of breath awareness, mantra and non-dual meditation techniques to go deeper within and develop mindful awareness.",
   },
   {
-    title: "Develop Greater Insight",
-    text: "Gain the essential skills to practise meditation with complete confidence on your own, so you can grow in wisdom and compassion.",
+    title: "Develop greater insight",
+    text: "Gain the essential skills to practice meditation with complete confidence on your own, so you can grow in wisdom and compassion.",
   },
 ];
 
 const includes = [
   {
-    title: "Meditation Sessions",
+    title: "Meditation sessions",
     text: "The foundation of the retreats: a complete method of silent meditation — pranayama, then breath awareness, mantra and self-inquiry.",
   },
   {
-    title: "Yoga Classes",
+    title: "Yoga classes",
     text: "A fluid sequencing of postures linked with the breath that releases habitual tension and channels subtle energy into the spine.",
   },
   {
@@ -52,7 +52,7 @@ const includes = [
     text: "A scientific method of complete relaxation from ancient Tantric texts — transitioning consciously through the layers of the mind to release negative patterns.",
   },
   {
-    title: "Lifestyle Guidance & Dharma Talks",
+    title: "Lifestyle guidance & Dharma talks",
     text: "Listening, reflecting and abiding: talks that clarify the path, answer questions and resolve doubts, so the benefits continue into daily life.",
   },
 ];
@@ -77,7 +77,7 @@ const progression = [
   },
   {
     title: "Teach",
-    text: "Our courses qualify you to teach meditation, and the 225-hour YTT includes a 25-hour meditation certificate recognised for Yoga Alliance continuing education.",
+    text: "Our courses qualify you to teach meditation, and the 225-hour YTT includes a 25-hour meditation certificate recognized for Yoga Alliance continuing education.",
     href: "/yoga-teacher-training",
     link: "Explore the teacher training",
   },
@@ -220,7 +220,7 @@ export default function MeditationPage() {
             title="Shri Vidya — knowledge of the Supreme"
             tone="light"
             align="center"
-            intro="These timeless teachings have been passed from teacher to student since ancient Vedic times. The essence of our programmes is inspired by:"
+            intro="These timeless teachings have been passed from teacher to student since ancient Vedic times. The essence of our programs is inspired by:"
           />
           <LineageGrid />
         </div>
@@ -234,7 +234,7 @@ export default function MeditationPage() {
         image="/assets/images/venue/river-flow.webp"
         eyebrow="Give yourself the gift of silence"
         title="Dive deeper into meditation"
-        text="Apply for a beginner or advanced retreat — we reply to all enquiries within 24 hours."
+        text="Apply for a beginner or advanced retreat — we reply to all inquiries within 24 hours."
         primary={{ label: "Apply now", href: "/contact" }}
         secondary={{ label: "Explore yoga retreats", href: "/yoga-retreats" }}
       />

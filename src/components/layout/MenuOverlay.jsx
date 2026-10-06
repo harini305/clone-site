@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "@/animations/gsap";
-import { primaryNav } from "@/data/navigation";
+import { primaryNav, resourceLinks } from "@/data/navigation";
 import { contact } from "@/data/contact";
 import styles from "./MenuOverlay.module.css";
 
@@ -95,6 +95,7 @@ export default function MenuOverlay({ open, onClose }) {
       id="site-menu"
       className={styles.overlay}
       role="dialog"
+      data-lenis-prevent
       aria-modal="true"
       aria-label="Site menu"
       inert={!open}
@@ -163,6 +164,16 @@ export default function MenuOverlay({ open, onClose }) {
               <br />
               {contact.address.line2}
             </p>
+            <p className={styles.label}>Student resources</p>
+            <ul className={styles.resources}>
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} onClick={onClose}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <p className={styles.label}>Talk to us</p>
             <p>
               <a href={`mailto:${contact.email}`}>{contact.email}</a>

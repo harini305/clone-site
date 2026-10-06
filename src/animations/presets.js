@@ -1,14 +1,23 @@
-// Shared motion language: slow, soft, editorial.
+// Shared motion language: quick, soft and never in the way of reading.
 export const EASE = "power3.out";
 export const EASE_SOFT = "expo.out";
 export const EASE_INOUT = "power2.inOut";
 
-export const DURATION = 1.1;
-export const DISTANCE = 36;
-export const DISTANCE_MOBILE = 22;
-export const STAGGER = 0.09;
+// Scroll reveals: a soft, clearly visible rise as content arrives.
+export const DURATION = 0.9;
+export const DISTANCE = 40;
+export const DISTANCE_MOBILE = 26;
+export const STAGGER = 0.12;
+export const EASE_REVEAL = "power2.out";
 
-export const START = "top 86%";
+// Reveal once an element is a little way into the viewport, so it is seen
+// arriving rather than finishing below the fold.
+export const START = "top 88%";
+
+// Play once and never reverse. Deliberately not `once: true`: once-triggers kill
+// themselves inside ScrollTrigger.refresh(), which crashes GSAP 3.15 when a page
+// opens part-way down (e.g. a link to /retreat-center#amenities).
+export const REVEAL_TRIGGER = { start: START, toggleActions: "play none none none" };
 
 export const MEDIA = {
   desktop: "(min-width: 900px) and (prefers-reduced-motion: no-preference)",

@@ -56,21 +56,3 @@ export function MeditationIcon() {
     </svg>
   );
 }
-
-/** "Scroll to explore" — arched text over a mouse with a moving wheel dot. */
-export function ScrollCue() {
-  return (
-    <svg width="168" height="76" viewBox="0 0 168 76" fill="none" aria-hidden="true">
-      <defs>
-        <path id="scroll-arc" d="M12 82a72 72 0 0 1 144 0" />
-      </defs>
-      <text fill="currentColor" fontSize="12.5" letterSpacing="2.2" fontFamily="var(--font-sans), sans-serif">
-        <textPath href="#scroll-arc" startOffset="50%" textAnchor="middle">
-          SCROLL TO EXPLORE
-        </textPath>
-      </text>
-      <rect x="75" y="40" width="18" height="30" rx="9" stroke="currentColor" strokeWidth="1.5" />
-      <circle className="scroll-wheel" cx="84" cy="49" r="2" fill="currentColor" />
-    </svg>
-  );
-}

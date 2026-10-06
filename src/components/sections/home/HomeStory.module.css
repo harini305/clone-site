@@ -1,0 +1,29 @@
+.blocks {
+  display: grid;
+  gap: clamp(2.5rem, 2rem + 3vw, 5.5rem);
+}
+
+.cta {
+  margin-top: 1.25rem;
+}
+
+.blocks :global(a:not([class])) {
+  color: var(--sage-btn);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Phones: the three story blocks become a swipe carousel (like "At a glance"),
+   each block a card. */
+@media (max-width: 699px) {
+  .blocks > * {
+    align-self: start;
+    padding: 0.6rem 0.6rem 1.1rem;
+    border-radius: var(--radius);
+    background: var(--white);
+    border: 1px solid var(--line);
+  }
+  .blocks > * > :last-child {
+    padding-inline: 0.4rem;
+  }
+}

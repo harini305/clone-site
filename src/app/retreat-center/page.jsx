@@ -76,7 +76,7 @@ export default function RetreatCenterPage() {
             intro="Fine dining and the healing energy Bali is famous for — all within a few steps of your villa."
           />
           {venueHighlights.map((h, i) => (
-            <div key={h.key} id={h.key} className={i ? "block-gap" : undefined}>
+            <div key={h.key} id={h.key === "villas" ? undefined : h.key} className={i ? "block-gap" : undefined}>
               <SplitFeature image={h.image} imageAlt={h.title} eyebrow={h.eyebrow} title={h.title} reverse={i % 2 === 1}>
                 <p>{h.text}</p>
               </SplitFeature>
@@ -92,9 +92,9 @@ export default function RetreatCenterPage() {
             title="Find your space to unwind"
             intro="Every room enjoys river and jungle views. Villas have 1–3 bedrooms, each with its own plunge pool, living room and fully equipped kitchen."
           />
-          <RoomGrid rooms={roomTypes} ctaLabel="Enquire" />
-          <div className="block-gap">
-            <SectionHeading eyebrow="Villa amenities" title="Everything for a rejuvenating stay" size="small" />
+          <RoomGrid rooms={roomTypes} ctaLabel="Inquire" />
+          <div id="amenities" className="block-gap">
+            <SectionHeading eyebrow="Villa amenities" title="Everything for a rejuvenating stay" />
             <CheckList items={villaAmenities} columns={3} />
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function RetreatCenterPage() {
             title="Br. Mawang Kaja, Lodtunduh, Ubud"
             intro="In the Gianyar Regency of Bali, about 15 minutes from central Ubud and one hour from Denpasar airport."
           />
-          <GlanceGrid items={gettingThere} />
+          <GlanceGrid items={gettingThere} columns={4} />
         </div>
       </section>
 

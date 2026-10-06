@@ -85,6 +85,32 @@
   max-width: 72ch;
 }
 
+.body p + p,
+.body ul + p,
+.body p + ul {
+  margin-top: 0.9em;
+}
+
+.body ul {
+  margin: 0.9em 0 0;
+  padding-left: 1.2em;
+}
+
+.body li + li {
+  margin-top: 0.4em;
+}
+
+.body a {
+  color: var(--sage-btn);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.body strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .light {
   border-color: var(--line-light);
 }
@@ -110,5 +136,19 @@
 @media (max-width: 600px) {
   .body {
     padding-right: 0;
+  }
+}
+
+/* Phones: compact question rows. */
+@media (max-width: 600px) {
+  .trigger {
+    min-height: 52px;
+    padding: 0.85rem 0;
+    gap: 1rem;
+    font-size: 1.0625rem;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
   }
 }

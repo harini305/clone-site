@@ -15,8 +15,6 @@
   border-radius: var(--radius-pill);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--muted);
   transition:
     background-color var(--dur) var(--ease),

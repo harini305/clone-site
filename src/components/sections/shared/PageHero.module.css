@@ -38,15 +38,6 @@
   object-fit: cover;
 }
 
-.video {
-  opacity: 0;
-  transition: opacity 1.2s var(--ease);
-}
-
-.video:global(.is-ready) {
-  opacity: 1;
-}
-
 .overlay {
   position: absolute;
   inset: 0;
@@ -118,7 +109,7 @@
 }
 
 .title em {
-  font-style: italic;
+  font-style: normal;
   color: #f1e4d3;
 }
 

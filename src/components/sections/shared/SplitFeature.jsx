@@ -6,6 +6,7 @@ import styles from "./SplitFeature.module.css";
 /**
  * Editorial two-column block: large rounded image + copy.
  * Optional secondary image overlaps the main one for an asymmetric layout.
+ * compact: smaller image column and an h3 title (alternating story blocks).
  */
 export default function SplitFeature({
   image,
@@ -19,12 +20,16 @@ export default function SplitFeature({
   reverse = false,
   portrait = false,
   parallax = false,
+  compact = false,
   id,
   className = "",
   children,
 }) {
   return (
-    <div id={id} className={`${styles.split} ${reverse ? styles.reverse : ""} ${className}`}>
+    <div
+      id={id}
+      className={`${styles.split} ${reverse ? styles.reverse : ""} ${compact ? styles.compact : ""} ${className}`}
+    >
       <div className={styles.visual}>
         <div
           className={`${styles.frame} ${portrait ? styles.portrait : ""}`}
@@ -35,7 +40,7 @@ export default function SplitFeature({
             src={image}
             alt={imageAlt}
             fill
-            sizes="(max-width: 900px) 100vw, 50vw"
+            sizes={compact ? "(max-width: 900px) 100vw, 40vw" : "(max-width: 900px) 100vw, 50vw"}
             className="media-cover"
             data-parallax-target
           />
@@ -48,11 +53,16 @@ export default function SplitFeature({
       </div>
       <div className={styles.copy}>
         {eyebrow && <Eyebrow data-reveal="fade">{eyebrow}</Eyebrow>}
-        {title && (
-          <h2 className={styles.title} data-split>
-            {title}
-          </h2>
-        )}
+        {title &&
+          (compact ? (
+            <h3 className={styles.title} data-split>
+              {title}
+            </h3>
+          ) : (
+            <h2 className={styles.title} data-split>
+              {title}
+            </h2>
+          ))}
         <div className={styles.body} data-reveal>
           {children}
         </div>

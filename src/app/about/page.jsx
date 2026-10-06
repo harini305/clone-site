@@ -35,17 +35,17 @@ const journey = [
   {
     marker: "Bali",
     title: "A blessing from Ratu Pedanda Gunung",
-    text: "The guardian of the Balinese yoga tradition gave his blessing for Blooming Lotus Yoga to teach its training and retreat programmes here in Bali.",
+    text: "The guardian of the Balinese yoga tradition gave his blessing for Blooming Lotus Yoga to teach its training and retreat programs here in Bali.",
   },
   {
     marker: "Ubud",
     title: "A home above a sacred river",
-    text: "More than ten years of teacher trainings, yoga retreats and silent meditation retreats at our own centre in Lodtunduh, Ubud.",
+    text: "More than ten years of teacher trainings, yoga retreats and silent meditation retreats at our own center in Lodtunduh, Ubud.",
   },
   {
     marker: "2021",
     title: "Bali’s “Yoga School of The Year”",
-    text: "Recognised by the Travel & Hospitality Awards, alongside the Prestige Award™ for Bali’s “Yoga Retreat of The Year”.",
+    text: "Recognized by the Travel & Hospitality Awards, alongside the Prestige Award™ for Bali’s “Yoga Retreat of The Year”.",
   },
   {
     marker: "Today",
@@ -96,7 +96,7 @@ export default function AboutPage() {
               Our 200-hour teacher training certification courses in Ubud are Yoga Alliance registered, allowing students
               to teach yoga worldwide. Our Bali yoga retreats are perfect for beginner and intermediate students who wish to
               deepen their practice while exploring the beauty of Bali and its spiritual culture. Our silent meditation
-              retreats teach a complete technique that focuses on the ultimate aim of yoga: Self-Realisation.
+              retreats teach a complete technique that focuses on the ultimate aim of yoga: Self-Realization.
             </p>
           </SplitFeature>
         </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             title="Inspired by the awakened ones"
             tone="light"
             align="center"
-            intro="While we have had the fortune to study the great systems of yoga from many lineages, the essence of the Blooming Lotus Yoga programmes is inspired by the teachings of:"
+            intro="While we have had the fortune to study the great systems of yoga from many lineages, the essence of the Blooming Lotus Yoga programs is inspired by the teachings of:"
           />
           <LineageGrid />
         </div>

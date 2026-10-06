@@ -23,11 +23,11 @@ export const metadata = pageMetadata({
 });
 
 const glance = [
-  { title: "Two Unique Retreats", text: "A 4-day, 3-night retreat and a 7-day, 6-night retreat at our own centre in Ubud." },
-  { title: "Who They Are For", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
-  { title: "When They Start", text: "4-day retreats start every Sunday and Wednesday; 7-day retreats every Sunday." },
-  { title: "What They Cost", text: "From US$350 (4-day) and US$700 (7-day), including accommodation, two meals a day and all classes." },
-  { title: "Group Size", text: "A maximum of 16 retreat guests at a time." },
+  { title: "Two unique retreats", text: "A 4-day, 3-night retreat and a 7-day, 6-night retreat at our own center in Ubud." },
+  { title: "Who they are for", text: "Beginner and intermediate practitioners — no previous yoga experience required." },
+  { title: "When they start", text: "4-day retreats start every Sunday and Wednesday; 7-day retreats every Sunday." },
+  { title: "What they cost", text: "From US$350 (4-day) and US$700 (7-day), including accommodation, two meals a day and all classes." },
+  { title: "Group size", text: "A maximum of 16 retreat guests at a time." },
   { title: "Where", text: "Lodtunduh, Ubud — 15 minutes from central Ubud and one hour from Denpasar airport (DPS)." },
 ];
 
@@ -96,7 +96,7 @@ export default function RetreatsPage() {
           <SectionHeading
             eyebrow="How long should a retreat be?"
             title="4 days or 7 days?"
-            intro="Both run at the same centre with the same teachers, accommodation and daily rhythm. Choose 4 days if you have limited time or it’s your first retreat; choose 7 days to let the practice settle and receive all three workshops. Guests who book the 4-day frequently return for the 7-day."
+            intro="Both run at the same center with the same teachers, accommodation and daily rhythm. Choose 4 days if you have limited time or it’s your first retreat; choose 7 days to let the practice settle and receive all three workshops. Guests who book the 4-day frequently return for the 7-day."
           />
           <ComparisonTable />
         </div>

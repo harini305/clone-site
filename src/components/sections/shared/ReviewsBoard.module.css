@@ -15,8 +15,6 @@
   border: 1px solid var(--line);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition:
     background-color var(--dur) var(--ease),
     color var(--dur) var(--ease);

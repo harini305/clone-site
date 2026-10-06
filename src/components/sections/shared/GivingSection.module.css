@@ -1,45 +1,66 @@
-.grid {
+/* Photo-background band with the charity gallery on top. */
+.band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  color: var(--cream);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(20, 28, 22, 0.78) 0%, rgba(20, 28, 22, 0.62) 50%, rgba(20, 28, 22, 0.82) 100%);
+}
+
+.head {
   display: grid;
-  gap: 3.5rem;
-  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 3.5rem);
 }
 
 .title {
   font-size: var(--fs-h2);
-  font-weight: 400;
+  color: var(--white);
 }
 
 .text {
-  margin-top: 1.5rem;
-  color: rgba(249, 246, 240, 0.84);
+  color: rgba(249, 246, 240, 0.9);
 }
 
-.text p:first-child {
-  font-size: var(--fs-lead);
-  color: var(--cream);
-}
-
-.posters {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.photo {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.poster {
-  position: relative;
-  aspect-ratio: 900 / 1274;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  background: rgba(249, 246, 240, 0.96);
+  color: var(--ink);
 }
 
+.frame {
+  position: relative;
+  aspect-ratio: 1;
+}
 
-@media (min-width: 960px) {
-  .grid {
+.photo figcaption {
+  padding: 0.9rem 1.1rem 1.1rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 900px) {
+  .head {
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
+    align-items: end;
   }
 }

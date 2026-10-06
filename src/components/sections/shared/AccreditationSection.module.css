@@ -1,67 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: clamp(2rem, 1.5rem + 2vw, 3.25rem) clamp(1.25rem, 1rem + 2vw, 3.5rem);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 18px 50px -20px rgba(32, 28, 20, 0.22);
+  text-align: center;
+}
+
 .badges {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem clamp(1rem, 3vw, 2.25rem);
   margin: 0;
   padding: 0;
   list-style: none;
-  text-align: center;
 }
 
-.badgeImg {
-  display: grid;
-  place-items: center;
-  width: 112px;
-  height: 112px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1px solid var(--line);
-  padding: 10px;
-  transition: transform 0.7s var(--ease);
-}
-
-.badge:hover .badgeImg {
-  transform: scale(1.05) rotate(-2deg);
-}
-
-.badgeImg img {
-  width: 100%;
+.badges img {
+  width: clamp(64px, 7vw, 88px);
   height: auto;
-  border-radius: 50%;
 }
 
-.badgeLabel {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.text {
+  max-width: 62ch;
+  color: var(--ink-soft);
 }
 
-.badgeText {
-  margin-top: 0.3rem !important;
+.id {
+  margin-top: -0.75rem !important;
   font-size: 0.875rem;
   color: var(--muted);
-}
-
-.verify {
-  margin-top: 3rem;
-  text-align: center;
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
-
-.verify a {
-  color: var(--sage-deep);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .trust {
   display: grid;
   gap: 1rem;
-  margin: 3.5rem 0 0;
+  margin: 3rem 0 0;
   padding: 2.5rem 0 0;
   list-style: none;
   border-top: 1px solid var(--line);
@@ -81,9 +61,6 @@
 }
 
 @media (min-width: 700px) {
-  .badges {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .trust {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem 3rem;
@@ -91,10 +68,13 @@
 }
 
 @media (min-width: 1100px) {
-  .badges {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
   .trust {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .badges img {
+    width: 76px;
   }
 }
