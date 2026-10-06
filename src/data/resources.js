@@ -1,36 +1,35 @@
-// BLISS! Magazine posts from blooming-lotus-yoga.com/bliss — they live only on
-// the source site, so the cards link out.
-const BLISS = "https://www.blooming-lotus-yoga.com/bliss";
+// BLISS! Magazine posts (full articles at /blog/[slug]).
+const BLISS = "/blog";
 
 export const resources = [
   {
     title: "How to practice Yoga Nidra to reduce stress, improve mental health & increase happiness",
-    href: `${BLISS}/how-to-practice-yoga-nidra/`,
+    href: `${BLISS}/how-to-practice-yoga-nidra`,
     image: "/assets/images/blog/yoga-nidra.webp",
   },
   {
     title: "Spreading the light: a look into the charitable projects you help us support",
-    href: `${BLISS}/spreading-the-light/`,
+    href: `${BLISS}/spreading-the-light`,
     image: "/assets/images/blog/spreading-the-light.webp",
   },
   {
     title: "The essentials of balancing postures",
-    href: `${BLISS}/essentials-of-balancing-postures/`,
+    href: `${BLISS}/essentials-of-balancing-postures`,
     image: "/assets/images/blog/balancing-postures.webp",
   },
   {
     title: "Tips for living a yogic lifestyle",
-    href: `${BLISS}/tips-for-living-a-yogic-lifestyle/`,
+    href: `${BLISS}/tips-for-living-a-yogic-lifestyle`,
     image: "/assets/images/blog/yogic-lifestyle.webp",
   },
   {
     title: "Cooking as a spiritual practice: a yogi’s guide to Ayurvedic cooking",
-    href: `${BLISS}/guide-to-ayurvedic-cooking/`,
+    href: `${BLISS}/guide-to-ayurvedic-cooking`,
     image: "/assets/images/blog/ayurvedic-cooking.webp",
   },
   {
     title: "An introduction to Nyepi: Bali’s day of silence",
-    href: `${BLISS}/an-introduction-to-nyepi-the-bali-day-of-silence/`,
+    href: `${BLISS}/an-introduction-to-nyepi-the-bali-day-of-silence`,
     image: "/assets/images/blog/nyepi.webp",
   },
 ];

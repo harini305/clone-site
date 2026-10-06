@@ -42,7 +42,7 @@ export function Resources() {
         <div data-reveal>
           <Carousel label="BLISS! Magazine articles">
             {resources.map((post) => (
-              <MediaCard key={post.href} href={post.href} image={post.image} title={post.title} cta="Read on BLISS! Magazine" />
+              <MediaCard key={post.href} href={post.href} image={post.image} title={post.title} cta="Read the article" />
             ))}
           </Carousel>
         </div>

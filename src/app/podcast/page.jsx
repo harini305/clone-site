@@ -1,8 +1,7 @@
 import PageHero from "@/components/sections/shared/PageHero";
 import CTASection from "@/components/sections/shared/CTASection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
-import { podcastEpisodes, podcastIntro, podcastListen } from "@/data/community";
+import { podcastEpisodes, podcastIntro } from "@/data/community";
 import { pageMetadata } from "@/data/site";
 import styles from "@/components/sections/community/Community.module.css";
 
@@ -37,25 +36,12 @@ export default function PodcastPage() {
                   {ep.title}
                 </h3>
                 <audio controls preload="none" src={ep.src}>
-                  <a href={ep.src}>Listen to {ep.title}</a>
+                  Your browser does not support audio playback.
                 </audio>
-                <a className={styles.download} href={ep.src} download>
-                  Download
-                </a>
               </li>
             ))}
           </ol>
 
-          <h3 className={`${styles.episodeTitle} ${styles.listenTitle}`}>
-            Other ways to listen
-          </h3>
-          <div className="cta-row">
-            {podcastListen.map((l) => (
-              <Button key={l.href} href={l.href} variant="outline">
-                {l.label}
-              </Button>
-            ))}
-          </div>
         </div>
       </section>
 

@@ -37,14 +37,28 @@ function targetY(el) {
 function scrollToY(y, immediate) {
   // Programmatic jumps keep the header visible (see useHeaderState).
   window.dispatchEvent(new Event("bly:show-header"));
-  if (lenis) lenis.scrollTo(y, { immediate, force: true, duration: 1.1 });
+  if (lenis) lenis.scrollTo(y, { immediate, force: true, duration: 0.9 });
   else window.scrollTo({ top: y, behavior: immediate ? "auto" : "smooth" });
 }
 
 function scrollToHash(hash, immediate) {
   const el = hash && document.getElementById(decodeURIComponent(hash.slice(1)));
   if (!el) return false;
-  scrollToY(targetY(el), immediate);
+  let target = targetY(el);
+  scrollToY(target, immediate);
+  // Images above may finish loading while we travel and push the section
+  // down; re-check on arrival and settle exactly on it (unless the visitor
+  // has started scrolling themselves).
+  const settle = (tries) => {
+    const now = targetY(el);
+    const atTarget = Math.abs(window.scrollY - target) < 6;
+    if (atTarget && Math.abs(now - target) > 4) {
+      target = now;
+      scrollToY(now, true);
+    }
+    if (tries > 0 && atTarget) window.setTimeout(() => settle(tries - 1), 350);
+  };
+  window.setTimeout(() => settle(3), immediate ? 250 : 1000);
   return true;
 }
 
@@ -63,8 +77,8 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (!prefersReducedMotion()) {
       lenis = new Lenis({
-        duration: 1.1,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        // Light, responsive smoothing (follows the wheel closely, no lag).
+        lerp: 0.14,
         wheelMultiplier: 1,
       });
       lenis.on("scroll", ScrollTrigger.update);

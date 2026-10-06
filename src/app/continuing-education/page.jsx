@@ -2,7 +2,7 @@ import PageHero from "@/components/sections/shared/PageHero";
 import MediaCard, { MediaGrid } from "@/components/sections/shared/MediaCard";
 import CTASection from "@/components/sections/shared/CTASection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { vidyaAudio, vidyaBooks, vidyaCourses, vidyaFree, vidyaIntro, vidyaStart } from "@/data/community";
+import { vidyaAudio, vidyaBooks, vidyaCourses, vidyaFree, vidyaIntro } from "@/data/community";
 import { pageMetadata } from "@/data/site";
 import styles from "@/components/sections/community/Community.module.css";
 
@@ -14,17 +14,17 @@ export const metadata = pageMetadata({
   image: "/assets/images/venue/shala-night.webp",
 });
 
-function Products({ items, fit, ratio, cta = "Learn more" }) {
+// Product cards are informational; enrolling and purchases happen with the
+// Blooming Lotus team, so visitors are pointed to the contact page.
+function Products({ items, fit, ratio }) {
   return (
     <MediaGrid swipe={items.length > 2}>
       {items.map((item) => (
         <MediaCard
           key={item.title}
-          href={item.soon ? undefined : item.href}
           image={item.image}
           title={item.title}
           text={item.text}
-          cta={cta}
           fit={fit}
           ratio={ratio}
         >
@@ -44,7 +44,7 @@ export default function ContinuingEducationPage() {
         eyebrow="Continuing education"
         title="Discover the future of online yoga and self-growth training"
         subtitle="Illuminating online courses, audio recordings and eBooks to help you deepen your practice & understanding of the depths of yoga."
-        ctas={[{ label: "Find your next online course", href: vidyaStart }]}
+        ctas={[{ label: "See the online courses", href: "#online-courses" }]}
       />
 
       <section id="content" className="section">
@@ -58,7 +58,7 @@ export default function ContinuingEducationPage() {
         </div>
       </section>
 
-      <section className="section section--warm">
+      <section id="online-courses" className="section section--warm">
         <div className="container">
           <SectionHeading eyebrow="Online courses" title="Learn at your own pace" />
           <Products items={vidyaCourses} ratio="16 / 9" />
@@ -82,18 +82,15 @@ export default function ContinuingEducationPage() {
       <section className="section">
         <div className="container">
           <SectionHeading eyebrow="Free training" title="Free masterclasses" />
-          <Products items={vidyaFree} ratio="16 / 10" cta="Register now" />
-          <p className={styles.note} data-reveal>
-            Courses, audio and eBooks are delivered through the Blooming Lotus Yoga online learning platform and store.
-          </p>
+          <Products items={vidyaFree} ratio="16 / 10" />
         </div>
       </section>
 
       <CTASection
         image="/assets/images/meditation/path-meditation.webp"
         title="Join thousands of yogis"
-        text="Start your next online course today — or come and practice with us in Bali."
-        primary={{ label: "Start here", href: vidyaStart }}
+        text="Ask us about any course, recording or book — or come and practice with us in Bali."
+        primary={{ label: "Ask about online courses", href: "/contact" }}
         secondary={{ label: "Yoga retreats in Bali", href: "/yoga-retreats" }}
       />
     </>

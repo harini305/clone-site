@@ -4,9 +4,12 @@
   align-items: center;
 }
 
+/* Round 101px photo from the source: shown at native size (sharp) with its
+   space reserved, so the section never changes height when it loads. */
 .logo {
-  width: 170px;
-  height: auto;
+  width: 101px;
+  height: 101px;
+  border-radius: 50%;
   margin-bottom: 1.75rem;
   mix-blend-mode: multiply;
 }

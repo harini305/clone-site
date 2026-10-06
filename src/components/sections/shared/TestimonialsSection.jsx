@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Carousel from "@/components/ui/Carousel";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { contact } from "@/data/contact";
@@ -25,12 +26,7 @@ export default function TestimonialsSection({
             </p>
             <p className={styles.ratingText}>Average rating on Google and Tripadvisor</p>
             <p className={styles.verify}>
-              <a href={contact.reviews.google} target="_blank" rel="noopener noreferrer">
-                Verify Google reviews
-              </a>
-              <a href={contact.reviews.tripadvisor} target="_blank" rel="noopener noreferrer">
-                Verify Tripadvisor reviews
-              </a>
+              <Link href="/reviews">Read all student stories</Link>
             </p>
           </div>
         </div>

@@ -3,7 +3,6 @@ import MediaCard, { MediaGrid } from "@/components/sections/shared/MediaCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { blogPosts } from "@/data/community";
 import { pageMetadata } from "@/data/site";
-import styles from "@/components/sections/community/Community.module.css";
 
 export const metadata = pageMetadata({
   title: "Blog — BLISS! Magazine",
@@ -45,9 +44,6 @@ export default function BlogPage() {
               />
             ))}
           </MediaGrid>
-          <p className={styles.note} data-reveal>
-            Articles open on BLISS! Magazine, the Blooming Lotus Yoga blog.
-          </p>
         </div>
       </section>
     </>

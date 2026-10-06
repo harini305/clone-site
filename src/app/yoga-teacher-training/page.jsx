@@ -90,7 +90,10 @@ export default function YTTPage() {
         </div>
       </section>
 
-      <AccreditationSection title="A trusted global leader in yoga training for over 10 years" />
+      <AccreditationSection
+        title="A trusted global leader in yoga training for over 10 years"
+        cta={{ label: "See dates & prices", href: "#pricing" }}
+      />
 
       <section id="curriculum" className="section section--warm">
         <div className="container">

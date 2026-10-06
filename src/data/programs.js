@@ -88,7 +88,7 @@ export const homeFacts = [
   {
     title: "Accreditation",
     text: "Blooming Lotus Yoga is a Yoga Alliance Registered Yoga School (RYS 200) and a Yoga Alliance Continuing Education Provider (YACEP). Graduates are eligible to register as RYT-200.",
-    href: "https://app.yogaalliance.org/schoolpublicprofile/0013g000002phUpAAI/blooming-lotus-yoga",
-    link: "Verify credentials",
+    href: "/about#accreditation",
+    link: "About our accreditation",
   },
 ];

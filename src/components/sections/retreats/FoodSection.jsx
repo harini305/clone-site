@@ -11,7 +11,7 @@ export default function FoodSection({ meals = "breakfast and dinner", id = "food
     <section id={id} className="section section--warm">
       <div className={`container ${styles.grid}`}>
         <div>
-          <Image src="/assets/logos/amrita.png" alt="Amrita — nourished by nectar" width={300} height={92} className={styles.logo} data-reveal="fade" />
+          <Image src="/assets/logos/amrita.png" alt="" width={101} height={101} className={styles.logo} data-reveal="fade" />
           <SectionHeading
             eyebrow="Where you will eat"
             title="Organic, vegan & made with love"

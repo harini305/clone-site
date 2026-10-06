@@ -4,7 +4,6 @@ import StatsBand from "@/components/sections/shared/StatsBand";
 import AccreditationSection from "@/components/sections/shared/AccreditationSection";
 import CTASection from "@/components/sections/shared/CTASection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
 import { reviewCategories, testimonials } from "@/data/testimonials";
 import { contact } from "@/data/contact";
 import { pageMetadata } from "@/data/site";
@@ -43,16 +42,7 @@ export default function ReviewsPage() {
           <SectionHeading
             eyebrow="Rated 4.9 on Google & Tripadvisor"
             title="Trusted by students from around the world"
-          >
-            <div className="cta-row" data-reveal>
-              <Button href={contact.reviews.google} variant="outline" size="sm">
-                Verify Google reviews
-              </Button>
-              <Button href={contact.reviews.tripadvisor} variant="outline" size="sm">
-                Verify Tripadvisor reviews
-              </Button>
-            </div>
-          </SectionHeading>
+          />
           <StatsBand stats={stats} />
         </div>
       </section>

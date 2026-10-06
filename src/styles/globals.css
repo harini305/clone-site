@@ -120,7 +120,7 @@ hr {
 /* Each page fades in on navigation (see app/template.jsx). Opacity only, so
    sticky and fixed elements are unaffected. */
 .page-enter {
-  animation: page-in 0.45s ease-out both;
+  animation: page-in 0.3s ease-out both;
 }
 
 @keyframes page-in {

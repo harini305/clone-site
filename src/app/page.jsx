@@ -70,7 +70,7 @@ export default function HomePage() {
             imageAlt="Two students with hands in prayer at the end of a practice"
             eyebrow="Vidya online learning"
             title="Online yoga trainings and courses"
-            cta={{ label: "Explore online courses", href: "https://courses.blooming-lotus-yoga.com/", variant: "primary" }}
+            cta={{ label: "Explore online courses", href: "/continuing-education", variant: "primary" }}
           >
             <p>
               Discover the future of online yoga training and self-growth with our new collection of illuminating online

@@ -43,7 +43,7 @@ const shared = {
   },
 };
 
-const PRICE_REVIEW = "https://www.blooming-lotus-yoga.com/bali-yoga-teacher-training-cost/";
+const PRICE_REVIEW = "/blog/bali-yoga-teacher-training-cost";
 
 // Homepage FAQ — all 12 questions with the full answers from the source homepage.
 export const homeFaqs = [
@@ -129,9 +129,7 @@ export const homeFaqs = [
         with prices from US$1,450 to US$5,252. Tuition-only courses look cheaper, at US$2,366 on average, but a room and
         meals add about US$40 a day, and 8 of 29 schools add card or payment fees of up to 8%, so compare the full cost
         rather than the headline price.{" "}
-        <a href={PRICE_REVIEW} target="_blank" rel="noopener noreferrer">
-          See our 2026–27 price review of 29 Bali schools
-        </a>
+        <Link href={PRICE_REVIEW}>See our 2026–27 price review of 29 Bali schools</Link>
         .
       </>,
       "A 7-day yoga retreat at Blooming Lotus Yoga costs from US$700 per person, and a 4-day retreat from US$350, including accommodation, breakfast and dinner, twice-daily yoga classes, workshops and daily meditation.",
@@ -279,9 +277,7 @@ export const peopleAlsoAsk = [
         cheaper, at US$2,366 on average, but once a room and meals are added they usually cost more than an all-inclusive
         package, which averages US$2,858. It’s also worth asking whether paying by card or PayPal adds a fee: 8 of 29
         schools charge one.{" "}
-        <a href={PRICE_REVIEW} target="_blank" rel="noopener noreferrer">
-          See our 2026–27 price review of 29 Bali schools
-        </a>
+        <Link href={PRICE_REVIEW}>See our 2026–27 price review of 29 Bali schools</Link>
         .
       </>,
       <>

@@ -2,18 +2,18 @@ import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { awards, credentials, registrationId, trustPoints } from "@/data/accreditation";
-import { contact } from "@/data/contact";
 import styles from "./AccreditationSection.module.css";
 
 /**
- * Accreditation card: badge row, one paragraph and the verify button in a
- * single white card. Inner pages can add a heading and the trust points.
+ * Accreditation card: badge row, one paragraph and a button (to a page on this
+ * site) in a single white card. Inner pages can add a heading and trust points.
  */
 export default function AccreditationSection({
   id = "accreditation",
   eyebrow = "Accreditation",
   title = "A trusted global leader in yoga training for over 10 years",
   showTrust = true,
+  cta = { label: "Explore our teacher training", href: "/yoga-teacher-training" },
 }) {
   return (
     <section id={id} className="section">
@@ -35,7 +35,7 @@ export default function AccreditationSection({
           <p className={styles.id}>
             RYS 200 • E-RYT 500 • YACEP · Registration ID: {registrationId}
           </p>
-          <Button href={contact.yogaAllianceHref}>Verify credentials</Button>
+          <Button href={cta.href}>{cta.label}</Button>
         </div>
 
         {showTrust && (

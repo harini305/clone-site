@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Carousel from "@/components/ui/Carousel";
 import Eyebrow from "@/components/ui/Eyebrow";
 import ShowMore from "@/components/ui/ShowMore";
@@ -6,7 +7,7 @@ import styles from "./GivingSection.module.css";
 
 // Photos and captions from “Spreading the Light”, the source article on the
 // charitable projects the fund supports.
-const STORY = "https://www.blooming-lotus-yoga.com/bliss/spreading-the-light/";
+const STORY = "/blog/spreading-the-light";
 const photos = [
   {
     src: "/assets/images/giving/backpacks.webp",
@@ -75,9 +76,7 @@ export default function GivingSection({ id = "giving" }) {
                 As such, significant portions of all proceeds from our yoga teacher training and yoga retreats are donated
                 to charities in Bali, Indonesia and India. Many charitable projects have touched our hearts, and here are
                 just some of the{" "}
-                <a href={STORY} target="_blank" rel="noopener noreferrer">
-                  charitable projects
-                </a>{" "}
+                <Link href={STORY}>charitable projects</Link>{" "}
                 you help us support.
               </p>
             </ShowMore>

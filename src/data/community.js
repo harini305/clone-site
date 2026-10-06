@@ -149,7 +149,6 @@ export const vidyaFree = [
   },
 ];
 
-export const vidyaStart = `${COURSES}/#overview`;
 
 // ── Charitable activities ─────────────────────────────────────────────────
 export const charityIntro = [
@@ -165,10 +164,10 @@ export const charityPosters = [
   { src: "/assets/images/giving/india-projects.webp", alt: "Charitable projects supported in India" },
 ];
 
-// ── Blog: BLISS! Magazine (articles live on the source site) ──────────────
+// ── Blog: BLISS! Magazine (full articles at /blog/[slug]) ─────────────────
 const post = (title, slug, image, author, category) => ({
   title,
-  href: `${BLISS}/${slug}/`,
+  href: `/blog/${slug}`,
   image: `/assets/images/blog/${image}.webp`,
   author,
   category,
@@ -223,7 +222,3 @@ export const podcastEpisodes = [
   { title: "Glimpses into the Amritabindu Upanishad", src: `${MP3}/6.-Glimpses-into-the-Amritabindu-Upanishad.mp3` },
 ];
 
-export const podcastListen = [
-  { label: "Apple Podcasts", href: "https://podcasts.apple.com/podcast/drops-of-nectar-satsang-with-ramananda-mayi/id1491411500" },
-  { label: "Spotify", href: "https://open.spotify.com/show/4lUjBMv6MB8cGRsRgy4d8N" },
-];

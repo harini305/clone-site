@@ -85,9 +85,7 @@ export default function Footer() {
             Yoga Alliance Certified · RYS 200 · E-RYT 500 · YACEP
             <br />
             Registration ID: {registrationId} ·{" "}
-            <a href={contact.yogaAllianceHref} target="_blank" rel="noopener noreferrer">
-              Verify credentials
-            </a>
+            <Link href="/about#accreditation">About our accreditation</Link>
           </p>
         </div>
         <ul className={styles.social} aria-label="Social media">
