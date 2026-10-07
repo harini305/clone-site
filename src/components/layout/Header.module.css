@@ -20,6 +20,12 @@
   transition: opacity 0.6s var(--ease);
 }
 
+/* Page change: snap to the new state instead of animating (useHeaderState). */
+:global(html[data-header-instant]) .header,
+:global(html[data-header-instant]) .header::before {
+  transition: none;
+}
+
 .scrolled {
   background: rgba(27, 31, 27, 0.86);
   -webkit-backdrop-filter: blur(10px);

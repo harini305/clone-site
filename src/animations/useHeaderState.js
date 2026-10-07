@@ -50,10 +50,22 @@ export function useHeaderState(pathname) {
       },
     });
 
-    // Sync once after route change (scroll position may have reset).
-    const raf = requestAnimationFrame(() => apply(window.scrollY > 60, false));
+    // Sync once after route change (scroll position may have reset). A new
+    // page opens with the header already in place: arriving from deep in the
+    // last page (e.g. a footer link), it would otherwise slide down and fade
+    // from dark to clear — a visible jolt. html[data-header-instant] turns the
+    // header's transitions off until the new state has painted.
+    const root = document.documentElement;
+    root.dataset.headerInstant = "";
+    let settle = 0;
+    const raf = requestAnimationFrame(() => {
+      apply(window.scrollY > 60, false);
+      settle = window.setTimeout(() => delete root.dataset.headerInstant, 250);
+    });
     return () => {
       cancelAnimationFrame(raf);
+      window.clearTimeout(settle);
+      delete root.dataset.headerInstant;
       window.removeEventListener("bly:show-header", onShow);
       trigger.kill();
     };

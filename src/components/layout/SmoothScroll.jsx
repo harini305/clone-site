@@ -98,8 +98,10 @@ export default function SmoothScroll() {
 
     // Stop any glide the moment a link is pressed, so the link can't slide
     // out from under the pointer and no momentum survives the navigation.
+    // Only while gliding: stopping a still page emits a scroll event that the
+    // header reads as "scrolling up" and slides in just before the page changes.
     const onPointerDown = (e) => {
-      if (lenis && e.target.closest?.("a[href]")) lenis.scrollTo(window.scrollY, { immediate: true, force: true });
+      if (lenis?.isScrolling && e.target.closest?.("a[href]")) lenis.scrollTo(window.scrollY, { immediate: true, force: true });
     };
 
     // Links to the current page: #section glides to its heading; a plain link
