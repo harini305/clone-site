@@ -8,13 +8,15 @@
   isolation: isolate;
 }
 
+/* Page heroes fill the first screen exactly, like the home hero, so no strip
+   of the next section shows beneath them. */
 .full {
-  min-height: max(620px, 94svh);
+  min-height: max(620px, 100svh);
   padding-block: calc(var(--header-h) + 3rem) 7.5rem;
 }
 
 .page {
-  min-height: max(540px, 78svh);
+  min-height: max(540px, 100svh);
   padding-block: calc(var(--header-h) + 3rem) 4rem;
 }
 
@@ -197,11 +199,12 @@
   }
 }
 
+/* Phones: still the full first screen, with lower floors for short phones. */
 @media (max-width: 600px) {
   .full {
-    min-height: max(600px, 92svh);
+    min-height: max(560px, 100svh);
   }
   .page {
-    min-height: 560px;
+    min-height: max(500px, 100svh);
   }
 }
