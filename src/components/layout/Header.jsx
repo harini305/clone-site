@@ -28,6 +28,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The full menu is for phones and tablets only: if the window widens to the
+  // desktop header (where the hamburger is hidden), close it.
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1180px)");
+    const onChange = (e) => e.matches && setMenuOpen(false);
+    desktop.addEventListener("change", onChange);
+    return () => desktop.removeEventListener("change", onChange);
+  }, []);
+
   const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (

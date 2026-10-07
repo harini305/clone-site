@@ -250,13 +250,16 @@
   }
 }
 
-/* Desktop: links sit right-aligned, alongside the button and the hamburger,
-   which opens the full menu at every width. */
+/* Desktop: one navigation only — the inline links and the Message us button.
+   The hamburger and full-screen menu are for phones and tablets. */
 @media (min-width: 1180px) {
   .nav {
     display: block;
   }
   .inner {
     justify-content: flex-start;
+  }
+  .menuButton {
+    display: none;
   }
 }
