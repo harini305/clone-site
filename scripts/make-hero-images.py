@@ -46,7 +46,8 @@ def collect():
                 for block in re.findall(r"<PageHero(.*?)/>", text, re.S):
                     found.update(re.findall(r'(?:image|portraitImage)="(/assets/[^"]+)"', block))
     hero = read("src/components/sections/home/HomeHero.jsx")
-    found.update(re.findall(r'"(/assets/images/hero/villas-aerial[^"]*\.webp)"', hero))
+    found.update(re.findall(r'"(/assets/images/hero/film/[^"]+\.webp)"', hero))
+    found.update(re.findall(r'"(/assets/images/hero/film/[^"]+\.webp)"', read("src/components/sections/home/HeroFilm.jsx")))
     # Retreat detail pages use retreats[*].image.
     out = subprocess.run(
         ["node", "-e", "import('./src/data/retreats.js').then(m=>console.log(JSON.stringify(Object.values(m.retreats).map(r=>r.image))))"],

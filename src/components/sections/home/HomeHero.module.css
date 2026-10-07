@@ -25,6 +25,12 @@
   object-fit: cover;
 }
 
+/* First-paint still: on tall screens keep the villas in frame, where the
+   film's opening shot is framed too. */
+.poster {
+  object-position: 62% 50%;
+}
+
 /* Clean, even shade for legible white text — no haze or glow. Slightly
    deeper at the top (header) and bottom (cards, badges). */
 .shade {

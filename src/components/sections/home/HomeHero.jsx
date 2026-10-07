@@ -1,15 +1,14 @@
 import Image from "next/image";
 import HeroImage from "@/components/sections/shared/HeroImage";
-import HeroVideo from "@/components/sections/shared/HeroVideo";
 import Button from "@/components/ui/Button";
 import { awards } from "@/data/accreditation";
+import HeroFilm from "./HeroFilm";
 import { GlobeIcon, LotusIcon, MeditationIcon, PinIcon } from "./HeroIcons";
 import styles from "./HomeHero.module.css";
 
-// HD aerial stills of the villas; the video loops are rendered from the same
-// photos, so the still (first paint) and the first video frame match.
-const POSTER = "/assets/images/hero/villas-aerial.webp";
-const POSTER_PORTRAIT = "/assets/images/hero/villas-aerial-portrait.webp";
+// Opening shot of the hero film, as the first paint; the film (HeroFilm)
+// fades in over it once its four shots have loaded.
+const POSTER = "/assets/images/hero/film/shot-1-establishing.webp";
 
 const trust = [
   { icon: LotusIcon, label: "Yoga Alliance certified" },
@@ -20,8 +19,9 @@ const trust = [
 
 /**
  * Home hero — House of Om layout (brand name as the H1, tagline beneath, one
- * button, four trust items) with Blooming Lotus content: an HD aerial loop of
- * the villas, the source call to action and the three award badges.
+ * button, four trust items) with Blooming Lotus content: a four-shot cinematic
+ * film of the villas joined by luma-matte transitions, the source call to
+ * action and the three award badges.
  */
 export default function HomeHero() {
   return (
@@ -29,17 +29,10 @@ export default function HomeHero() {
       <div className={styles.media} data-hero-media>
         <HeroImage
           image={POSTER}
-          portraitImage={POSTER_PORTRAIT}
-          alt="Aerial view of the Blooming Lotus Yoga villas terraced into the jungle in Ubud"
-          className={styles.img}
+          alt="Aerial view of the Blooming Lotus Yoga villas terraced into the misty jungle in Ubud"
+          className={`${styles.img} ${styles.poster}`}
         />
-        <HeroVideo
-          sources={[
-            { src: "/assets/video/villas-aerial-portrait.mp4", type: "video/mp4", media: "(max-width: 600px)" },
-            { src: "/assets/video/villas-aerial-1080p.mp4", type: "video/mp4" },
-          ]}
-          className={styles.img}
-        />
+        <HeroFilm className={styles.img} />
       </div>
       <div className={styles.shade} aria-hidden="true" />
 

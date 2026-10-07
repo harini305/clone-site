@@ -998,6 +998,170 @@ const heroImages = {
   ],
   "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYgCdMoADC1bXOqNfZ2R6wCc6AAD+W4AAx+UjdyAk5mtWl4m2pMK5mGuWnIEblly8cdeHq0gyyjjG2EN0V7sRUhAh4WUpS5jv1XA/POdndtiiKW7RjbTXJ1m7k5tpmhkdn+8rrTEWMJYZsUDbg64EaC51IAAA"
  },
+ "/assets/images/hero/film/shot-1-establishing.webp": {
+  "width": 2096,
+  "height": 1176,
+  "srcset": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-1-establishing-640.webp"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1080.webp"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1600.webp"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1920.webp"
+   ]
+  ],
+  "avif": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-1-establishing-640.avif"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1080.avif"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1600.avif"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-1-establishing-1920.avif"
+   ]
+  ],
+  "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAACwAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JYwAAWSvN+w1uDDBFgAD33C0LlzfR2pE8Za6cmywm1JZOw4PTVydIFKhDMlwVGWLz2XJfivd6qXov0hPkp8Ti9BirGVd7ZhXEJKTcy/Ob6hy2gR/YNrRPrTfu58gA"
+ },
+ "/assets/images/hero/film/shot-2-terraces.webp": {
+  "width": 2096,
+  "height": 1176,
+  "srcset": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-2-terraces-640.webp"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1080.webp"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1600.webp"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1920.webp"
+   ]
+  ],
+  "avif": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-2-terraces-640.avif"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1080.avif"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1600.avif"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-2-terraces-1920.avif"
+   ]
+  ],
+  "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoYAA0APu1iqU2ppaOiMAgBMB2JQAB8zENYk/3FA53CVp/iAAD+5lxa76Djha9Ch0VwysteZxwyTdlzTm2UpUnu9CQpn2YSu72ZT+YvZpo2bhaRU2Bb+g+jNDh3kMoEI+vV6rvNkh40N14yUVX2CVdkg4baGXa0eiYa6d4JWv+lFgQgpQWPyxJZlk/Rt3uCAAA="
+ },
+ "/assets/images/hero/film/shot-3-pool-detail.webp": {
+  "width": 2096,
+  "height": 1176,
+  "srcset": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-640.webp"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1080.webp"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1600.webp"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1920.webp"
+   ]
+  ],
+  "avif": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-640.avif"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1080.avif"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1600.avif"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-3-pool-detail-1920.avif"
+   ]
+  ],
+  "blur": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADwAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JQBdmUAS4IYoV46oYwV+gAP6p/+OjkDysyKS+xTgBODQM/VgAkXkMOr8PNiPih/fx6jrOuUBhTWw8DfII1xF+GUopiXn+lxMswheTrgqpxmLvG+xmVXkok+m2xqirRHJlFnAInADJZzNo5fr+LF68IULnCCO9QObfBPxQdtysDJzmgFp9nZN3xsplhgAA"
+ },
+ "/assets/images/hero/film/shot-4-sunset.webp": {
+  "width": 2096,
+  "height": 1176,
+  "srcset": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-4-sunset-640.webp"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1080.webp"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1600.webp"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1920.webp"
+   ]
+  ],
+  "avif": [
+   [
+    640,
+    "/assets/images/_hero/hero-film-shot-4-sunset-640.avif"
+   ],
+   [
+    1080,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1080.avif"
+   ],
+   [
+    1600,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1600.avif"
+   ],
+   [
+    1920,
+    "/assets/images/_hero/hero-film-shot-4-sunset-1920.avif"
+   ]
+  ],
+  "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoYAA0APu1kqU2ppaQiMAgBMB2JQBOgA+nv5Vg9rAuxd+gccAD+qcIFh13s219614fTCWlboOO7hiDjW6IKk19o9uEMB7/4AHm4DxLbp9WgSzCzDk98f8Tn2FzxtuYx8eNtv3TlfuCpr+UFe2jiDRf2IoA/SYg6e8AAAA=="
+ },
  "/assets/images/hero/jungle-infinity.webp": {
   "width": 1920,
   "height": 1080,
@@ -1079,80 +1243,6 @@ const heroImages = {
    ]
   ],
   "blur": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCdAdwA8fFi7jNsAM2bCl6NAAD+7LsGhIyfpE9ziByOyBbma1BUBSvntachpQFgZmvZkMJvIQvyRBCcK8lDgRmDUAFhhJVfLlw+ebxY/HMrThA88MKmB9bVCW8yG96l8EsjCK6swAp7AU4Z3xDCOCgbm17L0OCsdSMl5bQG5g9fnsfXJ4AA"
- },
- "/assets/images/hero/villas-aerial-portrait.webp": {
-  "width": 1152,
-  "height": 2032,
-  "srcset": [
-   [
-    640,
-    "/assets/images/_hero/hero-villas-aerial-portrait-640.webp"
-   ],
-   [
-    1080,
-    "/assets/images/_hero/hero-villas-aerial-portrait-1080.webp"
-   ],
-   [
-    1152,
-    "/assets/images/_hero/hero-villas-aerial-portrait-1152.webp"
-   ]
-  ],
-  "avif": [
-   [
-    640,
-    "/assets/images/_hero/hero-villas-aerial-portrait-640.avif"
-   ],
-   [
-    1080,
-    "/assets/images/_hero/hero-villas-aerial-portrait-1080.avif"
-   ],
-   [
-    1152,
-    "/assets/images/_hero/hero-villas-aerial-portrait-1152.avif"
-   ]
-  ],
-  "blur": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAwBACdASoOABgAPu1iqU2ppaOiMAgBMB2JZgCdAywTnIwS6HClvRMxw7AAyioi2mVtu0r8dZu5l9yypI5m820PrWiTZ6gRZxju3S6ISgZHAW5C24+LayiDv3q2sWUXLD1MH89ym6PgS1Sg+YfnNuj0338oCcXQ5c3h90ueP5ww4X6yanDMYmlhY+vBnYgwpt7BAshqFmqcKH8pU4neMZnS6jpyH+OS2PD8AA=="
- },
- "/assets/images/hero/villas-aerial.webp": {
-  "width": 2096,
-  "height": 1184,
-  "srcset": [
-   [
-    640,
-    "/assets/images/_hero/hero-villas-aerial-640.webp"
-   ],
-   [
-    1080,
-    "/assets/images/_hero/hero-villas-aerial-1080.webp"
-   ],
-   [
-    1600,
-    "/assets/images/_hero/hero-villas-aerial-1600.webp"
-   ],
-   [
-    1920,
-    "/assets/images/_hero/hero-villas-aerial-1920.webp"
-   ]
-  ],
-  "avif": [
-   [
-    640,
-    "/assets/images/_hero/hero-villas-aerial-640.avif"
-   ],
-   [
-    1080,
-    "/assets/images/_hero/hero-villas-aerial-1080.avif"
-   ],
-   [
-    1600,
-    "/assets/images/_hero/hero-villas-aerial-1600.avif"
-   ],
-   [
-    1920,
-    "/assets/images/_hero/hero-villas-aerial-1920.avif"
-   ]
-  ],
-  "blur": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCdMoAluQ2IldSCf4CEjipHwAD7otzRFhsPRa8B4sAjuPd11kzrqkgNtQM1fP0/jUaQmcoUAD1o08vCPaIFagLCIuLFaxb17TO0UUeqbUS7F4kutR0ZSpUBsQppThiOSLJmv0mXd3XBuaicNuGQmB7ErbzpmiM+Vmbk54j8oFKufHuKDgvmTJFn5w8San7Llf9jwAA="
  },
  "/assets/images/meditation/rice-terrace.webp": {
   "width": 1920,
