@@ -55,8 +55,14 @@ export default function MenuOverlay({ open, onClose }) {
       lastFocus.current = document.activeElement;
       document.body.classList.add("is-locked");
       tl.timeScale(1).play();
+      // The menu items fade in partway through the timeline and cannot take
+      // focus while hidden, so retry briefly until the first one accepts it.
       const first = rootRef.current.querySelector("a, button");
-      window.setTimeout(() => first?.focus(), 350);
+      const focusFirst = (tries) => {
+        first?.focus();
+        if (first && document.activeElement !== first && tries > 0) window.setTimeout(() => focusFirst(tries - 1), 100);
+      };
+      window.setTimeout(() => focusFirst(12), 350);
     } else {
       document.body.classList.remove("is-locked");
       tl.timeScale(1.6).reverse();

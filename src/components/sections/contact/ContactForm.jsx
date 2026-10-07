@@ -8,19 +8,21 @@ import styles from "./ContactForm.module.css";
 
 const initial = { name: "", email: "", topic: "", message: "" };
 
+// Errors in on-screen order, so the first one found is the first field.
 function validate(values) {
   const errors = {};
+  if (!values.topic) errors.topic = "Please choose what your question is about.";
   if (!values.name.trim()) errors.name = "Please tell us your name.";
   if (!values.email.trim()) errors.email = "Please enter your email address.";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) errors.email = "Please enter a valid email address.";
-  if (!values.topic) errors.topic = "Please choose what your question is about.";
   if (values.message.trim().length < 10) errors.message = "Please write a short message (at least 10 characters).";
   return errors;
 }
 
 /**
  * Front-end only enquiry form: validates accessibly, then hands the message
- * to the visitor’s email app (no backend in this project).
+ * to the visitor’s email app (no backend in this project). The topic comes
+ * first, as a row of choice chips (native radios), then name, email and message.
  */
 export default function ContactForm() {
   const id = useId().replace(/:/g, "");
@@ -101,47 +103,65 @@ export default function ContactForm() {
 
   return (
     <form ref={formRef} className={styles.form} onSubmit={onSubmit} noValidate>
+      <fieldset
+        className={styles.topics}
+        aria-invalid={errors.topic ? true : undefined}
+        aria-describedby={errors.topic ? `${id}-topic-error` : undefined}
+      >
+        <legend className={styles.legend}>
+          What can we help you with? <span aria-hidden="true">*</span>
+        </legend>
+        <div className={styles.chips}>
+          {enquiryTopics.map((t) => (
+            <label key={t} className={styles.chip}>
+              <input
+                type="radio"
+                name="topic"
+                value={t}
+                checked={values.topic === t}
+                onChange={update("topic")}
+                required
+              />
+              <span>{t}</span>
+            </label>
+          ))}
+        </div>
+        {error("topic")}
+      </fieldset>
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor={`${id}-name`}>
-            Name <span aria-hidden="true">*</span>
+            Your name <span aria-hidden="true">*</span>
           </label>
           <input type="text" autoComplete="name" required {...field("name")} />
           {error("name")}
         </div>
         <div className={styles.field}>
           <label htmlFor={`${id}-email`}>
-            Email <span aria-hidden="true">*</span>
+            Email address <span aria-hidden="true">*</span>
           </label>
           <input type="email" autoComplete="email" required {...field("email")} />
           {error("email")}
         </div>
       </div>
       <div className={styles.field}>
-        <label htmlFor={`${id}-topic`}>
-          What is your question about? <span aria-hidden="true">*</span>
-        </label>
-        <select required {...field("topic")}>
-          <option value="">Please choose…</option>
-          {enquiryTopics.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-        {error("topic")}
-      </div>
-      <div className={styles.field}>
         <label htmlFor={`${id}-message`}>
-          Message <span aria-hidden="true">*</span>
+          Your message <span aria-hidden="true">*</span>
         </label>
-        <textarea rows={6} required {...field("message")} />
+        <textarea
+          rows={6}
+          required
+          placeholder="Your preferred dates, your experience with yoga, room preferences — anything that helps us help you."
+          {...field("message")}
+        />
         {error("message")}
       </div>
-      <p className={styles.hint}>* Required fields. {contact.responseTime}</p>
-      <Button type="submit" variant="dark">
-        Send message
-      </Button>
+      <div className={styles.submitRow}>
+        <p className={styles.hint}>* Required. {contact.responseTime}</p>
+        <Button type="submit" variant="dark">
+          Send message
+        </Button>
+      </div>
     </form>
   );
 }

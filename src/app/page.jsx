@@ -60,9 +60,9 @@ export default function HomePage() {
 
       <AccreditationSection title={null} showTrust={false} />
 
-      <LocationSection />
+      <LocationSection tone="warm" />
 
-      <section id="online-courses" className="section section--warm">
+      <section id="online-courses" className="section">
         <div className="container">
           <SplitFeature
             reverse
@@ -96,10 +96,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--tight" aria-labelledby="video-heading">
+      <section className="section section--tight section--dark" aria-labelledby="video-heading">
         <div className="container">
           <SectionHeading
             align="center"
+            tone="light"
             eyebrow="Watch"
             title={<span id="video-heading">Experience oneness</span>}
             intro="A journey into the essence of Blooming Lotus Yoga."
@@ -126,7 +127,7 @@ export default function HomePage() {
 
       <GuideCTA />
 
-      <FAQSection faqs={homeFaqs} defaultOpen={null} secondary={{ title: "People also ask…", items: peopleAlsoAsk }} />
+      <FAQSection faqs={homeFaqs} tone="warm" defaultOpen={null} secondary={{ title: "People also ask…", items: peopleAlsoAsk }} />
 
       <ContactClosing />
     </>

@@ -20,10 +20,17 @@ function LotusBullet() {
   );
 }
 
-/** Our spectacular location: one tinted card for Ubud with a photo beside it. */
-export default function LocationSection({ id = "location", cta = { label: "Explore the retreat center", href: "/retreat-center" } }) {
+/**
+ * Our spectacular location: one tinted card for Ubud with a photo beside it.
+ * tone="warm" sets it on the cream background, for alternating page rhythm.
+ */
+export default function LocationSection({
+  id = "location",
+  cta = { label: "Explore the retreat center", href: "/retreat-center" },
+  tone = "default",
+}) {
   return (
-    <section id={id} className="section">
+    <section id={id} className={`section ${tone === "warm" ? "section--warm" : ""}`}>
       <div className="container">
         <SectionHeading eyebrow="Our location" title="Our spectacular location" align="center" />
 

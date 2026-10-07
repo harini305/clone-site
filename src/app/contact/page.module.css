@@ -3,6 +3,14 @@
   gap: 3.5rem;
 }
 
+.formCard {
+  padding: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
 .aside {
   display: grid;
   gap: 1.25rem;

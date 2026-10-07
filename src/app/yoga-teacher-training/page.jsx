@@ -8,6 +8,7 @@ import { TeacherGrid } from "@/components/sections/shared/TeacherCard";
 import VideoEmbed from "@/components/sections/shared/VideoEmbed";
 import TestimonialsSection from "@/components/sections/shared/TestimonialsSection";
 import { RoomGrid } from "@/components/sections/shared/RoomCard";
+import RoomComparison from "@/components/sections/shared/RoomComparison";
 import CheckList from "@/components/sections/shared/CheckList";
 import RegistrationSteps from "@/components/sections/shared/RegistrationSteps";
 import ForYouSection from "@/components/sections/shared/ForYouSection";
@@ -153,6 +154,11 @@ export default function YTTPage() {
             eyebrow="Rooms & pricing"
             title="What “all-inclusive” actually means"
             intro="Many Bali trainings only quote tuition and charge accommodation & meals separately. The price you see is the price you pay — no hidden fees, taxes or payment-processing fees."
+          />
+          <RoomComparison
+            rooms={yttRooms.map((r) => ({ ...r, deposit: 500 }))}
+            priceNote="all-inclusive"
+            label="Compare teacher training rooms"
           />
           <RoomGrid
             rooms={yttRooms.map((r) => ({ ...r, deposit: 500 }))}

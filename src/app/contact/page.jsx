@@ -62,8 +62,12 @@ export default function ContactPage() {
       <section className="section">
         <div className={`container ${styles.grid}`}>
           <div>
-            <SectionHeading eyebrow="Send a message" title="Questions? Feel free to contact us…" />
-            <div data-reveal>
+            <SectionHeading
+              eyebrow="Send a message"
+              title="Let’s connect"
+              intro="Tell us a little about yourself and what you’re looking for — a teacher or our bookings team will get back to you personally."
+            />
+            <div className={styles.formCard} data-reveal>
               <ContactForm />
             </div>
           </div>

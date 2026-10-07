@@ -6,6 +6,7 @@ import FeatureGrid from "@/components/sections/shared/FeatureGrid";
 import CheckList from "@/components/sections/shared/CheckList";
 import LocationSection from "@/components/sections/shared/LocationSection";
 import { RoomGrid } from "@/components/sections/shared/RoomCard";
+import RoomComparison from "@/components/sections/shared/RoomComparison";
 import ForYouSection from "@/components/sections/shared/ForYouSection";
 import TestimonialsSection from "@/components/sections/shared/TestimonialsSection";
 import FAQSection from "@/components/sections/shared/FAQSection";
@@ -110,6 +111,7 @@ export default function RetreatDetail({ retreatKey, testimonials, faqs, intro, s
             title="Rooms & villas"
             intro={`All prices are per person for the full ${r.duration} retreat. Pay a 50% deposit now to save your space; free cancellation & change of dates (see FAQ). Prices exclude 5.6% tax & service fees.`}
           />
+          <RoomComparison rooms={r.rooms} label={`Compare ${r.short} rooms`} />
           <RoomGrid rooms={r.rooms} ctaLabel="Book this room" />
           <p className={styles.roomsNote} data-reveal>
             The Shared Riverside Room and Family Villa are currently sold out. Need group options?{" "}

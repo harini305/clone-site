@@ -69,6 +69,16 @@
 .nav {
   display: none;
   margin-left: auto;
+  transition:
+    opacity 0.35s var(--ease),
+    visibility 0.35s;
+}
+
+/* The full menu lists the same links, so the inline row steps aside while it
+   is open — one navigation on screen at a time. */
+.menuOpen .nav {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .navList {
