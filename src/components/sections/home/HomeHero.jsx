@@ -1,7 +1,5 @@
-import Image from "next/image";
 import HeroImage from "@/components/sections/shared/HeroImage";
 import Button from "@/components/ui/Button";
-import { awards } from "@/data/accreditation";
 import HeroFilm from "./HeroFilm";
 import { GlobeIcon, LotusIcon, MeditationIcon, PinIcon } from "./HeroIcons";
 import styles from "./HomeHero.module.css";
@@ -19,9 +17,9 @@ const trust = [
 
 /**
  * Home hero — House of Om layout (brand name as the H1, tagline beneath, one
- * button, four trust items) with Blooming Lotus content: a four-shot cinematic
- * film of the villas joined by luma-matte transitions, the source call to
- * action and the three award badges.
+ * button) with Blooming Lotus content: a four-shot cinematic film of the villas
+ * joined by luma-matte transitions, the source call to action and a slim strip
+ * of four trust points. Award badges live in the accreditation section below.
  */
 export default function HomeHero() {
   return (
@@ -54,21 +52,13 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <ul className={styles.cards} aria-label="Why Blooming Lotus Yoga">
+        <ul className={styles.trust} aria-label="Why Blooming Lotus Yoga">
           {trust.map(({ icon: Icon, label }) => (
-            <li key={label} className={styles.card} data-hero-item>
+            <li key={label} className={styles.trustItem} data-hero-item>
               <span className={styles.icon}>
                 <Icon />
               </span>
-              <span className={styles.cardLabel}>{label}</span>
-            </li>
-          ))}
-        </ul>
-
-        <ul className={styles.awards} aria-label="Awards" data-hero-item>
-          {awards.map((award) => (
-            <li key={award.src}>
-              <Image src={award.src} alt={`${award.label}: ${award.text}`} width={140} height={140} sizes="96px" />
+              <span className={styles.trustLabel}>{label}</span>
             </li>
           ))}
         </ul>

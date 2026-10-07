@@ -52,7 +52,7 @@ export default function HomePage() {
             layout="split"
             eyebrow="Courses & retreats"
             title="Find your next retreat or training course"
-            intro="Our 225-hour training takes a maximum of 18 students. 4-day retreats start Sundays and Wednesdays, 7-day retreats start Sundays — and both welcome complete beginners."
+            intro="Three ways to practise with us in Ubud — from a 4-day retreat to a three-week teacher training. 4-day retreats start Sundays and Wednesdays, 7-day retreats start Sundays, and both welcome complete beginners."
           />
           <ProgrammeGrid programs={programs} />
         </div>
@@ -96,7 +96,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="video-heading">
+      <section className="section section--tight" aria-labelledby="video-heading">
         <div className="container">
           <SectionHeading
             align="center"

@@ -117,6 +117,37 @@
   }
 }
 
+/* Stat-led items: small label, large figure, short supporting line. */
+.hasStat .title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--brown-deep);
+}
+
+.stat {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--font-display);
+  font-variant-numeric: lining-nums;
+  font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.hasStat .text {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.dark .stat {
+  color: var(--cream);
+}
+
 /* Phones, swipe carousel: every fact becomes a card (lines variant too). */
 @media (max-width: 699px) {
   .grid:global(.swipe-mobile) {

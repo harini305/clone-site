@@ -4,13 +4,17 @@ import styles from "./RoomCard.module.css";
 
 const usd = (n) => `US$${n.toLocaleString("en-US")}`;
 
-/** Accommodation option with specs, price and booking CTA. */
+/**
+ * Accommodation option with specs, price and booking CTA. One room per list
+ * can be `recommended`: its tag is filled and the card outlined, so it stands
+ * out from the quieter tags on the other cards.
+ */
 export default function RoomCard({ room, priceNote = "per person", ctaHref = "/contact", ctaLabel }) {
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${room.recommended ? styles.recommended : ""}`}>
       <div className={styles.media}>
         <Image src={room.image} alt={`${room.name} accommodation`} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" className={styles.img} />
-        {room.tag && <span className={styles.tag}>{room.tag}</span>}
+        {room.tag && <span className={`${styles.tag} ${room.recommended ? styles.tagFeatured : ""}`}>{room.tag}</span>}
       </div>
       <div className={styles.body}>
         <h3 className={styles.name}>{room.name}</h3>

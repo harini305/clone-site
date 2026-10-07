@@ -66,6 +66,7 @@ const roomBase = {
   privateSuite: {
     name: "Private Suite",
     tag: "Best value",
+    recommended: true,
     image: "/assets/images/rooms/private-suite.webp",
     specs: ["1 person per room", "1 twin bed (or king by request)", "Small private bathroom", "Air conditioning", "River & jungle views"],
     text: "A modern, minimalist room all to yourself — ideal if you want privacy without being completely alone, with the villa’s shared pool and living room right there.",

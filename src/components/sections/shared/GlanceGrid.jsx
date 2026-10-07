@@ -5,6 +5,8 @@ import styles from "./GlanceGrid.module.css";
  * “At a glance” facts grid with hairline dividers.
  * variant="cards" shows each fact as a card; swipe (default for 4+ facts)
  * turns the grid into a swipe carousel of cards on phones.
+ * An item with a `stat` leads with that figure: the title becomes a small
+ * label above it and the text a short supporting line.
  */
 export default function GlanceGrid({ items, columns = 3, tone = "light", variant = "lines", swipe = items.length > 3 }) {
   return (
@@ -16,16 +18,19 @@ export default function GlanceGrid({ items, columns = 3, tone = "light", variant
         const external = item.href && /^https?:/.test(item.href);
         const label = (
           <>
-            {item.link || "Learn more"} <span aria-hidden="true">→</span>
+            {item.link || "Learn more"}&nbsp;<span aria-hidden="true">→</span>
           </>
         );
         return (
-          <div key={item.title} className={styles.item}>
-            <span className={styles.index} aria-hidden="true">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+          <div key={item.title} className={`${styles.item} ${item.stat ? styles.hasStat : ""}`}>
+            {!item.stat && (
+              <span className={styles.index} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            )}
             <dt className={styles.title}>{item.title}</dt>
             <dd className={styles.text}>
+              {item.stat && <span className={styles.stat}>{item.stat}</span>}
               {item.text}
               {item.href &&
                 (external ? (

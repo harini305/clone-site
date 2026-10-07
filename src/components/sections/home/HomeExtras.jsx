@@ -31,7 +31,7 @@ export function FeaturedOn() {
 /** Resources carousel — BLISS! Magazine posts. */
 export function Resources() {
   return (
-    <section className="section section--warm" aria-labelledby="resources-heading">
+    <section className="section section--tight section--warm" aria-labelledby="resources-heading">
       <div className="container">
         <SectionHeading
           layout="split"

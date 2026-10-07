@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageHero from "@/components/sections/shared/PageHero";
 import CTASection from "@/components/sections/shared/CTASection";
 import ContactForm from "@/components/sections/contact/ContactForm";
@@ -69,6 +70,15 @@ export default function ContactPage() {
 
           <aside className={styles.aside} aria-label="Contact details">
             <div className={styles.card} data-reveal>
+              <div className={styles.cardMedia}>
+                <Image
+                  src="/assets/images/venue/aerial-villas-2.webp"
+                  alt="Aerial view of the Blooming Lotus Yoga villas in the jungle above the river in Ubud"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 420px"
+                  className={styles.cardImg}
+                />
+              </div>
               <Eyebrow>Our retreat location in Bali</Eyebrow>
               <h2 className={styles.cardTitle}>{contact.name}</h2>
               <address className={styles.address}>

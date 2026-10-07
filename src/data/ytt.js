@@ -130,6 +130,7 @@ export const yttRooms = [
   {
     name: "Private Suite",
     tag: "Most popular · limited places",
+    recommended: true,
     image: "/assets/images/rooms/private-suite.webp",
     price: 3670,
     specs: ["1 person per room", "1 king or 1 twin bed", "Small bathroom", "Air conditioning", "River & jungle views"],

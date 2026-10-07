@@ -53,10 +53,9 @@ export default function HomeStory() {
             title="Our yoga retreats and yoga teacher training in Bali"
           >
             <p>
-              The Blooming Lotus Yoga 225-hour Bali yoga and meditation teacher training takes a maximum of 18 students,
-              and is open to beginner and intermediate practitioners. Our 4-day{" "}
-              <Link href="/yoga-retreats">yoga retreats in Ubud</Link> start Sundays and Wednesdays, our 7-day retreats
-              start Sundays, and both welcome complete beginners as well as intermediate students.
+              Our Bali yoga and meditation teacher training is a small-group immersion in the practice, philosophy and
+              art of teaching yoga. Our <Link href="/yoga-retreats">yoga retreats in Ubud</Link> offer the same
+              heart-based teaching in 4 or 7 days, and welcome complete beginners as well as intermediate students.
             </p>
             <ShowMore>
               <p>

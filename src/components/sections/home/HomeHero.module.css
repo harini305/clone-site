@@ -4,7 +4,7 @@
   position: relative;
   isolation: isolate;
   display: flex;
-  min-height: max(640px, 95svh);
+  min-height: max(640px, 100svh);
   padding: calc(var(--header-h) + 0.5rem) clamp(1rem, 6.6vw, 5.9rem) clamp(1.5rem, 4.4vw, 3.95rem);
   overflow: hidden;
   color: #fff;
@@ -32,7 +32,7 @@
 }
 
 /* Clean, even shade for legible white text — no haze or glow. Slightly
-   deeper at the top (header) and bottom (cards, badges). */
+   deeper at the top (header) and bottom (trust strip). */
 .shade {
   position: absolute;
   inset: 0;
@@ -52,6 +52,7 @@
 
 .copy {
   display: flex;
+  margin-block: auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -97,64 +98,56 @@
   text-shadow: none;
 }
 
-.cards {
+/* Trust points: one slim glass strip along the bottom of the hero, the four
+   items divided by hairlines, so they support the call to action rather than
+   compete with it. */
+.trust {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.75rem;
   width: 100%;
   margin: clamp(2rem, 1.5rem + 1vw, 2.5rem) 0 0;
   padding: 0;
   list-style: none;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 1.17rem;
-  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+}
+
+.trustItem + .trustItem {
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .icon {
   display: grid;
   flex: none;
   place-items: center;
-  width: 52px;
-  height: 52px;
   color: #fff;
 }
 
-.cardLabel {
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.trustLabel {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.35;
   color: #fff;
 }
 
-/* Three award badges in a slim row along the bottom of the hero. */
-.awards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(1.5rem, 5vw, 4.5rem);
-  margin: auto 0 0;
-  padding: clamp(1.25rem, 2.5vw, 2rem) 0 0;
-  list-style: none;
-}
-
-.awards img {
-  width: clamp(56px, 6vw, 84px);
-  height: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-}
-
-/* Short laptop screens: keep headline, buttons and trust cards above the fold. */
+/* Short laptop screens: keep headline, button and trust strip above the fold. */
 @media (min-width: 900px) and (max-height: 820px) {
   .title {
     font-size: clamp(2.75rem, 1.5rem + 3.6vw, 4.6rem);
@@ -165,18 +158,24 @@
   .ctas {
     margin-top: 1.25rem;
   }
-  .cards {
-    margin-top: 1.5rem;
-  }
-  .awards img {
-    width: 56px;
-  }
 }
 
+/* Tablets and phones: 2 × 2 grid, still one strip. */
 @media (max-width: 1024px) {
-  .cards {
+  .trust {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+  }
+  .trustItem {
+    justify-content: flex-start;
+  }
+  .trustItem + .trustItem {
+    border-left: 0;
+  }
+  .trustItem:nth-child(even) {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .trustItem:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 }
 
@@ -187,23 +186,20 @@
   .copy {
     padding-top: 1rem;
   }
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
+  .trust {
     margin-top: 1.75rem;
-  }
-  .card {
-    gap: 0.5rem;
-    padding: 0.7rem 0.75rem;
     border-radius: 12px;
   }
-  .icon,
-  .icon svg {
-    width: 34px;
-    height: 34px;
+  .trustItem {
+    gap: 0.45rem;
+    padding: 0.6rem 0.65rem;
   }
-  .cardLabel {
-    font-size: 0.875rem;
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .trustLabel {
+    font-size: 0.8125rem;
     line-height: 1.3;
   }
 }
