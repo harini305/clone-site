@@ -22,7 +22,7 @@ export default function GlanceGrid({ items, columns = 3, tone = "light", variant
           </>
         );
         return (
-          <div key={item.title} className={`${styles.item} ${item.stat ? styles.hasStat : ""}`}>
+          <div key={item.title} className={`${styles.item} ${item.stat ? styles.hasStat : ""} ${variant === "cards" ? "hover-card" : ""}`}>
             {!item.stat && (
               <span className={styles.index} aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}

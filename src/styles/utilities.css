@@ -92,7 +92,7 @@
 }
 
 .block-gap {
-  margin-top: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
+  margin-top: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
 }
 
 /* Phones: turn a grid into a native swipe carousel (scroll-snap) that bleeds
@@ -118,5 +118,46 @@
   .swipe-mobile > * {
     scroll-snap-align: start;
     min-width: 0;
+  }
+}
+
+/* Shared hover, site-wide: a card lifts with a soft shadow; a photo zooms
+   gently inside its frame (.hover-zoom clips it). A .hover-zoom inside a
+   .hover-card zooms when the whole card is hovered. The zoom uses the CSS
+   `scale` property, which stacks with any transform already on the photo
+   (scroll parallax, reveal animations) instead of fighting it. Only on
+   devices that can hover, and never with reduced motion. */
+.hover-card {
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img,
+.zoom-layer {
+  transition: scale 0.9s var(--ease);
+}
+
+/* Wraps a photo that scroll parallax already moves (GSAP owns its
+   transform), so the hover zoom can scale this layer instead. */
+.zoom-layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  .hover-zoom:hover img,
+  .hover-card:hover .hover-zoom img,
+  .hover-zoom:hover .zoom-layer {
+    scale: 1.05;
   }
 }

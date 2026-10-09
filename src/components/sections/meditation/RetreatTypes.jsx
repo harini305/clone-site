@@ -37,7 +37,7 @@ export default function RetreatTypes() {
   return (
     <div className={styles.grid} data-stagger>
       {types.map((t) => (
-        <article key={t.key} className={`${styles.card} ${styles[t.key]}`}>
+        <article key={t.key} className={`${styles.card} ${styles[t.key]} hover-card`}>
           <p className={styles.for}>{t.for}</p>
           <h3 className={styles.title}>{t.label}</h3>
           <ul className={styles.list}>

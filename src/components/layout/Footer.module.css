@@ -1,7 +1,7 @@
 .footer {
   background: var(--night);
   color: rgba(249, 246, 240, 0.78);
-  padding-top: clamp(4rem, 3rem + 4vw, 6.5rem);
+  padding-top: clamp(3rem, 2.4rem + 2.5vw, 4.5rem);
   font-size: 0.9375rem;
 }
 

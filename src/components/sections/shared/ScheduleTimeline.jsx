@@ -71,8 +71,8 @@ export default function ScheduleTimeline({ id, eyebrow, title, intro, image, ima
               <span className={styles.nowTitle}>{current.title}</span>
             </div>
             {image && (
-              <div className={styles.media}>
-                <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 100vw, 40vw" className="media-cover" />
+              <div className={`${styles.media} hover-zoom`}>
+                <Image src={image} alt={imageAlt} fill sizes="(max-width: 900px) 100vw, 80vw" className="media-cover" />
               </div>
             )}
           </div>

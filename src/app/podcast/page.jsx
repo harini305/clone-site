@@ -30,7 +30,7 @@ export default function PodcastPage() {
           <SectionHeading eyebrow="Welcome" title="Welcome to the Drops of Nectar podcast" intro={podcastIntro} />
           <ol className={styles.episodes} data-stagger>
             {podcastEpisodes.map((ep, i) => (
-              <li key={ep.src} className={styles.episode}>
+              <li key={ep.src} className={`${styles.episode} hover-card`}>
                 <h3 className={styles.episodeTitle}>
                   <span>{i + 1}.</span>
                   {ep.title}

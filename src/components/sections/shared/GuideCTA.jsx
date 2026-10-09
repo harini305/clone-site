@@ -8,7 +8,7 @@ export default function GuideCTA() {
   return (
     <section className={`section ${styles.section}`}>
       <div className={`container ${styles.grid}`}>
-        <div className={styles.cover} data-reveal-image>
+        <div className={`${styles.cover} hover-card hover-zoom`} data-reveal-image>
           <Image
             src="/assets/images/guide/ytt-unfiltered.webp"
             alt="Cover of the YTT Unfiltered guide"

@@ -34,7 +34,7 @@ export default function FoodSection({ meals = "breakfast and dinner", id = "food
         </div>
         <ul className={styles.gallery} data-stagger>
           {foodGallery.map((f) => (
-            <li key={f.src} className={styles.tile}>
+            <li key={f.src} className={`${styles.tile} hover-zoom`}>
               <Image src={f.src} alt={f.alt} fill sizes="(max-width: 900px) 50vw, 22vw" className="media-cover" />
             </li>
           ))}

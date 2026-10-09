@@ -9,11 +9,19 @@ const usd = (n) => `US$${n.toLocaleString("en-US")}`;
  * can be `recommended`: its tag is filled and the card outlined, so it stands
  * out from the quieter tags on the other cards.
  */
-export default function RoomCard({ room, priceNote = "per person", ctaHref = "/contact", ctaLabel }) {
+export default function RoomCard({ room, priceNote = "per person", ctaHref = "/contact", ctaLabel, twoUp = false }) {
   return (
-    <article className={`${styles.card} ${room.recommended ? styles.recommended : ""}`}>
-      <div className={styles.media}>
-        <Image src={room.image} alt={`${room.name} accommodation`} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" className={styles.img} />
+    <article className={`${styles.card} ${room.recommended ? styles.recommended : ""} hover-card`}>
+      <div className={`${styles.media} hover-zoom`}>
+        {/* Room photos are wide panoramas cropped to 16:10, so they draw about 1.5×
+            the card width — sizes asks for that many pixels. */}
+        <Image
+          src={room.image}
+          alt={`${room.name} accommodation`}
+          fill
+          sizes={twoUp ? "(max-width: 700px) 150vw, 75vw" : "(max-width: 700px) 150vw, (max-width: 1100px) 75vw, 50vw"}
+          className={styles.img}
+        />
         {room.tag && <span className={`${styles.tag} ${room.recommended ? styles.tagFeatured : ""}`}>{room.tag}</span>}
       </div>
       <div className={styles.body}>
@@ -49,7 +57,7 @@ export function RoomGrid({ rooms, twoUp = false, ...cardProps }) {
   return (
     <div className={`${styles.grid} ${twoUp ? styles.two : ""} swipe-mobile`} data-stagger>
       {rooms.map((room) => (
-        <RoomCard key={room.name} room={room} {...cardProps} />
+        <RoomCard key={room.name} room={room} twoUp={twoUp} {...cardProps} />
       ))}
     </div>
   );

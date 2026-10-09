@@ -21,11 +21,7 @@
 
 .img {
   object-fit: cover;
-  transition: transform 1.2s var(--ease);
-}
-
-.card:hover .img {
-  transform: scale(1.05);
+  transition: scale 0.9s var(--ease);
 }
 
 /* Quiet tag on most cards; the recommended card's tag is filled. */

@@ -25,6 +25,19 @@ export default function SplitFeature({
   className = "",
   children,
 }) {
+  const photo = (
+    <Image
+      src={image}
+      alt={imageAlt}
+      fill
+      // The photo frame is taller than the landscape photos, so they are
+      // cropped and draw wider than the frame.
+      sizes={compact ? "(max-width: 900px) 100vw, 80vw" : "100vw"}
+      className="media-cover"
+      {...(parallax ? { "data-parallax-target": true } : {})}
+    />
+  );
+
   return (
     <div
       id={id}
@@ -32,22 +45,17 @@ export default function SplitFeature({
     >
       <div className={styles.visual}>
         <div
-          className={`${styles.frame} ${portrait ? styles.portrait : ""}`}
+          className={`${styles.frame} ${portrait ? styles.portrait : ""} hover-zoom`}
           data-reveal-image
           {...(parallax ? { "data-parallax": "4" } : {})}
         >
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            sizes={compact ? "(max-width: 900px) 100vw, 40vw" : "(max-width: 900px) 100vw, 50vw"}
-            className="media-cover"
-            data-parallax-target
-          />
+          {/* Parallax moves the photo itself, so its hover zoom goes on a layer
+              around it (.zoom-layer) and the two effects stack. */}
+          {parallax ? <span className="zoom-layer">{photo}</span> : photo}
         </div>
         {secondaryImage && (
-          <div className={styles.secondary} data-reveal-image>
-            <Image src={secondaryImage} alt={secondaryAlt} fill sizes="(max-width: 900px) 40vw, 18vw" className="media-cover" />
+          <div className={`${styles.secondary} hover-zoom`} data-reveal-image>
+            <Image src={secondaryImage} alt={secondaryAlt} fill sizes="(max-width: 900px) 60vw, 32vw" className="media-cover" />
           </div>
         )}
       </div>

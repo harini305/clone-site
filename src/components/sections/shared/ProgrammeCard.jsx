@@ -14,7 +14,8 @@ export default function ProgrammeCard({ program, headingLevel: H = "h3" }) {
           src={program.image}
           alt=""
           fill
-          sizes="(max-width: 699px) 84vw, (max-width: 1099px) 50vw, 33vw"
+          // Landscape photos fill a tall card, so they draw far wider than it.
+          sizes="(max-width: 699px) 170vw, (max-width: 1099px) 100vw, 66vw"
           className={styles.img}
         />
         <span className={styles.shade} aria-hidden="true" />

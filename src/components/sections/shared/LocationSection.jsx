@@ -72,12 +72,12 @@ export default function LocationSection({
               </div>
             )}
           </div>
-          <div className={styles.media}>
+          <div className={`${styles.media} hover-zoom`}>
             <Image
               src="/assets/images/hero/aerial-pool.webp"
               alt="The Blooming Lotus Yoga villas and pool in the jungle above the river in Ubud"
               fill
-              sizes="(max-width: 899px) 92vw, 46vw"
+              sizes="(max-width: 899px) 100vw, 62vw"
               className="media-cover"
             />
           </div>

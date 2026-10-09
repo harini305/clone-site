@@ -2,7 +2,7 @@ import styles from "./TestimonialCard.module.css";
 
 export default function TestimonialCard({ testimonial, tone = "light" }) {
   return (
-    <figure className={`${styles.card} ${styles[tone]}`}>
+    <figure className={`${styles.card} ${styles[tone]} hover-card`}>
       <div className={styles.stars} aria-label="5 out of 5 stars" role="img">
         ★★★★★
       </div>

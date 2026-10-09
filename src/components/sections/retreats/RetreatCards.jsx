@@ -9,8 +9,8 @@ export default function RetreatCards() {
   return (
     <div className={styles.grid} data-stagger>
       {Object.values(retreats).map((r) => (
-        <article key={r.slug} className={styles.card}>
-          <div className={styles.media}>
+        <article key={r.slug} className={`${styles.card} hover-card`}>
+          <div className={`${styles.media} hover-zoom`}>
             <Image src={r.cardImage} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" className={styles.img} />
             <Badge tone="glass" className={styles.badge}>
               {r.badge}

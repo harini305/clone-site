@@ -87,7 +87,7 @@ export default function GivingSection({ id = "giving" }) {
           <Carousel label="Charitable projects" tone="light">
             {photos.map((p) => (
               <figure key={p.src} className={styles.photo}>
-                <div className={styles.frame}>
+                <div className={`${styles.frame} hover-zoom`}>
                   <Image src={p.src} alt={p.alt} fill sizes="(max-width: 640px) 86vw, (max-width: 1024px) 45vw, 30vw" className="media-cover" />
                 </div>
                 <figcaption>{p.caption}</figcaption>

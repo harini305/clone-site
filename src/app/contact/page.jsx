@@ -79,7 +79,7 @@ export default function ContactPage() {
                   src="/assets/images/venue/aerial-villas-2.webp"
                   alt="Aerial view of the Blooming Lotus Yoga villas in the jungle above the river in Ubud"
                   fill
-                  sizes="(max-width: 1023px) 100vw, 420px"
+                  sizes="(max-width: 1023px) 100vw, 640px"
                   className={styles.cardImg}
                 />
               </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
           <SectionHeading eyebrow="How can we help?" title="Reach the right person, faster" />
           <ul className={styles.purposes} data-stagger>
             {purposes.map((p) => (
-              <li key={p.title} className={styles.purpose}>
+              <li key={p.title} className={`${styles.purpose} hover-card`}>
                 <h3>{p.title}</h3>
                 <p>{p.text}</p>
                 <a href={p.href} {...(p.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>

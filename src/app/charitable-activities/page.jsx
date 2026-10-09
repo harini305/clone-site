@@ -42,7 +42,7 @@ export default function CharitableActivitiesPage() {
           <SectionHeading eyebrow="The fund" title="Where your contribution goes" />
           <ul className={styles.posters} data-stagger>
             {charityPosters.map((p) => (
-              <li key={p.src}>
+              <li key={p.src} className="hover-zoom">
                 <Image src={p.src} alt={p.alt} fill sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 24vw" className="media-cover" />
               </li>
             ))}

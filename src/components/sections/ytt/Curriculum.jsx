@@ -6,8 +6,8 @@ import styles from "./Curriculum.module.css";
 function Panel({ module }) {
   return (
     <div className={styles.panel}>
-      <div className={styles.media}>
-        <Image src={module.image} alt="" fill sizes="(max-width: 900px) 100vw, 40vw" className="media-cover" />
+      <div className={`${styles.media} hover-zoom`}>
+        <Image src={module.image} alt="" fill sizes="(max-width: 900px) 100vw, 80vw" className="media-cover" />
       </div>
       <ul className={styles.list}>
         {module.items.map((item) => (

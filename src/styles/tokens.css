@@ -44,8 +44,8 @@
   --container: 1320px;
   --container-narrow: 860px;
   --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
-  /* Vertical rhythm between sections: 48px on phones up to 96px on wide screens. */
-  --section-y: clamp(3rem, 2.2rem + 3.6vw, 6rem);
+  /* Vertical rhythm between sections: 36px on phones up to 64px on wide screens. */
+  --section-y: clamp(2.25rem, 1.75rem + 2.2vw, 4rem);
   --radius-sm: 10px;
   --radius: 18px;
   --radius-lg: 28px;
@@ -56,6 +56,7 @@
   /* Effects */
   --shadow-soft: 0 18px 50px -24px rgba(32, 28, 20, 0.28);
   --shadow-card: 0 10px 30px -18px rgba(32, 28, 20, 0.35);
+  --shadow-hover: 0 24px 48px -24px rgba(32, 28, 20, 0.38);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 0.5s;
 }

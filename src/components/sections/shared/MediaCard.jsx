@@ -12,7 +12,7 @@ export default function MediaCard({ href, image, title, meta, text, cta, fit = "
   const body = (
     <>
       {image && (
-        <span className={`${styles.media} ${fit === "contain" ? styles.contain : ""}`} style={{ aspectRatio: ratio }}>
+        <span className={`${styles.media} ${fit === "contain" ? styles.contain : ""} hover-zoom`} style={{ aspectRatio: ratio }}>
           <Image
             src={image}
             alt=""

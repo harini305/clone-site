@@ -66,7 +66,7 @@ export default function GraduateStudentsPage() {
           <ul className={styles.quotes} data-stagger>
             {luminaryQuotes.map((q) => (
               <li key={q.slice(0, 24)}>
-                <blockquote>“{q}”</blockquote>
+                <blockquote className="hover-card">“{q}”</blockquote>
               </li>
             ))}
           </ul>

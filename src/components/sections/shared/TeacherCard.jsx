@@ -3,8 +3,8 @@ import styles from "./TeacherCard.module.css";
 
 export default function TeacherCard({ teacher, detailed = false }) {
   return (
-    <article className={styles.card}>
-      <div className={styles.portrait}>
+    <article className={`${styles.card} hover-card`}>
+      <div className={`${styles.portrait} hover-zoom`}>
         <Image src={teacher.image} alt={`Portrait of ${teacher.name}`} fill sizes="(max-width: 700px) 60vw, 280px" className="media-cover" />
       </div>
       <div className={styles.body}>

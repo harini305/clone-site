@@ -59,7 +59,15 @@ export default function Gallery({ images, label = "Photo gallery" }) {
         {images.map((img, i) => (
           <li key={img.src} className={styles.item}>
             <button type="button" className={styles.thumb} onClick={() => open(i)} aria-label={`Open image: ${img.alt}`}>
-              <Image src={img.src} alt={img.alt} fill sizes="(max-width: 700px) 50vw, 25vw" className={styles.img} />
+              {/* Wide photos are cropped into square tiles, so they draw wider than
+                  the tile: request enough pixels for the crop (big tiles every 6th). */}
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes={i % 6 === 0 ? "(max-width: 700px) 200vw, 70vw" : "(max-width: 700px) 100vw, 36vw"}
+                className={styles.img}
+              />
             </button>
           </li>
         ))}

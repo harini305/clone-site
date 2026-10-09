@@ -8,7 +8,7 @@ export default function ForYouSection({ id = "for-you", forYou, notForYou, noun 
       <div className="container">
         <SectionHeading eyebrow="Is it right for you?" title={`Who this ${noun} is for`} align="center" />
         <div className={styles.grid}>
-          <div className={`${styles.col} ${styles.yes}`} data-reveal>
+          <div className={`${styles.col} ${styles.yes} hover-card`} data-reveal>
             <h3 className={styles.title}>This {noun} is for you if…</h3>
             <ul className={styles.list}>
               {forYou.map((item) => (
@@ -19,7 +19,7 @@ export default function ForYouSection({ id = "for-you", forYou, notForYou, noun 
               ))}
             </ul>
           </div>
-          <div className={`${styles.col} ${styles.no}`} data-reveal data-delay="0.15">
+          <div className={`${styles.col} ${styles.no} hover-card`} data-reveal data-delay="0.15">
             <h3 className={styles.title}>It’s not really for you if…</h3>
             <ul className={styles.list}>
               {notForYou.map((item) => (
