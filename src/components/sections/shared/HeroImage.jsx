@@ -75,7 +75,8 @@ export default function HeroImage({ image, portraitImage, alt = "", className, p
   const { props: tallProps } = getImageProps({ ...common, src: portraitImage });
   return (
     <picture>
-      <source media={PHONE} srcSet={tallProps.srcSet} sizes={tallProps.sizes} />
+      {/* With images.unoptimized there is no srcSet, only the original file. */}
+      <source media={PHONE} srcSet={tallProps.srcSet ?? tallProps.src} sizes={tallProps.sizes} />
       <img {...wideProps} alt={alt} className={className} />
     </picture>
   );
